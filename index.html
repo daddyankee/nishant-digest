@@ -8,13 +8,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg: #0f1117;
+            --fg: #e2e8f0;
+            --card-bg: #181b24;
+            --border: #2d3748;
+            --muted: #94a3b8;
+            --accent: #60a5fa;
+            --heading: #f1f5f9;
+        }
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg: #f8fafc;
+                --fg: #1e293b;
+                --card-bg: #ffffff;
+                --border: #e2e8f0;
+                --muted: #64748b;
+                --accent: #3b82f6;
+                --heading: #0f172a;
+            }
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Inter', -apple-system, sans-serif;
-            background: #0f1117;
-            color: #e2e8f0;
+            background: var(--bg);
+            color: var(--fg);
             line-height: 1.7;
             min-height: 100vh;
+            transition: background 0.3s, color 0.3s;
         }
         .container { max-width: 720px; margin: 0 auto; padding: 48px 24px; }
         h1 {
@@ -22,71 +43,62 @@
             font-weight: 800;
             letter-spacing: -0.03em;
             margin-bottom: 8px;
+            color: var(--heading);
         }
         .subtitle {
-            color: #94a3b8;
+            color: var(--muted);
             font-size: 1rem;
             margin-bottom: 32px;
-            border-bottom: 1px solid #2d3748;
+            border-bottom: 1px solid var(--border);
             padding-bottom: 24px;
         }
-        .digest-list {
-            list-style: none;
-        }
-        .digest-list li {
-            margin-bottom: 12px;
-        }
+        .subtitle a { color: var(--accent); }
+        .digest-list { list-style: none; }
+        .digest-list li { margin-bottom: 12px; }
         .digest-list li a {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 12px 16px;
-            background: #181b24;
-            border: 1px solid #2d3748;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
             border-radius: 8px;
-            color: #e2e8f0;
+            color: var(--fg);
             text-decoration: none;
             transition: all 0.2s ease;
         }
         .digest-list li a:hover {
-            border-color: #60a5fa;
-            background: #1e2230;
-            text-decoration: none;
+            border-color: var(--accent);
+            background: var(--card-bg);
+            filter: brightness(1.05);
         }
-        .digest-list .date {
-            font-weight: 600;
-        }
-        .digest-list .arrow {
-            color: #64748b;
-            font-size: 1.2rem;
-        }
-        .digest-list li a:hover .arrow {
-            color: #60a5fa;
-        }
+        .digest-list .date { font-weight: 600; }
+        .digest-list .arrow { color: var(--muted); font-size: 1.2rem; }
+        .digest-list li a:hover .arrow { color: var(--accent); }
         .empty-state {
-            color: #64748b;
+            color: var(--muted);
             text-align: center;
             padding: 48px 0;
             font-size: 1rem;
         }
         footer {
             text-align: center;
-            color: #64748b;
+            color: var(--muted);
             font-size: 0.85rem;
             padding: 24px;
-            border-top: 1px solid #2d3748;
+            border-top: 1px solid var(--border);
             margin-top: 48px;
         }
-        footer a { color: #60a5fa; }
+        footer a { color: var(--accent); }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Nishant's Daily Digest</h1>
-        <p class="subtitle">Auto-generated research digest by <a href="https://hermes-agent.nousresearch.com" style="color:#60a5fa;">Hermes Agent</a></p>
+        <p class="subtitle">Auto-generated research digest by <a href="https://hermes-agent.nousresearch.com">Hermes Agent</a></p>
 
         <ul class="digest-list" id="digestList">
-            <li><a href="/2026-06-11/"><span class="date">2026-06-11</span><span class="arrow">&rarr;</span></a></li>
+            <li><a href="2026-06-11/"><span class="date">2026-06-11</span><span class="arrow">&rarr;</span></a></li>
         </ul>
     </div>
     <footer>
