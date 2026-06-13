@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — June 13, 2026</title>
+    <link rel="stylesheet" href="../base/styles.css">
+    <script>
+        MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+</head>
+<body>
+    <!-- Sticky Nav -->
+    <nav class="sticky-nav">
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-home">&#8592; Home</a>
+            <span class="nav-title">Daily Digest &mdash; June 13, 2026</span>
+            <span class="nav-badge">~3,800 words · 18 min read</span>
+        </div>
+    </nav>
+
+    <!-- Floating TOC (Desktop) -->
+    <aside class="floating-toc">
+        <div class="toc-inner">
+            <h4>Jump to</h4>
+            <ul>
+                <li><a href="#industry">Industry News</a></li>
+                <li><a href="#startups">Startup Signals</a></li>
+                <li><a href="#research">Research Review</a></li>
+                <li><a href="#math">Math &amp; Physics</a></li>
+                <li><a href="#ml">ML Deep Dive</a></li>
+                <li><a href="#topic">Today's Topic</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <main class="digest-container">
+
+        <!-- Header -->
+        <header class="digest-header">
+            <h1>Daily Research Digest</h1>
+            <p class="header-date">June 13, 2026 &middot; Saturday</p>
+            <p class="header-stats">~3,800 words · ~18 min read</p>
+            <p class="header-teaser">Anthropic export controls test AI safety governance; Trump EO sets voluntary frontier model framework; Deep double descent reveals overparameterization's surprising benefits.</p>
+        </header>
+
+        <!-- ========== SECTION 1: Industry News (BLUE) ========== -->
+        <section id="industry" class="section-card accent-blue">
+            <div class="section-header">
+                <h2>Industry News</h2>
+                <span class="reading-time">5 min read</span>
+            </div>
+            <div class="section-body">
+
+                <div class="news-item">
+                    <h3>U.S. Government Orders Anthropic to Cut Foreign Access to Mythos 5 and Fable 5</h3>
+                    <p>On June 12, the Trump administration issued an export control directive ordering Anthropic to suspend all access to its flagship models &mdash; Mythos 5 and Fable 5 &mdash; for any foreign national, including those within the United States. Commerce Secretary Howard Lutnick's letter to CEO Dario Amodei cited a third-party jailbreak claim as the trigger. Anthropic complied by cutting off all customer access late Friday night, publicly stating it believes the action stems from a "misunderstanding" and is working to restore access. The models will remain locked until the administration's national security apparatus is hardened, potentially for weeks.</p>
+                    <p><strong>Key technical detail:</strong> Fable 5 uses a novel safety routing mechanism &mdash; when it detects a high-risk query (cybersecurity, biology, chemistry, distillation), it falls back to Claude Opus 4.8 rather than blocking outright. Priced at $10/M input tokens, $50/M output tokens. The government's action marks the most significant federal restriction on frontier AI models to date.</p>
+                    <p class="source-link"><a href="https://www.axios.com/2026/06/12/anthropic-trump-mythos-fable-national-security" target="_blank">Axios</a> &middot; <a href="https://www.cnbc.com/2026/06/09/anthropic-mythos-claude-fable-5.html" target="_blank">CNBC</a> &middot; <a href="https://www.usnews.com/news/us/articles/2026/06/12/anthropic-says-has-taken-its-latest-ai-models-offline-to-comply-with-new-export-controls" target="_blank">US News</a></p>
+                </div>
+
+                <div class="news-item">
+                    <h3>OpenAI Acquires Ona to Give Codex Persistent, Secure Agent Execution</h3>
+                    <p>OpenAI announced on June 11 it will acquire Ona, a startup providing secure, pre-configured cloud environments for AI agents. Ona's technology enables Codex (now 5M+ weekly active users, up 400% YTD) to handle tasks spanning hours or days &mdash; agents that continue working in a customer's cloud environment even when the developer's laptop is closed. This positions Codex to compete directly with Anthropic's Claude Code in the enterprise agent space.</p>
+                    <p><strong>Key technical detail:</strong> Ona provides a customer-controlled execution model where agents operate inside an organization's own cloud with credential scoping, activity logging, and review workflows &mdash; addressing the key enterprise requirement of secure, auditable, long-running autonomous agents.</p>
+                    <p class="source-link"><a href="https://openai.com/index/openai-to-acquire-ona/" target="_blank">OpenAI Blog</a> &middot; <a href="https://www.cnbc.com/2026/06/11/open-ai-ona-acquisition-codex.html" target="_blank">CNBC</a></p>
+                </div>
+
+                <div class="news-item">
+                    <h3>Trump Signs Executive Order on AI Innovation and Security &mdash; Voluntary Frontier Model Framework</h3>
+                    <p>On June 2, President Trump signed an executive order titled "Promoting Advanced Artificial Intelligence Innovation and Security." It establishes a voluntary framework where frontier AI model developers can grant the government up to 30 days of pre-release access to "covered frontier models" with confidentiality and IP protections. The order explicitly disclaims any mandatory licensing, preclearance, or permitting regime &mdash; a lighter-touch approach compared to the EU's binding AI Act.</p>
+                    <p><strong>Key technical detail:</strong> The NSA Director determines the "covered frontier model" threshold via a classified benchmarking process assessing advanced cyber capabilities. The EO also mandates an AI cybersecurity clearinghouse for vulnerability coordination and expands federal hiring for cybersecurity specialists.</p>
+                    <p class="source-link"><a href="https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/" target="_blank">White House</a> &middot; <a href="https://www.skadden.com/insights/publications/2026/06/new-ai-executive-order" target="_blank">Skadden Analysis</a></p>
+                </div>
+
+                <div class="news-item">
+                    <h3>Apple Unveils Third-Gen Foundation Models and Siri AI at WWDC 2026</h3>
+                    <p>At WWDC 2026 (June 8), Apple debuted Siri AI with personal context understanding, on-screen awareness, and systemwide app actions. Under the hood, Apple introduced its AFM 3 family of five models built in collaboration with Google and NVIDIA. The most novel architectural contribution is the AFM 3 Core Advanced (20B-parameter sparse model with 1-4B active parameters) using Instruction-Following Pruning (IFP) to store the full model in flash memory (NAND) rather than DRAM, loading only active experts per prompt.</p>
+                    <p><strong>Key technical detail:</strong> AFM 3 Cloud Pro achieved ~10% relative improvement over its predecessor in text response satisfaction and ~14% in math/image understanding. The IFP sparse architecture enables desktop-class intelligence at dramatically reduced memory footprint by leveraging flash storage bandwidth instead of DRAM capacity.</p>
+                    <p class="source-link"><a href="https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/" target="_blank">Apple Newsroom</a> &middot; <a href="https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models" target="_blank">Apple ML Research</a></p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========== SECTION 2: Startup Signals (PURPLE) ========== -->
+        <section id="startups" class="section-card accent-purple">
+            <div class="section-header">
+                <h2>Startup Signals</h2>
+                <span class="reading-time">4 min read</span>
+            </div>
+            <div class="section-body">
+
+                <div class="news-item">
+                    <h3>Project Prometheus (Bezos) Raises $12B at $41B Valuation for "Artificial General Engineer"</h3>
+                    <p>On June 11, Jeff Bezos' Project Prometheus announced a $12 billion Series B at ~$41 billion valuation, following its initial $6.2B raise in late 2025. The company is building an "artificial general engineer" &mdash; software to automate design and manufacturing of complex physical systems: jet engines, drug compounds, and more. Backers include Bezos, JPMorgan Chase, Goldman Sachs, and BlackRock. The massive round will go largely to compute infrastructure, underscoring the capital intensity of physical-world AI. This represents one of the largest single bets on the "physical AI" thesis to date.</p>
+                    <p class="source-link"><a href="https://techcrunch.com/2026/06/11/jeff-bezoss-prometheus-raises-12b-to-build-an-artificial-general-engineer-for-the-physical-world/" target="_blank">TechCrunch</a> &middot; <a href="https://www.cnbc.com/2026/06/11/project-prometheus-bezos-bajaj-live-updates.html" target="_blank">CNBC</a></p>
+                </div>
+
+                <div class="news-item">
+                    <h3>SpaceX Goes Public in Largest IPO Ever &mdash; $75B Raised, $2.3T+ Valuation</h3>
+                    <p>SpaceX began trading on Nasdaq (ticker: SPCX) on June 12 after raising $75 billion in the largest IPO in history (555.6M shares at $135 each). The stock opened at $152 (+11%) and closed at $160.95 (+19% on day one), making SpaceX the 7th largest company globally at over $2.3 trillion. This is the culmination of the SpaceX-xAI merger completed in February 2026. President Gwynne Shotwell hinted at a future Tesla merger, saying publicly "that might make Elon's life a little easier." The IPO validates the mega-IPO path for capital-intensive AI companies.</p>
+                    <p class="source-link"><a href="https://www.wsj.com/finance/spacex-is-aiming-to-go-public-on-june-12-in-what-stands-to-be-biggest-ipo-ever-2662311b" target="_blank">WSJ</a> &middot; <a href="https://www.reuters.com/world/us/live-elon-musks-spacex-set-stock-market-trading-after-worlds-biggest-ipo-2026-06-12/" target="_blank">Reuters</a> &middot; <a href="https://fortune.com/2026/06/12/spacex-tesla-merger-gwynne-shotwell-hints-elon-musk-ipo/" target="_blank">Fortune</a></p>
+                </div>
+
+                <div class="news-item">
+                    <h3>Supabase Raises $500M Series F at $10.5B Valuation &mdash; Riding the Vibe Coding Wave</h3>
+                    <p>On June 4, YC alum Supabase announced a $500M Series F led by GIC at a $10.5B post-money valuation, roughly doubling from October 2025. The company also previewed "Multigres," a product designed to scale databases "up to the size of OpenAI or even larger." Anthropic's Claude Code and OpenAI's Codex are now the largest contributors to Supabase databases. The valuation doubling in ~8 months signals that AI-assisted coding is fundamentally reshaping the backend infrastructure market.</p>
+                    <p class="source-link"><a href="https://www.cnbc.com/2026/06/04/database-startup-supabase-raises-500-million-10point5-billion-valuation.html" target="_blank">CNBC</a></p>
+                </div>
+
+                <div class="news-item">
+                    <h3>Flourish Raises $500M for Brain-Inspired "Cortex AI" at $2.5B</h3>
+                    <p>Flourish, a startup building brain-inspired "Cortex AI" models, raised $500M at a $2.5B valuation from Bezos, Lux Capital, and GV. The company's approach models cortical computation directly rather than using transformer architectures, drawing on recent neuroscience findings about predictive coding and cortical column processing. This represents a contrarian bet against the transformer monoculture, aiming for more sample-efficient and interpretable learning by mimicking neocortical structure.</p>
+                    <p class="source-link"><a href="https://www.wired.com/story/flourish-brain-inspired-ai-cortex-startup/" target="_blank">WIRED</a></p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========== SECTION 3: Research Review (TEAL) ========== -->
+        <section id="research" class="section-card accent-teal">
+            <div class="section-header">
+                <h2>Research Review</h2>
+                <span class="reading-time">5 min read</span>
+            </div>
+            <div class="section-body">
+
+                <div class="paper-item">
+                    <h3>BitsMoE &mdash; Efficient Spectral Energy-Guided Bit Allocation for MoE LLM Quantization</h3>
+                    <p><strong>Authors:</strong> Jiayu Zhao, Zihan Teng, Minhao Fan et al. &middot; <strong>Venue:</strong> arXiv preprint, June 2026</p>
+                    <p>BitsMoE addresses the memory bottleneck of Mixture-of-Experts LLMs by decomposing each MoE layer via SVD into a shared basis and expert-specific spectral factors. The shared basis is retained without quantization to preserve common cross-expert structure, while expert-specific factors are quantized using a spectrum-wise mixed-precision scheme where bit-widths are determined by an integer linear program minimizing estimated reconstruction loss under a fixed budget.</p>
+                    <p><strong>Key result:</strong> Under 2-bit quantization on Qwen3-30B-A3B-Base, BitsMoE accelerates quantization by <strong>12.3&times;</strong>, improves average accuracy by <strong>27.83 percentage points</strong>, and increases decoding speed by <strong>1.76&times;</strong> over GPTQ.</p>
+                    <p class="source-link"><a href="https://arxiv.org/abs/2606.00079" target="_blank">arXiv:2606.00079</a></p>
+                </div>
+
+                <div class="paper-item">
+                    <h3>Demo2Reward &mdash; From Demonstrations to Rewards via Test-Time VLM Prompt Optimization</h3>
+                    <p><strong>Authors:</strong> Christian Gumbsch, Leonardo Barcellona, Lennard Sch&uuml;nemann et al. &middot; <strong>Venue:</strong> arXiv preprint, May 2026</p>
+                    <p>Demo2Reward optimizes the language instruction of a VLM-based reward model using only 3&ndash;10 expert demonstration trajectories at test time. It eliminates manual reward engineering by automatically refining prompts to reduce false positives while preserving true positives. No additional model training or computation is required during policy learning. Validated on both simulated robotic tasks and real-world robot learning.</p>
+                    <p><strong>Key result:</strong> Consistently outperforms existing zero-shot and few-shot VLM reward models across multiple simulated robotic manipulation tasks and policy backbones; successfully transfers to physical robot policy learning.</p>
+                    <p class="source-link"><a href="https://arxiv.org/abs/2606.00083" target="_blank">arXiv:2606.00083</a></p>
+                </div>
+
+                <div class="paper-item">
+                    <h3>Physical Object Understanding with a Physically Controllable World Model</h3>
+                    <p><strong>Authors:</strong> Rahul Venkatesh, Klemen Kotar, Lilian Naing Chen et al. &middot; <strong>Venue:</strong> <strong>CVPR 2026 Highlight</strong></p>
+                    <p>This paper introduces probabilistic world models trained via autoregressive sequence modeling from raw video. The model can estimate any visual variable conditioned on any other, generating multiple plausible future states through sequential inference. By analyzing motion correlations across generated futures, the model discovers objects and articulated subparts without any supervision, then enables 3D manipulation and physical relationship computation.</p>
+                    <p><strong>Key result:</strong> Emergent object discovery and physical relationship understanding from raw video alone, demonstrated on a Visual Jenga reasoning task. Selected as a <strong>CVPR 2026 Highlight</strong>.</p>
+                    <p class="source-link"><a href="https://arxiv.org/abs/2606.00439" target="_blank">arXiv:2606.00439</a></p>
+                </div>
+
+                <div class="paper-item">
+                    <h3>DOPA &mdash; Robust In-Context Learning via Out-of-Distribution Proxies <span class="pgdr-tag">[PGDR]</span></h3>
+                    <p><strong>Authors:</strong> Hao Xu, Rite Bo, Fausto Giunchiglia, Yingji Li, Rui Song &middot; <strong>Venue:</strong> <strong>ACL 2026 Main</strong></p>
+                    <p>DOPA addresses the practical challenge where the target domain is inaccessible during demonstration selection for in-context learning. The framework introduces an OOD proxy to approximate the unknown target domain and guide retrieval from the available source domain, combined with a Mahalanobis distance-based global diversity constraint. Experiments across multiple LLMs and tasks show robust performance under severe distribution shifts.</p>
+                    <p><strong>Key result:</strong> Consistently improves LLM ICL performance under out-of-distribution settings compared to standard retrieval baselines. The OOD proxy and diversity constraint both contribute to robustness gains.</p>
+                    <p class="source-link"><a href="https://arxiv.org/abs/2606.00014" target="_blank">arXiv:2606.00014</a></p>
+                </div>
+
+                <div class="pgdr-callout">
+                    <strong>[PGDR] Relevance:</strong> DOPA directly addresses worst-group performance under distribution shift &mdash; a core concern in the GroupDRO / spurious-correlations literature. The OOD proxy mechanism parallels the robust optimization approach taken in GroupDRO, but applied to the demonstration retrieval problem in ICL rather than training-time optimization.
+                </div>
+
+                <div class="paper-item">
+                    <h3>MPVI &mdash; Making Vision-Language-Action Models Robust via Motion Planning Interleaving</h3>
+                    <p><strong>Authors:</strong> Dan BW Choe, Sundhar Vinodh Sangeetha, Samuel Coogan, Shreyas Kousik &middot; <strong>Venue:</strong> arXiv preprint, May 2026</p>
+                    <p>MPVI addresses the fundamental limitation of VLA models on long-horizon mobile manipulation tasks, where early execution errors compound rapidly. Rather than requiring more training data, MPVI interleaves model-based motion planning with VLA policies, using VLM-based completion checking with proprioceptive triggers to achieve reliable module switching. The framework handles localization, navigation to distant/occluded objects, cluttered scene navigation, and open-vocabulary detection.</p>
+                    <p><strong>Key result:</strong> <strong>113%</strong> improvement in task progress over the top end-to-end VLA baseline on the BEHAVIOR-1K benchmark, without any additional training data.</p>
+                    <p class="source-link"><a href="https://arxiv.org/abs/2606.00985" target="_blank">arXiv:2606.00985</a></p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========== SECTION 4: Math & Physics (AMBER) ========== -->
+        <section id="math" class="section-card accent-amber">
+            <div class="section-header">
+                <h2>Math &amp; Physics &mdash; Kernel PCA</h2>
+                <span class="reading-time">4 min read</span>
+            </div>
+            <div class="curriculum-bar">
+                <div class="curriculum-fill" style="width: 73%;"></div>
+                <span class="curriculum-label">Day 8 of 11 &middot; Kernel Methods Track</span>
+            </div>
+            <div class="section-body">
+
+                <h3>From Linear PCA to Kernel PCA</h3>
+
+                <p>Classical PCA finds linear directions of maximum variance in the input space $ \mathcal{X} \subseteq \mathbb{R}^d $. But real data is often not linearly separable in the raw feature space. The kernel trick &mdash; implicitly mapping data into a high-dimensional (possibly infinite) feature space $ \mathcal{H} $ via $ \phi: \mathcal{X} \to \mathcal{H} $ and performing PCA there &mdash; yields <strong>Kernel PCA (KPCA)</strong>, which can capture nonlinear structure without explicitly computing $ \phi $.</p>
+
+                <h3>Formal Setup</h3>
+
+                <p>Let $ \{\mathbf{x}_1, \ldots, \mathbf{x}_n\} \subset \mathcal{X} $ be centered in feature space: $ \sum_i \phi(\mathbf{x}_i) = \mathbf{0} $. The sample covariance in $ \mathcal{H} $ is:</p>
+
+                \[
+                \mathbf{C} = \frac{1}{n} \sum_{i=1}^n \phi(\mathbf{x}_i) \phi(\mathbf{x}_i)^\top
+                \]
+
+                <p>We seek eigenvectors $ \mathbf{v} \in \mathcal{H} $ satisfying $ \mathbf{C} \mathbf{v} = \lambda \mathbf{v} $. Since $ \mathbf{C} $ is a sum of $ n \) rank-1 outer products, $ \mathbf{v} $ lies in the span of $ \{\phi(\mathbf{x}_i)\} $:</p>
+
+                \[
+                \mathbf{v} = \sum_{i=1}^n \alpha_i \phi(\mathbf{x}_i)
+                \]
+
+                <p>Substituting into the eigenvector equation and multiplying both sides by $ \phi(\mathbf{x}_k)^\top $ gives:</p>
+
+                \[
+                \frac{1}{n} \sum_{i=1}^n \alpha_i \sum_{j=1}^n (\phi(\mathbf{x}_k)^\top \phi(\mathbf{x}_j)) (\phi(\mathbf{x}_j)^\top \phi(\mathbf{x}_i)) = \lambda \sum_{i=1}^n \alpha_i (\phi(\mathbf{x}_k)^\top \phi(\mathbf{x}_i))
+                \]
+
+                <p>This is the key step where the kernel trick enters. Define the <strong>kernel matrix</strong> $ \mathbf{K} \in \mathbb{R}^{n \times n} $ with entries $ K_{ij} = \langle \phi(\mathbf{x}_i), \phi(\mathbf{x}_j) \rangle = k(\mathbf{x}_i, \mathbf{x}_j) $, where $ k $ is a positive-definite kernel. The equation above reduces to:</p>
+
+                \[
+                \mathbf{K}^2 \boldsymbol{\alpha} = n \lambda \mathbf{K} \boldsymbol{\alpha}
+                \]
+
+                <p>For $ \mathbf{K} $ invertible, this simplifies to the standard eigenvalue problem:</p>
+
+                \[
+                \mathbf{K} \boldsymbol{\alpha} = n \lambda \boldsymbol{\alpha}
+                \]
+
+                <p>Where $ \boldsymbol{\alpha} = (\alpha_1, \ldots, \alpha_n)^\top $ and eigenvalues are $ \lambda_j $ with corresponding $ \boldsymbol{\alpha}^{(j)} $ normalized so that $ \langle \mathbf{v}_j, \mathbf{v}_j \rangle = \lambda_j n \langle \boldsymbol{\alpha}^{(j)}, \boldsymbol{\alpha}^{(j)} \rangle = 1 $.</p>
+
+                <h3>Projection onto Principal Components</h3>
+
+                <p>For a test point $ \mathbf{x} $, the projection onto the $ j $-th principal component in $ \mathcal{H} $ is:</p>
+
+                \[
+                \langle \mathbf{v}_j, \phi(\mathbf{x}) \rangle = \sum_{i=1}^n \alpha_i^{(j)} k(\mathbf{x}_i, \mathbf{x})
+                \]
+
+                <p>Notice: we never compute $ \phi(\mathbf{x}) $ explicitly. The entire computation uses only the kernel function $ k $.</p>
+
+                <h3>Centering in Feature Space</h3>
+
+                <p>If $ \phi(\mathbf{x}_i) $ are not centered, we must work with the centered kernel matrix:</p>
+
+                \[
+                \tilde{\mathbf{K}} = \mathbf{K} - \mathbf{1}_n \mathbf{K} - \mathbf{K} \mathbf{1}_n + \mathbf{1}_n \mathbf{K} \mathbf{1}_n
+                \]
+
+                <p>where $ (\mathbf{1}_n)_{ij} = 1/n $. For a test point, the centered kernel vector $ \tilde{\mathbf{k}}(\mathbf{x}) $ has entries:</p>
+
+                \[
+                \tilde{k}_i(\mathbf{x}) = k(\mathbf{x}_i, \mathbf{x}) - \frac{1}{n} \sum_{r=1}^n k(\mathbf{x}_r, \mathbf{x}) - \frac{1}{n} \sum_{s=1}^n k(\mathbf{x}_i, \mathbf{x}_s) + \frac{1}{n^2} \sum_{r,s} k(\mathbf{x}_r, \mathbf{x}_s)
+                \]
+
+                <h3>Worked Example 1: RBF Kernel on Concentric Circles</h3>
+
+                <p>Consider the classic "concentric circles" dataset in $ \mathbb{R}^2 $, which is not linearly separable. Apply KPCA with the RBF kernel $ k(\mathbf{x}, \mathbf{y}) = \exp(-\gamma \|\mathbf{x} - \mathbf{y}\|^2) $ with $ \gamma = 0.1 $.</p>
+
+                <p><strong>Step 1:</strong> Compute $ \mathbf{K} \in \mathbb{R}^{100 \times 100} $ where $ K_{ij} = \exp(-0.1 \|\mathbf{x}_i - \mathbf{x}_j\|^2) $.</p>
+                <p><strong>Step 2:</strong> Center $ \mathbf{K} $ to get $ \tilde{\mathbf{K}} $.</p>
+                <p><strong>Step 3:</strong> Solve $ \tilde{\mathbf{K}} \boldsymbol{\alpha} = n\lambda \boldsymbol{\alpha} $ for the top 2 eigenvectors.</p>
+                <p><strong>Step 4:</strong> Project each point onto $ \mathbf{v}_1, \mathbf{v}_2 $ via $ \sum_i \alpha_i^{(j)} k(\mathbf{x}_i, \mathbf{x}) $.</p>
+
+                <p>The resulting 2D representation separates the circles cleanly &mdash; something classical PCA cannot achieve since the variance structure is identical in all radial directions.</p>
+
+                <h3>Worked Example 2: Preimage Problem</h3>
+
+                <p>Given a point $ \mathbf{z} $ in feature space $ \mathcal{H} $, find $ \mathbf{x} \in \mathcal{X} $ such that $ \phi(\mathbf{x}) \approx \mathbf{z} $ (needed for denoising). For the RBF kernel, this reduces to minimizing:</p>
+
+                \[
+                \|\mathbf{z} - \phi(\mathbf{x})\|^2 = \langle \mathbf{z}, \mathbf{z} \rangle - 2 \sum_{i=1}^n \beta_i k(\mathbf{x}_i, \mathbf{x}) + k(\mathbf{x}, \mathbf{x})
+                \]
+
+                <p>where $ \beta_i $ are the expansion coefficients of $ \mathbf{z} $. For the RBF kernel, $ k(\mathbf{x}, \mathbf{x}) = 1 $, and the minimization becomes an unconstrained nonlinear optimization over $ \mathbf{x} $ solvable via gradient descent.</p>
+
+                <h3>What Comes Next: The Representer Theorem</h3>
+
+                <p>KPCA is a special case of a deeper principle: any solution to a regularized empirical risk minimization with a reproducing kernel Hilbert space norm penalty takes the form $ f(\mathbf{x}) = \sum_i \alpha_i k(\mathbf{x}_i, \mathbf{x}) $. This <strong>Representer Theorem</strong> underlies kernel ridge regression, kernel SVMs, and Gaussian processes &mdash; connecting PCA to the entire kernel methods family.</p>
+
+                <div class="curriculum-progress-end">
+                    <p><strong>CURRICULUM_POSITION:</strong> Kernel PCA &mdash; derivation via centered kernel matrix, RBF kernel on nonlinear data, preimage problem, Representer Theorem preview [Day 8 completed 2026-06-13]</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========== SECTION 5: ML Deep Dive (ROSE) ========== -->
+        <section id="ml" class="section-card accent-rose">
+            <div class="section-header">
+                <h2>ML Deep Dive &mdash; Deep Double Descent</h2>
+                <span class="reading-time">4 min read</span>
+            </div>
+            <div class="curriculum-bar">
+                <div class="curriculum-fill" style="width: 73%;"></div>
+                <span class="curriculum-label">Day 8 of 11 &middot; Modern Deep Learning Theory</span>
+            </div>
+            <div class="section-body">
+
+                <h3>The Bias-Variance Tradeoff, Revisited</h3>
+
+                <p>The classical bias-variance tradeoff from statistical learning theory states that as model complexity increases, bias decreases monotonically while variance increases monotonically. The optimal model sits at the U-shaped minimum of test error, just before variance overwhelms bias. This story applies to well-specified, low-capacity models like linear regression with $ p < n $.</p>
+
+                <p>Modern neural networks shatter this narrative. They operate in the <strong>overparameterized</strong> regime ($ p \gg n $) where the classical curve would predict catastrophic variance &mdash; yet they generalize well. Worse: test error exhibits a second peak at the <strong>interpolation threshold</strong> ($ p = n $ for linear models), then <em>decreases</em> as model size increases further. This is <strong>deep double descent</strong>.</p>
+
+                <h3>Formal Definition</h3>
+
+                <p>Let $ f_{\theta}: \mathcal{X} \to \mathcal{Y} $ be a model with $ p $ parameters trained on $ n $ samples. The test error (risk) $ R(p, n) $ exhibits two distinct regimes:</p>
+
+                \[
+                R(p, n) = 
+                \begin{cases}
+                \text{U-shaped (classical)} & p < n \\
+                \text{divergent peak} & p \approx n \quad (\text{interpolation threshold}) \\
+                \text{decreasing} & p > n \quad (\text{overparameterized})
+                \end{cases}
+                \]
+
+                <p>For a linear model $ f_{\mathbf{w}}(\mathbf{x}) = \mathbf{w}^\top \mathbf{x} $ with $ \mathbf{X} \in \mathbb{R}^{n \times p} $, the minimum-norm least-squares solution (interpolating solution) is:</p>
+
+                \[
+                \hat{\mathbf{w}} = \mathbf{X}^\top (\mathbf{X} \mathbf{X}^\top)^{-1} \mathbf{y}
+                \]
+
+                <p>This solution exists precisely when $ \mathbf{X} \mathbf{X}^\top $ is invertible, which requires $ p \geq n $. At $ p = n $ (assuming full rank), the matrix is exactly square and the solution is unique &mdash; it perfectly interpolates training data but typically has enormous $ \ell_2 $ norm, which translates to high variance for out-of-sample predictions. As $ p $ increases beyond $ n $, the solution manifold expands and we can select solutions with smaller norm, reducing variance more than the increase in bias.</p>
+
+                <h3>Derivation: Risk Decomposition at Interpolation</h3>
+
+                <p>Consider the random design setting $ \mathbf{x}_i \sim \mathcal{N}(0, \mathbf{I}_p) $, $ y_i = \mathbf{w}_*^\top \mathbf{x}_i + \varepsilon_i $ with $ \varepsilon_i \sim \mathcal{N}(0, \sigma^2) $. The minimum-norm interpolator has risk:</p>
+
+                \[
+                R(p, n) = \sigma^2 \cdot \frac{p}{p - n - 1} + \|\mathbf{w}_*\|^2 \cdot \frac{n}{p - n - 1}
+                \]
+
+                <p>for $ p > n + 1 $ (a result due to Hastie et al., 2019). The key observation: as $ p \to n+1 $ from above, both terms diverge to $ \infty $ &mdash; this is the peak. As $ p \to \infty $, the first term tends to $ \sigma^2 $ (the irreducible error) and the second term tends to $ 0 $ (the bias vanishes). So infinite overparameterization recovers the Bayes-optimal risk.</p>
+
+                <h3>Historical Context</h3>
+
+                <p>Belkin et al. (2019) first clearly articulated the "double descent" phenomenon in <em>"Reconciling modern machine-learning practice and the classical bias-variance trade-off"</em>. The phenomenon had been observed earlier by Opper (1995) in the context of Gaussian process regression, but was dismissed as a theoretical curiosity. Modern understanding emerged from the confluence of three threads:</p>
+
+                <ol>
+                    <li><strong>Random matrix theory</strong> (Hastie et al., 2019): exact risk expressions for linear models with random features</li>
+                    <li><strong>Neural tangent kernel</strong> (Jacot et al., 2018): infinite-width networks behave as kernel machines, inheriting the same double descent</li>
+                    <li><strong>Empirical deep learning</strong> (Nakkiran et al., 2019): demonstrated double descent for ResNets, CNNs, and Transformers on real data (CIFAR-10, ImageNet)</li>
+                </ol>
+
+                <h3>Failure Modes and Practical Implications</h3>
+
+                <p>The double descent peak has important practical consequences. Training exactly at the interpolation threshold (e.g., a model whose parameter count matches the dataset size) produces the worst possible test error. For modern overparameterized networks, this is invisible because $ p \gg n $ from the start. However, double descent can be observed along other axes of model complexity: training epochs (epoch-wise double descent) and dataset size (sample non-monotonicity).</p>
+
+                <p><strong>Epoch-wise double descent:</strong> For a fixed $ p \gg n $, test error can initially decrease, then increase (as the model reaches the interpolation threshold in function space), then decrease again. This explains why early stopping can sometimes help even in massively overparameterized regimes &mdash; it halts before the interpolation peak.</p>
+
+                <h3>Connection to NTK</h3>
+
+                <p>Recall Day 7's NTK analysis: in the infinite-width limit, a neural network $ f(\mathbf{x}; \theta) $ evolves under gradient flow as a linearized model:</p>
+
+                \[
+                f_t(\mathbf{x}) \approx f_0(\mathbf{x}) - \Theta_t(\mathbf{x}, \mathcal{X}) \Theta(\mathcal{X}, \mathcal{X})^{-1} (\mathbf{I} - e^{-\eta \Theta(\mathcal{X}, \mathcal{X}) t / n}) (\mathbf{y} - f_0(\mathcal{X}))
+                \]
+
+                <p>At convergence ($ t \to \infty $), the NTK-ridge-regression solution inherits the same double descent behavior as the kernel matrix $ \Theta(\mathcal{X}, \mathcal{X}) $ approaches rank-deficiency at the interpolation threshold. The key difference: NTK kernels behave like $ p \to \infty $ always, so the model lives firmly in the overparameterized regime after convergence &mdash; but early in training, the effective number of "active" features can be much smaller, creating conditions for epoch-wise double descent.</p>
+
+                <div class="curriculum-progress-end">
+                    <p><strong>CURRICULUM_POSITION:</strong> Deep Double Descent &mdash; classical vs. modern bias-variance tradeoff, interpolation threshold, exact risk for minimum-norm interpolators, epoch-wise double descent, NTK connection [Day 8 completed 2026-06-13]</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========== SECTION 6: Today's Topic (GREEN) ========== -->
+        <section id="topic" class="section-card accent-green">
+            <div class="section-header">
+                <h2>Today's Topic &mdash; AI Safety &amp; Alignment</h2>
+                <span class="reading-time">3 min read</span>
+            </div>
+            <div class="section-body">
+
+                <p>This week, AI safety and alignment moved from abstract research conference debates to the center of U.S. national security policy &mdash; driven by three intersecting events that together define a new regulatory paradigm.</p>
+
+                <h3>The Anthropic Export Control Precedent</h3>
+
+                <p>The U.S. government's directive to block foreign access to Anthropic's Mythos 5 and Fable 5 is unprecedented in scope. It is not a voluntary opt-in under the new EO framework, but a binding export control order under Commerce Department authority &mdash; effectively treating a frontier AI model like a missile guidance system. The trigger was a claimed jailbreak by an unnamed third party, highlighting a fundamental gap in current safety evaluation: there exists no standardized, government-accepted protocol for determining when a model is "safe enough" for unrestricted deployment. The administration's response was an all-or-nothing export ban because the evaluation infrastructure to make a more nuanced determination does not yet exist.</p>
+
+                <p>This parallels the core insight from the <strong>International AI Safety Report 2026</strong> (published February 2026): existing safety evaluations focus on narrow, known vulnerability categories, but frontier models exhibit emergent capabilities that evade these tests. The report recommended scenario-based evaluations and adversarial testing as necessary complements to standardized benchmarks.</p>
+
+                <h3>The Voluntary Framework Paradox</h3>
+
+                <p>The June 2 Executive Order creates a <em>voluntary</em> framework for pre-release government access to frontier models, while explicitly disclaiming mandatory licensing. Within ten days, the government used its existing export control authority to force exactly that outcome for Anthropic. This creates a paradoxical incentive: companies that participate in the voluntary framework gain a transparent, collaborative relationship with government evaluators; companies that release models without engagement risk sudden, disruptive action via export controls or other existing authorities. The framework is "voluntary" only in the sense that companies can choose when and how to structure government access, not whether government access will ultimately be demanded.</p>
+
+                <p>From an alignment research perspective, this highlights a gap between <strong>technical alignment</strong> (ensuring models do what their operators intend) and <strong>regulatory alignment</strong> (ensuring models meet government-defined safety thresholds). Anthropic's Fable 5 safety routing mechanism &mdash; falling back to a less capable model on high-risk queries &mdash; is a technical alignment solution, but it failed to prevent the regulatory outcome because the concern was not model behavior but model access by foreign actors.</p>
+
+                <h3>Recent Alignment Research</h3>
+
+                <p>Several recent papers articulate the technical challenges exposed by these policy developments:</p>
+
+                <ul>
+                    <li><strong>"Position: AI Safety Requires Effective Controllability"</strong> (arXiv:2605.27117) argues that alignment is insufficient without explicit mechanisms for human operators to halt, modify, or inspect model behavior in deployment. The Anthropic case confirms this: the "control" mechanism applied was not technical but legal (export controls), applied externally rather than built into the model.</li>
+                    <li><strong>"AI Alignment Breaks at the Edge"</strong> (arXiv:2602.20042) shows that current alignment techniques (RLHF, constitutional AI) degrade significantly on out-of-distribution inputs. This directly relates to the PGDR research program: worst-group accuracy in alignment systems is a practical national security concern when an adversary deliberately seeks edge cases.</li>
+                    <li><strong>"What Matters For Safety Alignment?"</strong> (arXiv:2601.03868) systematically evaluates which training interventions (data curation, RLHF scaling, red teaming) most improve safety metrics, finding that RLHF scaling alone accounts for ~60% of safety gains, with data quality contributing the remainder.</li>
+                </ul>
+
+                <p>The week's events establish a new reality: alignment is no longer a purely technical problem solved before deployment. It is an ongoing governance challenge where technical safety mechanisms, regulatory frameworks, and geopolitical competition intersect. For the PGDR research program, the lesson is direct &mdash; robustness to distribution shift is not a nice-to-have academic property; it is the difference between a model that can be deployed confidently and one that triggers an export ban.</p>
+
+                <p class="source-link">
+                    <a href="https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/" target="_blank">White House EO (June 2)</a> &middot;
+                    <a href="https://www.axios.com/2026/06/12/anthropic-trump-mythos-fable-national-security" target="_blank">Axios: Anthropic Export Controls</a> &middot;
+                    <a href="https://arxiv.org/abs/2605.27117" target="_blank">arXiv:2605.27117 (Controllability)</a> &middot;
+                    <a href="https://arxiv.org/abs/2602.20042" target="_blank">arXiv:2602.20042 (Alignment Breaks)</a> &middot;
+                    <a href="https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026" target="_blank">International AI Safety Report 2026</a>
+                </p>
+
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="digest-footer">
+            <p>Generated autonomously by Nishant's Research Director &middot; June 13, 2026 &middot; 7:00 AM EST</p>
+            <p><a href="https://github.com/daddyankee/nishant-digest" target="_blank">Source</a> &middot; <a href="https://daddyankee.github.io/nishant-digest/" target="_blank">Archive</a></p>
+        </footer>
+
+    </main>
+</body>
+</html>
