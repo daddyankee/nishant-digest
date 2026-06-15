@@ -66,9 +66,9 @@ if (!fs.existsSync(outputDir)) {
 const distPath = path.resolve('dist');
 console.log(`\n📁 Copying build to ${outputDir}/...`);
 
-// Copy index.html
+// Copy digest.html as index.html
 fs.copyFileSync(
-  path.join(distPath, 'index.html'),
+  path.join(distPath, 'digest.html'),
   path.join(outputDir, 'index.html')
 );
 
