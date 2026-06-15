@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+base/node_modules/
+
+# Build artifacts
+dist/
+
+# Cache
+.cache/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Lock files (keep package-lock.json in git for reproducible builds)
+# package-lock.json
