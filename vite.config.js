@@ -4,7 +4,7 @@ import { resolve } from 'path';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/nishant-digest/',
+  base: './', // Use relative paths for static hosting in date folders
   build: {
     outDir: 'dist',
     rollupOptions: {
