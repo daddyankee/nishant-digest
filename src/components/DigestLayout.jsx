@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 export default function DigestLayout({ digest }) {
   const [darkMode, setDarkMode] = useState(false);
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState(0);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
@@ -34,251 +34,288 @@ export default function DigestLayout({ digest }) {
     });
   };
 
+  const currentSection = digest.sections[currentPage];
+
   return (
-    <div className="min-h-screen">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-black text-white border-b border-gray-800">
+    <div className="min-h-screen flex flex-col">
+      {/* Top Navigation */}
+      <nav className="bg-black text-white border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <a href="../index.html" className="text-sm font-semibold tracking-wider uppercase">
+            <h1 className="text-sm font-semibold tracking-wider uppercase">
               Nishant's Daily Digest
-            </a>
-            <div className="text-xs tracking-wide opacity-70 hidden md:block">
+            </h1>
+            <div className="text-xs tracking-wide opacity-70">
               {formatDate(digest.date)}
             </div>
-            <div className="flex items-center gap-4">
-              <button
-                onClick={toggleDarkMode}
-                className="px-3 py-1.5 text-xs font-semibold border border-white hover:bg-white hover:text-black transition-colors rounded"
-                aria-label="Toggle theme"
-              >
-                {darkMode ? '🌙' : '☀️'}
-              </button>
-              <button
-                onClick={() => setSidebarOpen(!sidebarOpen)}
-                className="md:hidden text-2xl"
-                aria-label="Toggle menu"
-              >
-                &#9776;
-              </button>
-            </div>
+            <button
+              onClick={toggleDarkMode}
+              className="px-3 py-1.5 text-xs font-semibold border border-white hover:bg-white hover:text-black transition-colors rounded"
+              aria-label="Toggle theme"
+            >
+              {darkMode ? '🌙' : '☀️'}
+            </button>
           </div>
         </div>
       </nav>
 
-      {/* Sidebar */}
-      <aside
-        className={`fixed left-0 top-16 h-[calc(100vh-4rem)] w-64 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700 overflow-y-auto transition-transform md:translate-x-0 ${
-          sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-        } z-40`}
-      >
-        <div className="p-6">
-          <h3 className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-4">
-            Jump to
-          </h3>
-          <ul className="space-y-3">
-            {digest.sections.map((section) => (
-              <li key={section.id}>
-                <a
-                  href={`#${section.id}`}
-                  className="block text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                  onClick={() => setSidebarOpen(false)}
-                >
-                  {section.title.split('—')[0].trim()}
-                </a>
-              </li>
+      {/* Page Navigation Tabs */}
+      <div className="bg-gray-100 dark:bg-gray-900 border-b border-gray-300 dark:border-gray-700">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex gap-2 overflow-x-auto">
+            {digest.sections.map((section, index) => (
+              <button
+                key={section.id}
+                onClick={() => setCurrentPage(index)}
+                className={`px-6 py-3 text-sm font-medium whitespace-nowrap border-b-2 transition-colors ${
+                  currentPage === index
+                    ? 'border-black dark:border-white text-black dark:text-white'
+                    : 'border-transparent text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white'
+                }`}
+              >
+                {section.title.split('—')[0].trim()}
+              </button>
             ))}
-          </ul>
+          </div>
         </div>
-      </aside>
+      </div>
 
-      {/* Main Content */}
-      <main className="md:ml-64 min-h-screen">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          {/* Header */}
-          <header className="mb-12 text-center border-b-2 border-black dark:border-white pb-8">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
-              Daily Research Digest
-            </h1>
-            <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-4">
-              <span>📅 {formatDate(digest.date)}</span>
-              <span>📄 ~{digest.meta.wordCount.toLocaleString()} words</span>
-              <span>⏱ ~{digest.meta.readingMinutes} min read</span>
-            </div>
-            <p className="text-lg italic text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-              {digest.meta.topicTeaser}
-            </p>
-          </header>
-
-          {/* Sections */}
-          {digest.sections.map((section, index) => (
-            <Section key={section.id} section={section} index={index} />
-          ))}
-        </div>
+      {/* Main Content Area */}
+      <main className="flex-1 overflow-y-auto">
+        {currentSection.id === 'tech-news' ? (
+          <TechNewsPage section={currentSection} />
+        ) : (
+          <StandardPage section={currentSection} darkMode={darkMode} />
+        )}
       </main>
 
-      {/* Footer */}
-      <footer className="md:ml-64 border-t-2 border-black dark:border-white mt-16">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-sm text-gray-600 dark:text-gray-400">
-          <p className="mb-2">
-            Generated on {formatDate(digest.date)} by{' '}
-            <a href="https://hermes-agent.nousresearch.com" target="_blank" rel="noopener" className="underline">
-              Hermes Agent
-            </a>
-          </p>
-          <p>
-            <a href="https://github.com/daddyankee/nishant-digest" target="_blank" rel="noopener" className="underline">
-              Source on GitHub
-            </a>
-          </p>
+      {/* Bottom Navigation */}
+      <footer className="bg-gray-100 dark:bg-gray-900 border-t border-gray-300 dark:border-gray-700">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex items-center justify-between">
+            <button
+              onClick={() => setCurrentPage(Math.max(0, currentPage - 1))}
+              disabled={currentPage === 0}
+              className="px-4 py-2 text-sm font-medium disabled:opacity-30 disabled:cursor-not-allowed hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+              ← Previous
+            </button>
+            <span className="text-sm text-gray-600 dark:text-gray-400">
+              Page {currentPage + 1} of {digest.sections.length}
+            </span>
+            <button
+              onClick={() => setCurrentPage(Math.min(digest.sections.length - 1, currentPage + 1))}
+              disabled={currentPage === digest.sections.length - 1}
+              className="px-4 py-2 text-sm font-medium disabled:opacity-30 disabled:cursor-not-allowed hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+              Next →
+            </button>
+          </div>
         </div>
       </footer>
     </div>
   );
 }
 
-function Section({ section, index }) {
-  const getThemeClass = () => {
-    if (section.theme === 'modern-news') return 'theme-modern-news';
-    if (section.theme === 'vintage-scholar') return 'theme-vintage-scholar';
-    if (section.theme === 'claude') return 'theme-claude';
-    return '';
-  };
+// Tech News Magazine Layout
+function TechNewsPage({ section }) {
+  const items = section.content;
 
   return (
-    <section id={section.id} className={`mb-16 ${getThemeClass()}`}>
-      <div className="border-b-2 border-current pb-4 mb-8">
-        <div className="flex items-baseline justify-between">
-          <h2 className="text-3xl md:text-4xl font-bold">{section.title}</h2>
-          <span className="text-xs uppercase tracking-wide opacity-60">
-            {section.readingMinutes} min read
-          </span>
+    <div className="magazine-theme min-h-full">
+      <div className="max-w-7xl mx-auto px-6 py-12">
+        {/* Header */}
+        <header className="mb-12 pb-6 border-b-4 border-[#41431B]">
+          <h2 className="text-5xl font-bold text-[#41431B] mb-2 font-serif">
+            {section.title}
+          </h2>
+          {section.subtitle && (
+            <p className="text-lg text-[#41431B]/70 italic">{section.subtitle}</p>
+          )}
+        </header>
+
+        {/* Magazine Grid - Mix of large and small cards */}
+        <div className="grid grid-cols-12 gap-6">
+          {items.map((item, index) => {
+            // Create varied layout: some full-width, some half, some third
+            let colSpan = 'col-span-12';
+            if (index === 0) colSpan = 'col-span-12'; // Hero article
+            else if (index % 5 === 1) colSpan = 'col-span-12 md:col-span-8'; // Large
+            else if (index % 5 === 2) colSpan = 'col-span-12 md:col-span-4'; // Small
+            else if (index % 3 === 0) colSpan = 'col-span-12 md:col-span-6'; // Half
+            else colSpan = 'col-span-12 md:col-span-4'; // Third
+
+            const isHero = index === 0;
+
+            return (
+              <article
+                key={index}
+                className={`${colSpan} bg-[#F8F3E1] border-2 border-[#AEB784] overflow-hidden hover:shadow-xl transition-shadow group`}
+              >
+                <div className="p-6">
+                  {/* Category Tag */}
+                  <div className="mb-3">
+                    <span className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider bg-[#41431B] text-[#F8F3E1]">
+                      {item.category || 'News'}
+                    </span>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className={`font-serif font-bold text-[#41431B] mb-3 group-hover:text-[#AEB784] transition-colors ${
+                    isHero ? 'text-4xl leading-tight' : 'text-2xl'
+                  }`}>
+                    {item.title}
+                  </h3>
+
+                  {/* Meta */}
+                  <div className="flex items-center gap-3 text-sm text-[#41431B]/60 mb-4 font-sans">
+                    <span>{item.source}</span>
+                    <span>•</span>
+                    <span>{item.date}</span>
+                  </div>
+
+                  {/* Summary */}
+                  <p className={`text-[#41431B]/80 leading-relaxed mb-4 ${
+                    isHero ? 'text-lg' : 'text-base'
+                  }`}>
+                    {item.summary}
+                  </p>
+
+                  {/* Read More Link */}
+                  {item.url && (
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-sm font-semibold text-[#41431B] hover:text-[#AEB784] transition-colors border-b-2 border-[#41431B] hover:border-[#AEB784]"
+                    >
+                      Read Full Article →
+                    </a>
+                  )}
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
-
-      {section.id === 'tech-news' ? (
-        <NewsGrid content={section.content} />
-      ) : (
-        <div className="space-y-8">
-          {section.content.map((item, i) => (
-            <ContentItem key={i} item={item} sectionTheme={section.theme} />
-          ))}
-        </div>
-      )}
-    </section>
-  );
-}
-
-function NewsGrid({ content }) {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {content.map((item, i) => (
-        <div
-          key={i}
-          className="bg-gray-50 dark:bg-gray-800 p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow"
-        >
-          <div className="text-[10px] uppercase tracking-wider text-blue-600 dark:text-blue-400 font-bold mb-2">
-            {item.type}
-          </div>
-          <h3 className="text-xl font-bold mb-2 leading-tight">{item.title}</h3>
-          {item.subtitle && (
-            <p className="text-xs text-gray-500 dark:text-gray-400 italic mb-3">{item.subtitle}</p>
-          )}
-          {item.body.map((para, j) => (
-            <p key={j} className="text-sm mb-3 leading-relaxed">
-              {para}
-            </p>
-          ))}
-          {item.keyTakeaway && (
-            <div className="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-blue-600 dark:border-blue-400 p-3 my-4">
-              <p className="text-sm font-medium">{item.keyTakeaway}</p>
-            </div>
-          )}
-          {item.sources && (
-            <div className="flex flex-wrap gap-3 mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-              {item.sources.map((source, k) => (
-                <a
-                  key={k}
-                  href={source.url}
-                  target="_blank"
-                  rel="noopener"
-                  className="text-xs font-semibold uppercase tracking-wide text-blue-600 dark:text-blue-400 hover:underline"
-                >
-                  {source.label}
-                </a>
-              ))}
-            </div>
-          )}
-        </div>
-      ))}
     </div>
   );
 }
 
-function ContentItem({ item, sectionTheme }) {
-  const isVintage = sectionTheme === 'vintage-scholar';
+// Physics/Math Standard Layout
+function StandardPage({ section, darkMode }) {
+  const getThemeColors = () => {
+    switch (section.id) {
+      case 'physics':
+        return {
+          bg: darkMode ? '#2b2722' : '#f9f7f1',
+          text: darkMode ? '#f9f7f1' : '#2b2722',
+          accent: darkMode ? '#d2691e' : '#8b4513',
+          border: darkMode ? '#8b4513' : '#8b4513'
+        };
+      case 'math':
+      case 'random-topic':
+        return {
+          bg: darkMode ? '#1a1816' : '#f7f5f2',
+          text: darkMode ? '#f7f5f2' : '#1a1816',
+          accent: darkMode ? '#ff9933' : '#cc6600',
+          border: darkMode ? '#cc6600' : '#cc6600'
+        };
+      default:
+        return {
+          bg: darkMode ? '#1a1a1a' : '#ffffff',
+          text: darkMode ? '#ffffff' : '#000000',
+          accent: darkMode ? '#4d9fff' : '#0066ff',
+          border: darkMode ? '#4d9fff' : '#0066ff'
+        };
+    }
+  };
+
+  const colors = getThemeColors();
 
   return (
-    <div className={`${isVintage ? 'font-serif' : ''}`}>
-      <div className="mb-4">
-        <div className="text-xs uppercase tracking-wider opacity-60 mb-2 font-semibold">
-          {item.type}
-        </div>
-        <h3 className={`${isVintage ? 'text-2xl' : 'text-xl'} font-bold mb-2`}>
-          {item.title}
-        </h3>
-        {item.subtitle && (
-          <p className="text-sm opacity-70 italic">{item.subtitle}</p>
-        )}
-      </div>
-
-      <div className={`space-y-4 ${isVintage ? 'text-lg leading-relaxed text-justify' : 'text-base'}`}>
-        {item.body.map((para, i) => (
-          <p key={i} dangerouslySetInnerHTML={{ __html: para }} />
-        ))}
-      </div>
-
-      {item.keyTakeaway && (
-        <div className="my-6 bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-current p-4 italic">
-          <p>{item.keyTakeaway}</p>
-        </div>
-      )}
-
-      {item.video && (
-        <div className="my-6 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-5">
-          <div className="flex items-center gap-3 mb-2">
-            <span className="text-xl">🎥</span>
-            <h4 className="font-semibold">{item.video.title}</h4>
-          </div>
-          <p className="text-sm opacity-70 mb-3">
-            {item.video.channel} {item.video.duration && `· ${item.video.duration}`}
-          </p>
-          <a
-            href={item.video.url}
-            target="_blank"
-            rel="noopener"
-            className="text-blue-600 dark:text-blue-400 font-semibold hover:underline"
+    <div
+      className="min-h-full font-serif"
+      style={{ backgroundColor: colors.bg, color: colors.text }}
+    >
+      <div className="max-w-4xl mx-auto px-8 py-16">
+        {/* Header */}
+        <header className="mb-16 pb-8" style={{ borderBottom: `3px solid ${colors.border}` }}>
+          <h2
+            className="text-5xl font-bold mb-4"
+            style={{ color: colors.accent }}
           >
-            Watch Video →
-          </a>
-        </div>
-      )}
+            {section.title}
+          </h2>
+          {section.subtitle && (
+            <p className="text-xl italic opacity-80">{section.subtitle}</p>
+          )}
+        </header>
 
-      {item.sources && (
-        <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
-          {item.sources.map((source, i) => (
-            <a
-              key={i}
-              href={source.url}
-              target="_blank"
-              rel="noopener"
-              className="inline-block mr-4 text-sm font-semibold hover:underline opacity-70 hover:opacity-100"
-            >
-              [{source.label}]
-            </a>
+        {/* Content */}
+        <div className="space-y-12">
+          {section.content.map((item, index) => (
+            <article key={index} className="space-y-6">
+              {item.heading && (
+                <h3 className="text-3xl font-bold" style={{ color: colors.accent }}>
+                  {item.heading}
+                </h3>
+              )}
+
+              {item.subheading && (
+                <h4 className="text-2xl font-semibold opacity-90">
+                  {item.subheading}
+                </h4>
+              )}
+
+              {item.text && (
+                <div
+                  className="text-lg leading-relaxed text-justify space-y-4"
+                  dangerouslySetInnerHTML={{ __html: item.text.replace(/\n\n/g, '</p><p class="mt-4">').replace(/^/, '<p>').replace(/$/, '</p>') }}
+                />
+              )}
+
+              {item.video && (
+                <div className="my-8 p-6 rounded" style={{ backgroundColor: `${colors.accent}10`, border: `2px solid ${colors.accent}` }}>
+                  <div className="flex items-center gap-4">
+                    <span className="text-4xl">🎥</span>
+                    <div className="flex-1">
+                      <h5 className="font-bold text-lg mb-1">{item.video.title}</h5>
+                      <p className="text-sm opacity-70">
+                        {item.video.channel} • {item.video.duration}
+                      </p>
+                    </div>
+                    <a
+                      href={item.video.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 font-semibold rounded transition-colors"
+                      style={{
+                        backgroundColor: colors.accent,
+                        color: colors.bg
+                      }}
+                    >
+                      Watch
+                    </a>
+                  </div>
+                </div>
+              )}
+
+              {item.link && (
+                <a
+                  href={item.link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-4 font-semibold hover:underline"
+                  style={{ color: colors.accent }}
+                >
+                  {item.link.text} →
+                </a>
+              )}
+            </article>
           ))}
         </div>
-      )}
+      </div>
     </div>
   );
 }
