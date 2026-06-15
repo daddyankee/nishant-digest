@@ -13,7 +13,9 @@ const path = require('path');
  * Format date to human-readable format
  */
 function formatDate(dateStr) {
-  const date = new Date(dateStr);
+  // Parse as YYYY-MM-DD and treat as local time, not UTC
+  const [year, month, day] = dateStr.split('-').map(Number);
+  const date = new Date(year, month - 1, day);
   const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
   return date.toLocaleDateString('en-US', options);
 }
