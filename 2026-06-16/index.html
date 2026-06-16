@@ -17,7 +17,10 @@ MathJax = {
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; font-family: 'IBM Plex Sans', system-ui, sans-serif; }
-:root {
+html { scroll-behavior: smooth; }
+
+/* Parchment Theme (default) */
+:root, [data-theme="parchment"] {
   --nav-bg: #0A0A0A; --nav-text: #FFFFFF;
   --tabs-bg: #F2EEE2; --tabs-border: #DDDACA; --tab-active: #0A0A0A; --tab-muted: #7A7260;
   --footer-bg: #F2EEE2; --footer-border: #DDDACA; --footer-text: #5A5040;
@@ -26,48 +29,200 @@ html, body { height: 100%; font-family: 'IBM Plex Sans', system-ui, sans-serif; 
   --ph-bg: #FAF8F0; --ph-text: #2A2218; --ph-accent: #7A5218; --ph-fbg: rgba(122,82,24,0.05);
   --mt-bg: #F8F6EE; --mt-text: #1E1C18; --mt-accent: #9B6C00; --mt-fbg: rgba(155,108,0,0.05); --mt-vbg: rgba(155,108,0,0.07);
 }
+
+/* Sepia Theme */
+[data-theme="sepia"] {
+  --nav-bg: #2C1A0E; --nav-text: #F5E8D4;
+  --tabs-bg: #F6EDD8; --tabs-border: #DCC898; --tab-active: #2C1A0E; --tab-muted: #906040;
+  --footer-bg: #F6EDD8; --footer-border: #DCC898; --footer-text: #704020;
+  --tn-bg: #FBF5E8; --tn-card: #FDF8EE; --tn-ink: #3A1E08; --tn-accent: #3A1E08;
+  --tn-sage: #A06828; --tn-border: #D0A870; --tn-meta: rgba(58,30,8,0.45);
+  --ph-bg: #FBF5E8; --ph-text: #3A1E08; --ph-accent: #8B2500; --ph-fbg: rgba(139,37,0,0.05);
+  --mt-bg: #FAF2E0; --mt-text: #2E1408; --mt-accent: #A84018; --mt-fbg: rgba(168,64,24,0.05); --mt-vbg: rgba(168,64,24,0.07);
+}
+
+/* Nordic Theme */
+[data-theme="nordic"] {
+  --nav-bg: #1E2D3A; --nav-text: #E8EFF8;
+  --tabs-bg: #ECF1F8; --tabs-border: #C4D4E8; --tab-active: #1E2D3A; --tab-muted: #5A7890;
+  --footer-bg: #ECF1F8; --footer-border: #C4D4E8; --footer-text: #3A5870;
+  --tn-bg: #F2F7FC; --tn-card: #FFFFFF; --tn-ink: #1E2D3A; --tn-accent: #1E2D3A;
+  --tn-sage: #2060B8; --tn-border: #88B4D8; --tn-meta: rgba(30,45,58,0.45);
+  --ph-bg: #ECF1F8; --ph-text: #1E2D3A; --ph-accent: #0A4CA0; --ph-fbg: rgba(10,76,160,0.06);
+  --mt-bg: #EEF3FA; --mt-text: #101C2E; --mt-accent: #007890; --mt-fbg: rgba(0,120,144,0.06); --mt-vbg: rgba(0,120,144,0.08);
+}
+
+/* Dusk Theme (dark) */
+[data-theme="dusk"] {
+  --nav-bg: #131022; --nav-text: #E2DBF8;
+  --tabs-bg: #1A1730; --tabs-border: #302C54; --tab-active: #9278E8; --tab-muted: #605880;
+  --footer-bg: #1A1730; --footer-border: #302C54; --footer-text: #807AAA;
+  --tn-bg: #171428; --tn-card: #1E1A38; --tn-ink: #E2DBF8; --tn-accent: #C0B0FF;
+  --tn-sage: #A090E0; --tn-border: #342E60; --tn-meta: rgba(226,219,248,0.42);
+  --ph-bg: #141228; --ph-text: #E2DBF8; --ph-accent: #9278E8; --ph-fbg: rgba(146,120,232,0.10);
+  --mt-bg: #12101E; --mt-text: #D8D0F4; --mt-accent: #B090F0; --mt-fbg: rgba(176,144,240,0.10); --mt-vbg: rgba(176,144,240,0.12);
+}
+
+/* Graphite Theme (dark) */
+[data-theme="graphite"] {
+  --nav-bg: #080B10; --nav-text: #DDE6F4;
+  --tabs-bg: #0E1320; --tabs-border: #1E2A3A; --tab-active: #2AB8A8; --tab-muted: #4A6070;
+  --footer-bg: #0E1320; --footer-border: #1E2A3A; --footer-text: #587080;
+  --tn-bg: #0C1220; --tn-card: #141E2C; --tn-ink: #DDE6F4; --tn-accent: #2AB8A8;
+  --tn-sage: #3DD4C4; --tn-border: #1C3048; --tn-meta: rgba(221,230,244,0.38);
+  --ph-bg: #080E18; --ph-text: #DDE6F4; --ph-accent: #2AB8A8; --ph-fbg: rgba(42,184,168,0.08);
+  --mt-bg: #080C16; --mt-text: #D4E0F0; --mt-accent: #26A898; --mt-fbg: rgba(38,168,152,0.08); --mt-vbg: rgba(38,168,152,0.10);
+}
+
+/* Smooth transitions for theme changes */
+#root, #root * {
+  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+
 .mjx-chtml { color: inherit; }
+
+/* Theme switching dots */
+.theme-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  transition: all 200ms ease;
+  display: block;
+}
+.theme-dot:hover {
+  transform: scale(1.3);
+}
+.theme-dot.active {
+  width: 15px;
+  height: 15px;
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.85);
+}
+
+/* Scrollbar styling */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-thumb { background: rgba(128,128,128,0.2); border-radius: 3px; }
-@media (max-width: 1024px) {
+::-webkit-scrollbar-thumb:hover { background: rgba(128,128,128,0.4); }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* Tablet: 768px-1024px (iPad) */
+@media (min-width: 768px) and (max-width: 1024px) {
   #tech-grid > * { grid-column: span 6 !important; }
   #tech-grid > *:first-child { grid-column: span 12 !important; }
+  #tech-grid { gap: 20px !important; }
 }
+
+/* Mobile: <768px */
 @media (max-width: 767px) {
-  #tech-grid { grid-template-columns: 1fr !important; }
+  #tech-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
   #tech-grid > * { grid-column: auto !important; }
+
+  nav { height: 56px !important; padding: 0 16px !important; }
+  .nav-title { font-size: 10px !important; }
+  .nav-date { font-size: 10px !important; }
+
+  .tabs-container { padding: 0 4px !important; }
+  .tab-button { padding: 14px 16px !important; font-size: 13px !important; }
+
+  footer { height: 56px !important; padding: 0 16px !important; }
+  .footer-button { font-size: 12px !important; padding: 6px 12px !important; }
+  .footer-page-num { font-size: 10px !important; }
+
+  .tech-news-container { padding: 24px 16px 40px !important; }
+  .tech-news-container h1 { font-size: 28px !important; padding-bottom: 16px !important; margin-bottom: 24px !important; }
+
+  .article-title-large { font-size: 28px !important; margin-bottom: 16px !important; }
+  .article-title-small { font-size: 20px !important; margin-bottom: 12px !important; }
+  .article-summary { font-size: 15px !important; }
+
+  .content-container { padding: 32px 16px 48px !important; }
+  .content-heading { font-size: 26px !important; }
+  .content-subheading { font-size: 20px !important; }
+  .content-paragraph { font-size: 17px !important; }
+
+  .video-card { flex-direction: column !important; }
+  .video-card a { width: 100% !important; text-align: center !important; }
+
+  .formula-block { overflow-x: auto !important; font-size: 14px !important; }
 }
 </style>
 </head>
 <body>
-<div style="height: 100vh; display: flex; flex-direction: column;">
+<div id="root" data-theme="parchment" style="height: 100vh; display: flex; flex-direction: column;">
   <nav style="background: var(--nav-bg); color: var(--nav-text); height: 64px; display: flex; align-items: center; padding: 0 24px; gap: 16px;">
-    <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; flex: 1;">Nishant's Daily Digest</span>
-    <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; opacity: 0.5;">Tuesday, June 16, 2026</span>
+    <span class="nav-title" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; flex: 1;">Nishant's Daily Digest</span>
+    <span class="nav-date" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; opacity: 0.5;">Tuesday, June 16, 2026</span>
+    <div style="display: flex; gap: 8px; align-items: center;" title="Theme">
+      <button class="theme-dot" data-theme="parchment" style="background: #8BAF6E;" title="Parchment" onclick="setTheme('parchment')"></button>
+      <button class="theme-dot" data-theme="sepia" style="background: #C4944A;" title="Sepia" onclick="setTheme('sepia')"></button>
+      <button class="theme-dot" data-theme="nordic" style="background: #4A90C4;" title="Nordic" onclick="setTheme('nordic')"></button>
+      <button class="theme-dot" data-theme="dusk" style="background: #9278E8;" title="Dusk" onclick="setTheme('dusk')"></button>
+      <button class="theme-dot" data-theme="graphite" style="background: #2AB8A8;" title="Graphite" onclick="setTheme('graphite')"></button>
+    </div>
   </nav>
-  <div style="background: var(--tabs-bg); border-bottom: 1px solid var(--tabs-border); display: flex; padding: 0 8px;">
-    <button onclick="showTab(0)" id="tab0" style="background: transparent; border: none; border-bottom: 2px solid transparent; cursor: pointer; padding: 16px 20px; font-size: 14px; font-family: 'IBM Plex Sans'; color: var(--tab-muted);">Tech News</button><button onclick="showTab(1)" id="tab1" style="background: transparent; border: none; border-bottom: 2px solid transparent; cursor: pointer; padding: 16px 20px; font-size: 14px; font-family: 'IBM Plex Sans'; color: var(--tab-muted);">Physics</button><button onclick="showTab(2)" id="tab2" style="background: transparent; border: none; border-bottom: 2px solid transparent; cursor: pointer; padding: 16px 20px; font-size: 14px; font-family: 'IBM Plex Sans'; color: var(--tab-muted);">Mathematics</button><button onclick="showTab(3)" id="tab3" style="background: transparent; border: none; border-bottom: 2px solid transparent; cursor: pointer; padding: 16px 20px; font-size: 14px; font-family: 'IBM Plex Sans'; color: var(--tab-muted);">Deep Dive</button>
+  <div class="tabs-container" style="background: var(--tabs-bg); border-bottom: 1px solid var(--tabs-border); display: flex; padding: 0 8px;">
+    <button onclick="showTab(0)" id="tab0" class="tab-button" style="background: transparent; border: none; border-bottom: 2px solid transparent; cursor: pointer; padding: 16px 20px; font-size: 14px; font-family: 'IBM Plex Sans'; color: var(--tab-muted);">Tech News</button><button onclick="showTab(1)" id="tab1" class="tab-button" style="background: transparent; border: none; border-bottom: 2px solid transparent; cursor: pointer; padding: 16px 20px; font-size: 14px; font-family: 'IBM Plex Sans'; color: var(--tab-muted);">Physics</button><button onclick="showTab(2)" id="tab2" class="tab-button" style="background: transparent; border: none; border-bottom: 2px solid transparent; cursor: pointer; padding: 16px 20px; font-size: 14px; font-family: 'IBM Plex Sans'; color: var(--tab-muted);">Mathematics</button><button onclick="showTab(3)" id="tab3" class="tab-button" style="background: transparent; border: none; border-bottom: 2px solid transparent; cursor: pointer; padding: 16px 20px; font-size: 14px; font-family: 'IBM Plex Sans'; color: var(--tab-muted);">Deep Dive</button>
   </div>
   <main id="content" style="flex: 1; overflow-y: auto;"></main>
   <footer style="background: var(--footer-bg); height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; border-top: 1px solid var(--footer-border);">
-    <button onclick="prevTab()" style="background: transparent; border: none; padding: 8px 16px; font-size: 13px; font-family: 'IBM Plex Sans'; color: var(--footer-text); cursor: pointer;">← Previous</button>
-    <span id="pageNum" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--footer-text); text-transform: uppercase;">Page 1 of 4</span>
-    <button onclick="nextTab()" style="background: transparent; border: none; padding: 8px 16px; font-size: 13px; font-family: 'IBM Plex Sans'; color: var(--footer-text); cursor: pointer;">Next →</button>
+    <button onclick="prevTab()" class="footer-button" style="background: transparent; border: none; padding: 8px 16px; font-size: 13px; font-family: 'IBM Plex Sans'; color: var(--footer-text); cursor: pointer;">← Previous</button>
+    <span id="pageNum" class="footer-page-num" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--footer-text); text-transform: uppercase;">Page 1 of 4</span>
+    <button onclick="nextTab()" class="footer-button" style="background: transparent; border: none; padding: 8px 16px; font-size: 13px; font-family: 'IBM Plex Sans'; color: var(--footer-text); cursor: pointer;">Next →</button>
   </footer>
 </div>
 <script>
 const data = {"date":"June 16, 2026","dayOfWeek":"Tuesday","articles":[{"category":"AI","cols":12,"title":"SpaceX Acquires Cursor for $60 Billion — The Largest AI Acquisition in History","source":"The Verge / TechCrunch","date":"Jun 16, 2026","summary":"SpaceX exercised its April 21 option to acquire AI coding assistant Cursor for $60 billion in an all-stock deal, just four days after its record $75 billion IPO. The acquisition transforms SpaceX from a space-and-infrastructure company into a vertically integrated AI powerhouse: Cursor's 1M+ daily active developers and $2B ARR now feed directly into SpaceX's Colossus supercomputer (~1M H100 equivalents), creating an integrated stack from developer IDE to orbital data centers. Cursor serves 67% of Fortune 500 companies and generates 150 million lines of enterprise code daily. The deal exploits an unprecedented regulatory window: Anthropic's Fable 5 and Mythos 5 were banned from foreign access on June 13, crippling Cursor's biggest competitor (Claude Code, which had surpassed Cursor's revenue run rate). SpaceX's S-1 filing claimed a $26 trillion AI TAM; Cursor is the bridge between compute infrastructure and enterprise revenue. The acquisition redefines the AI competitive landscape, pitting SpaceX/Cursor directly against OpenAI/Codex and establishing the world's first end-to-end AI stack spanning from the developer's keyboard to orbit.","url":"https://www.theverge.com/ai-artificial-intelligence/950571/spacex-is-officially-buying-cursor-for-60-billion"},{"category":"AI","cols":6,"title":"Inside the Fight Over Claude Mythos 5: Anthropic Disables Frontier Models Worldwide After Export Ban","source":"The Verge","date":"Jun 16, 2026","summary":"Anthropic spent the weekend fighting the Trump administration after receiving a U.S. export control directive at 5:21 PM Friday ordering suspension of Mythos 5 and Fable 5 access for 'any foreign national,' including Anthropic's own employees. Unable to guarantee compliance, Anthropic disabled both models globally. The order cites a 'narrow, non-universal jailbreak' in Fable 5, a standard Anthropic argues would halt all frontier model deployments if applied uniformly. Notably, OpenAI's GPT-5.5 and Google's Gemini 3.1 Pro remain unrestricted. Anthropic warned of billions in lost revenue and disrupted $180M in financial institution negotiations. The EU has protested the controls as 'discriminatory.' Anthropic meetings with officials began June 15; the outcome will determine whether the export ban becomes permanent precedent for frontier AI regulation.","url":"https://www.theverge.com/ai-artificial-intelligence/950412/anthropic-trump-adminstration-claude-mythos-fable-5-export-controls"},{"category":"AI","cols":6,"title":"OpenAI Faces Multi-State AG Investigation as Confidential IPO Filing Looms","source":"TechCrunch / Wall Street Journal","date":"Jun 13, 2026","summary":"A coalition of state attorneys general has opened a broad investigation into OpenAI, with the initial subpoena served by New York's AG on June 12. The document demands records covering advertising practices, user engagement, model sycophancy, handling of consumer and health data, and treatment of minors and seniors. This compounds existing legal pressure: Florida sued OpenAI on June 1, multiple families are suing over ChatGPT's alleged role in suicides, and copyright holders have active lawsuits. Despite winning the high-profile Musk v. Altman trial, OpenAI's legal exposure is widening just as it confidentially filed to go public. The company says it 'takes the concerns raised by state attorneys general seriously' and cites age prediction tools, parental controls, and crisis safeguards as evidence of responsible deployment.","url":"https://techcrunch.com/2026/06/13/openai-faces-investigation-from-state-attorneys-general/"},{"category":"AI","cols":6,"title":"ChatGPT's Global Market Share Falls Below 50% for First Time","source":"TechCrunch","date":"Jun 16, 2026","summary":"ChatGPT's share of the AI chatbot market has slipped below 50% for the first time, a symbolic milestone for the industry. The chatbot retains 1.1 billion monthly active users but faces accelerating competition: Gemini at 662 million MAU and Claude at 245 million. The share erosion reflects the market's structural shift from a single-player landscape to a multi-model ecosystem where enterprises route queries to the best model per task rather than defaulting to one provider. OpenAI is responding with aggressive price cuts and the planned retirement of GPT-4.5 (end of June) and o3 (August), consolidating around next-gen models ahead of a planned IPO.","url":"https://techcrunch.com/2026/06/16/chatgpts-market-share-slips-below-50-for-first-time/"},{"category":"AI","cols":6,"title":"Threads Surpasses 500M Monthly Users, Adds AI-Powered 'Your Algo' Feed Controls","source":"TechCrunch / The Verge","date":"Jun 16, 2026","summary":"Meta's Threads crossed 500 million monthly active users, hitting the milestone just shy of the platform's third anniversary. Daily active users continue to 'increase strongly across the globe,' with growth entirely driven by Communities features. Threads also launched 'Your Algo,' a tool giving users direct control over feed personalization — a departure from the algorithmic opacity that has drawn regulatory scrutiny to Meta's other platforms. CEO Mark Zuckerberg has said Threads could reach 1 billion users.","url":"https://techcrunch.com/2026/06/16/threads-adds-new-personalization-and-community-features-as-it-reaches-500m-monthly-users/"},{"category":"SECURITY","cols":4,"title":"Fortinet FortiSandbox: Three Critical Flaws Under Active Exploitation, One Patched Last Week","source":"The Hacker News","date":"Jun 16, 2026","summary":"Threat intelligence firm Defused Cyber reports active exploitation of three vulnerabilities in Fortinet FortiSandbox: CVE-2026-39813 (CVSS 9.1, path traversal in JRPC API), CVE-2026-39808, and CVE-2026-25089. One was patched as recently as last week. The speed from patch to exploit highlights the shrinking window defenders face in securing enterprise network appliances.","url":"https://thehackernews.com/2026/06/attackers-exploit-three-fortinet.html"},{"category":"SECURITY","cols":4,"title":"CISA Flags LiteSpeed cPanel Plugin Flaw Exploited for Root Privilege Escalation","source":"The Hacker News","date":"Jun 16, 2026","summary":"CISA added CVE-2026-54420 (CVSS 8.5) in the LiteSpeed cPanel Plugin to its Known Exploited Vulnerabilities catalog, mandating federal agency fixes by June 18. The privilege escalation bug enables attackers to gain root access on affected servers. The rapid KEV addition signals the flaw's active exploitation in the wild.","url":"https://thehackernews.com/2026/06/cisa-flags-litespeed-cpanel-plugin-flaw.html"},{"category":"SECURITY","cols":4,"title":"Cisco SD-WAN Manager Vulnerability Under Active Attack — Patch Immediately","source":"The Hacker News","date":"Jun 16, 2026","summary":"Cisco released security updates for CVE-2026-20262 (CVSS 6.5) in Catalyst SD-WAN Manager, confirming active exploitation. The flaw allows authenticated remote attackers to create unauthorized files. While medium severity, active exploitation and the criticality of SD-WAN infrastructure make this a priority patch for enterprise network teams.","url":"https://thehackernews.com/2026/06/cisco-releases-security-updates-for.html"},{"category":"SECURITY","cols":4,"title":"China-Linked SprySOCKS Backdoor Expands to Windows with Kernel Driver Stealth","source":"The Hacker News","date":"Jun 16, 2026","summary":"ESET researchers identified two previously undocumented Windows variants of SprySOCKS (WIN_DRV and WIN_PLUS), a backdoor previously thought to be Linux-only. Both include hard-coded C&C supporting TCP, UDP, and ICMP communication. The WIN_DRV variant deploys a kernel driver for deep stealth, marking a significant escalation in the threat actor's Windows capabilities.","url":"https://thehackernews.com/2026/06/china-linked-sprysocks-backdoor-expands.html"},{"category":"SECURITY","cols":4,"title":"North Korean ScarCruft Group Uses Fake Microsoft Alerts to Deploy NarwhalRAT","source":"The Hacker News","date":"Jun 16, 2026","summary":"The ScarCruft (APT37) group is distributing spear-phishing emails impersonating Microsoft Account security alerts to install NarwhalRAT malware. The Genians Security Center reports the emails 'create concern over possible unauthorized access,' tricking victims into opening malicious attachments. The campaign targets organizations with plausible Microsoft ecosystem presence.","url":"https://thehackernews.com/2026/06/fake-microsoft-alerts-used-to-deploy.html"},{"category":"SECURITY","cols":4,"title":"Survey: 94% of Security Incidents Involve Anonymized Infrastructure, Teams Stay Reactive","source":"The Hacker News","date":"Jun 16, 2026","summary":"A new industry survey finds that 94% of investigated incidents feature anonymized infrastructure — VPNs, proxies, Tor exit nodes, and bulletproof hosting. Despite abundant IP enrichment feeds and threat intelligence, security teams remain largely reactive, struggling to distinguish malicious from benign anonymized traffic at scale.","url":"https://thehackernews.com/2026/06/survey-94-of-incidents-involve.html"},{"category":"NEWS","cols":4,"title":"India Orders Nationwide Telegram Ban Until June 22 Over Exam Fraud Concerns","source":"TechCrunch","date":"Jun 16, 2026","summary":"India has imposed a temporary nationwide ban on Telegram, effective until June 22, citing the platform's role in facilitating exam fraud through leaked question papers and answer keys. The order also requires Telegram to disable its message editing feature, which authorities say enables evidence destruction. The ban follows escalating government pressure on encrypted messaging platforms in the world's most populous nation.","url":"https://techcrunch.com/2026/06/16/india-temporarily-blocks-access-to-telegram-over-exam-fraud-concerns/"},{"category":"STARTUPS","cols":4,"title":"Malaysia's Respond.io Raises $62.5M for AI-Powered Enterprise Messaging, Eyes M&A","source":"TechCrunch","date":"Jun 16, 2026","summary":"Respond.io, a Malaysian AI messaging startup, raised $62.5 million to scale its agent-powered customer communication platform. Unlike per-seat pricing models, the company charges per conversation — a model that scales with AI agent throughput. The company is actively pursuing acquisitions in North America and Europe as it expands beyond Southeast Asia.","url":"https://techcrunch.com/2026/06/15/malaysias-respond-io-raises-62-5m-eyes-acquisitions-in-north-america-and-europe/"},{"category":"STARTUPS","cols":4,"title":"Foundation Alloy Raises $22M to Scale Cold-Forged Super Metals for Drones and Luxury Goods","source":"TechCrunch","date":"Jun 16, 2026","summary":"Foundation Alloy secured $22 million to scale production of its novel cold-forged alloys. Unlike traditional thermal processing, the startup uses mechanical deformation to achieve superior material properties — stronger, lighter, and more durable metals. Target markets include military drones, luxury watches, and high-end chef's knives. The approach could reduce energy consumption in metallurgy by eliminating heat-treatment steps.","url":"https://techcrunch.com/2026/06/16/this-startups-super-metals-could-soon-be-in-military-drones-luxury-watches-and-chefs-knives/"},{"category":"AI","cols":4,"title":"Apple HomeKit Secure Video Gets AI-Powered Search, Smarter Notifications in iOS 27","source":"The Verge","date":"Jun 16, 2026","summary":"Apple's HomeKit Secure Video is gaining Apple Intelligence features, enabling natural language search of recorded footage and AI-powered descriptive alerts from connected cameras. The Home app also adds energy reporting support and improved notifications. The updates arrive as part of iOS 27, bringing on-device AI processing to Apple's privacy-focused smart home ecosystem.","url":"https://www.theverge.com/tech/949854/first-look-apple-home-ios-27-upgrades-homekit-secure-video"},{"category":"NEWS","cols":4,"title":"Data Centers Face Grid Constraints — Flexible Power Strategies Could Accelerate Deployment","source":"MIT Technology Review","date":"Jun 16, 2026","summary":"An MIT Technology Review report examines how data center operators can accelerate deployment by adopting grid-flexible power strategies. Using the UK National Grid's tea-time demand surge as an analogy, the piece argues that data centers capable of throttling compute during grid stress could secure connections faster in capacity-constrained regions like Ireland, Singapore, and the Netherlands, where data center moratoriums are already in effect.","url":"https://www.technologyreview.com/2026/06/16/1138591/data-center-online-quickly-electric-grid-flex/"},{"category":"HARDWARE","cols":4,"title":"Commodore Brand Returns with Distraction-Free Flip Phone Blocking Social Media and Browsers","source":"Ars Technica / The Verge","date":"Jun 16, 2026","summary":"The resurrected Commodore brand, now owned by retro computing YouTuber Christian 'Peri Fractic' Simpson, is launching a flip phone that deliberately blocks social media apps and web browsers. The device embraces digital minimalism under the iconic Commodore name, continuing Simpson's strategy of picking up where the original company left off in the mid-1990s — a nostalgic hardware play with contemporary digital wellness relevance.","url":"https://arstechnica.com/gadgets/2026/06/commodores-newest-gadget-is-a-flip-phone-that-blocks-social-media-and-browsers/"},{"category":"RESEARCH","cols":4,"title":"Relational Structural Causal Models Extend Pearl's SCMs to Variable Object Sets","source":"arXiv (2606.14892) — ICML 2026","date":"Jun 12, 2026","summary":"Ejaz and Bareinboim formalize Relational Structural Causal Models (RSCMs), extending Pearl's SCM framework to settings where objects and their relations vary. They prove observational and causal queries about unseen object combinations are non-identifiable without further assumptions, derive symbolic identification criteria via relational causal graphs (handling unobserved confounding), and propose provably correct Relational Neural Causal Models that outperform non-relational baselines on simulated traffic scenes. Accepted at ICML 2026.","url":"https://arxiv.org/abs/2606.14892"},{"category":"RESEARCH","cols":4,"title":"Separable Neural Architectures as Physical World Models: 150,000x Speedup Over FEM","source":"arXiv (2606.14934)","date":"Jun 12, 2026","summary":"Batley, Kichline, and Saha introduce Separable Neural Architectures (SNA), combining neural approximation with tensor decomposition into a 'solve once, query anywhere' surrogate for PDEs. The VSNA framework mitigates the curse of dimensionality via algebraic scaling and tensor-native ALS optimization. On a 7D parametric manufacturing simulation, VSNA executes 1M Monte Carlo queries in 102s on a laptop CPU — a 150,000x speedup over a full-grid FEM baseline on an NVIDIA A100 GPU.","url":"https://arxiv.org/abs/2606.14934"},{"category":"RESEARCH","cols":4,"title":"Policy Regret for Embedding Model Routing: Contextual Bandits with Low-Rank Experts","source":"arXiv (2606.14929)","date":"Jun 12, 2026","summary":"Dai, Golrezaei, and Jaillet formalize embedding model routing — dynamically selecting among multiple embedding models per query — as an adversarial contextual linear bandit with low-rank experts. They propose Hypentropy Policy Gradient (HPG) achieving O(s√(MT)) linearized policy regret with s = rank, M = models, T = rounds, avoiding the curse of dimensionality. A parameter-free implementation is provided for practical deployment.","url":"https://arxiv.org/abs/2606.14929"}],"physicsContent":[{"type":"section_heading","text":"EXPLANATION"},{"type":"heading","text":"The Thermodynamics of Information: What Bit Erasure Costs the Universe"},{"type":"paragraph","text":"If you write code, you delete variables every millisecond — clearing registers, flushing caches, discarding intermediate tensors. Every one of those operations, at the physical level, incurs a thermodynamic debt. The insight that information is not an abstract mathematical construct but a physical quantity with measurable energetic consequences traces back to Maxwell's demon — a thought experiment from 1867 in which a tiny being appeared to violate the second law of thermodynamics by sorting molecules, creating a temperature gradient without doing work. The paradox stood unresolved for a century until Rolf Landauer (1961) and Charles Bennett (1982) identified the loophole: the demon must erase its memory to operate cyclically, and that erasure has a minimum energy cost."},{"type":"paragraph","text":"Landauer's principle — that erasing one bit of information at temperature \\(T\\) dissipates at least \\(k_B T \\ln 2\\) of heat — established that information is physical. At room temperature (300 K), this bound is approximately \\(2.87 \\times 10^{-21}\\) J per bit, or 0.018 eV. Modern CMOS transistors dissipate roughly \\(10^{-15}\\) to \\(10^{-13}\\) J per operation — six to eight orders of magnitude above the Landauer limit. This gap is not an engineering inefficiency; it reflects real-world constraints (finite time, modularity, precision) that stochastic thermodynamics now quantifies precisely."},{"type":"paragraph","text":"In 2024–2025, the field accelerated dramatically. A major PNAS paper (Wolpert et al., 2024) argued that traditional Landauer bounds are insufficient for analyzing real computers, which must operate under time, space, and precision constraints. Meanwhile, Hsieh (2025, Physical Review Letters) proved a dynamical Landauer principle: a quantum channel's capacity to transmit \\(k\\) bits is equivalent to its capacity to transmit \\(k \\cdot k_B T \\ln 2\\) of energy — unifying Shannon information theory with thermodynamic work at the foundational level. The wall between thermodynamics and information theory has collapsed."},{"type":"subheading","text":"The Landauer Bound and Its Generalizations"},{"type":"formula","text":"\\[ \\Delta Q \\geq k_B T \\ln 2 \\]"},{"type":"paragraph","text":"Landauer's bound is deceptively simple: erasing a bit (a logically irreversible operation mapping two input states to one output state) must dissipate at least \\(k_B T \\ln 2\\) as heat. The modern quantum-information formulation by Reeb and Wolf sharpens this to an exact equality:"},{"type":"formula","text":"\\[ \\beta \\Delta Q = \\Delta S + I(\\mathcal{S}' : R') + S(\\rho_R' \\| \\rho_R) \\geq \\Delta S \\]"},{"type":"paragraph","text":"Here \\(\\beta = 1/(k_B T)\\), \\(\\Delta S\\) is the change in von Neumann entropy, \\(I(\\mathcal{S}' : R')\\) is mutual information between system and reservoir after interaction, and \\(S(\\rho_R' \\| \\rho_R)\\) is the quantum relative entropy of the reservoir — a direct measure of free energy irretrievably lost to the environment."},{"type":"subheading","text":"Jarzynski Equality: Far-From-Equilibrium Thermodynamics"},{"type":"formula","text":"\\[ \\langle e^{-\\beta W} \\rangle = e^{-\\beta \\Delta F} \\]"},{"type":"paragraph","text":"For a system driven arbitrarily far from equilibrium, the Jarzynski equality relates the fluctuating work \\(W\\) over non-equilibrium trajectories to the equilibrium free-energy difference \\(\\Delta F\\). This is remarkable: an exponential average of a far-from-equilibrium quantity yields an equilibrium quantity. Crooks generalized this:"},{"type":"formula","text":"\\[ \\frac{P_F(W)}{P_R(-W)} = e^{\\beta (W - \\Delta F)} \\]"},{"type":"paragraph","text":"where \\(P_F(W)\\) and \\(P_R(-W)\\) are forward and reverse work distributions. At \\(W = \\Delta F\\), the two distributions cross — a symmetry exploited for free-energy estimation in drug binding and, increasingly, for training energy-based models in ML."},{"type":"subheading","text":"The Dynamical Landauer Principle (Hsieh, 2025)"},{"type":"formula","text":"\\[ C_{\\varepsilon}^{\\mathcal{R}}(\\mathcal{E}) \\approx \\frac{1}{k_B T \\ln 2} \\, W_{\\varepsilon}^{\\mathcal{R}}(\\mathcal{E}) \\]"},{"type":"paragraph","text":"Transmitting \\(k\\) bits of classical information through a quantum channel is equivalent (up to small error terms) to transmitting \\(k \\cdot k_B T \\ln 2\\) of work-energy. This unifies Shannon and thermodynamics: information capacity and energy capacity are two faces of the same physical quantity."},{"type":"subheading","text":"Why This Matters for ML/AI Engineers"},{"type":"paragraph","text":"Training a frontier model already costs tens of millions in electricity. Inference at scale (ChatGPT serves ~10M queries daily) may ultimately dominate. Landauer's principle provides a hard floor under the energy cost of irreversible computation, and stochastic thermodynamics reveals that realistic constraints push the actual floor far higher. The Jarzynski equality is mathematically identical to the importance-sampling identities underpinning Annealed Importance Sampling (AIS) and score-based generative models — the 2025 arXiv paper by Guo, Tao, and Chen provides the first non-asymptotic complexity bounds for these methods using tools drawn directly from stochastic thermodynamics."},{"type":"paragraph","text":"Algorithmic choices — reducing complexity from \\(O(N^2)\\) to \\(O(N \\log N)\\), pruning to sparsity, quantization, early exiting — are not just performance optimizations; they are thermodynamic optimizations. And a growing community is exploring thermodynamic computing: designing physical systems (analog circuits, nanomagnetic arrays) that naturally solve sampling and optimization problems by relaxing to equilibrium. In the era of trillion-parameter models, computer science and thermodynamics are, irreducibly, the same subject."}],"mathContent":[{"type":"section_heading","text":"CONCEPT"},{"type":"heading","text":"The Fourier Transform: Decomposing the Universe into Pure Frequencies"},{"type":"paragraph","text":"The Fourier Transform is one of the most profound ideas in mathematics — a bridge between the world of time and the world of frequency. Its central insight: any signal, no matter how messy, can be expressed as a sum of pure sine waves, each with its own amplitude and phase. It is a mathematical prism: just as a prism splits white light into a rainbow of pure colors, the Fourier Transform takes a jumbled signal — a sound recording, a radio wave, the wobbling of a bridge — and separates it into the clean, elementary frequencies that compose it."},{"type":"paragraph","text":"Fourier's original motivation was the heat equation: he wanted to understand how temperature diffuses along a metal rod. His radical proposal — that even a sharp, discontinuous step function could be written as an infinite sum of smooth cosine waves — was so controversial that Lagrange and Laplace rejected his 1807 paper. Today, it powers everything from MP3 compression and MRI machines to quantum mechanics and the study of prime numbers. Its efficient cousin, the Fast Fourier Transform (FFT), has been called one of the most important algorithms of the 20th century."},{"type":"subheading","text":"The Fourier Transform Pair"},{"type":"formula","text":"\\[ \\hat{g}(f) = \\int_{-\\infty}^{\\infty} g(t)\\, e^{-2\\pi i f t} \\, dt \\]"},{"type":"formula","text":"\\[ g(t) = \\int_{-\\infty}^{\\infty} \\hat{g}(f)\\, e^{2\\pi i f t} \\, df \\]"},{"type":"paragraph","text":"These two integrals are mirror images. The forward transform \\(\\hat{g}(f)\\) tells you 'how much' of frequency \\(f\\) is present in signal \\(g(t)\\). The inverse transform reconstructs the original signal from its frequency components. Together they form a transform pair — perfect reconstruction, no information lost."},{"type":"subheading","text":"Intuition via the Winding Machine"},{"type":"paragraph","text":"To understand why this works, imagine wrapping your signal \\(g(t)\\) around a circle at a chosen 'winding frequency' \\(f\\). At each instant \\(t\\), you form \\(g(t)e^{-2\\pi i f t}\\) — the signal value placed at angle \\(-2\\pi f t\\) on the complex plane. If the winding frequency matches a frequency present in the signal, the wrapped graph is lopsided: peaks align on one side, pushing the center of mass away from the origin. If the winding frequency does not match, values spread evenly around the circle, and the center of mass stays near zero. The Fourier Transform is precisely this center of mass — scaled by duration — evaluated at every possible winding frequency."},{"type":"subheading","text":"Derivation from Fourier Series"},{"type":"paragraph","text":"Begin with the complex Fourier series for a periodic function of period \\(T\\): \\(g(t) = \\sum_{n=-\\infty}^{\\infty} c_n e^{2\\pi i n t / T}\\) with \\(c_n = \\frac{1}{T} \\int_{-T/2}^{T/2} g(t) e^{-2\\pi i n t / T} dt\\). Now let \\(T \\to \\infty\\). The discrete frequencies \\(f_n = n/T\\) become a continuum. Define \\(\\hat{g}(f_n) = T c_n\\). The Fourier series sum becomes a Riemann sum converging to an integral — yielding the Fourier Transform pair in its most elegant, symmetric form."},{"type":"subheading","text":"The Convolution Theorem — Where the Magic Happens"},{"type":"formula","text":"\\[ \\mathcal{F}\\{g * h\\} = \\hat{g}(f) \\cdot \\hat{h}(f) \\]"},{"type":"paragraph","text":"Convolution in the time domain — a messy, \\(O(n^2)\\) operation where \\((g * h)(t) = \\int_{-\\infty}^{\\infty} g(\\tau) h(t - \\tau) d\\tau\\) — becomes simple multiplication in the frequency domain. This is why the FFT is so powerful: filtering, blurring, template matching, and polynomial multiplication all reduce to pointwise multiplication of transforms. The entire signal processing industry — audio, image, video compression — rests on this theorem."},{"type":"paragraph","text":"The Fourier Transform embodies mathematics at its most elegant: a single integral that decomposes any function into an orthogonal basis. It reveals that complexity is often a matter of perspective — what looks chaotic in one domain becomes beautifully simple in another. It doesn't just solve equations; it changes how we see."},{"type":"video","video":{"title":"But what is the Fourier Transform? A visual introduction.","channel":"3Blue1Brown","duration":"20:56","url":"https://www.youtube.com/watch?v=spUNpyF58BY"}},{"type":"video","video":{"title":"Epicycles, complex Fourier series and Homer Simpson's orbit","channel":"Mathologer","duration":"25:35","url":"https://www.youtube.com/watch?v=qS4H6PEcCCA"}}],"deepContent":[{"type":"section_heading","text":"ANALYSIS"},{"type":"heading","text":"SpaceX's $60B Cursor Acquisition: The Most Consequential AI Deal of 2026"},{"type":"paragraph","text":"On June 16, 2026, SpaceX exercised its option to acquire AI coding assistant Cursor for $60 billion in an all-stock deal — four days after its record $75B IPO. This is not a rocket company buying a coding tool. This is an infrastructure company securing the demand layer that justifies its infrastructure, an IPO narrative crystallizing into a balance-sheet asset, and the most strategically coherent vertical integration play in AI history. The deal redefines the competitive landscape at a moment when the entire industry is being reshuffled by government action, market maturation, and the shift from editing to agentic coding."},{"type":"subheading","text":"The Three-Bet Framework"},{"type":"paragraph","text":"The SpaceX-Cursor deal is best understood as three simultaneous bets. Bet 1 — Compute + Killer App: Colossus, the Memphis supercomputer with ~1M H100 equivalents inherited from the xAI merger, needs workload. Cursor's 1M+ daily active developers generating 150M lines of enterprise code daily provide exactly that. The unit economics improve immediately: Cursor's Composer models, running on SpaceX-owned infrastructure, eliminate the margin they were paying to Anthropic and OpenAI for model access. Bet 2 — Distribution Moat: Cursor's embedded workflow inside 67% of Fortune 500 companies is a moat that cannot be replicated by compute alone. Every Cursor user is now a SpaceX customer. Bet 3 — IPO Narrative: A $60B AI coding asset transforms SpaceX's roadshow, bridging the $2.4T AI infrastructure TAM and $22.7T enterprise application TAM."},{"type":"subheading","text":"The Anthropic Export Ban Gift"},{"type":"paragraph","text":"The most explosive competitive dimension is timing. On June 13 — two days after SpaceX's IPO and three days before the Cursor acquisition closed — the U.S. government ordered Anthropic to suspend foreign access to Fable 5 and Mythos 5. Anthropic disabled both models globally. Claude Code — Cursor's most dangerous competitor, having surpassed Cursor's revenue run rate at $2.5B/month — is now hamstrung by regulatory action that does not affect SpaceX/Cursor. If this asymmetry persists, Cursor faces a competitive environment where its biggest rival is partially disabled by government decree."},{"type":"subheading","text":"The Vertical Integration Endgame"},{"type":"paragraph","text":"SpaceX is building an unprecedented integrated AI stack: Developer to Cursor IDE to Composer Models to Colossus Supercomputer to Starlink Network to Orbital Data Centers (AI1 satellites, 2027+). When Colossus hits terrestrial limits, overflow goes to orbit — where solar power is abundant and cooling is free. Cursor's code-generation workloads are the ideal payload: latency-tolerant, massively parallel, and growing exponentially."},{"type":"subheading","text":"Risks and Contradictions"},{"type":"paragraph","text":"The deal carries serious risks. Cursor's Composer models are built on Chinese open-source foundations (DeepSeek, Kimi, Qwen) — problematic optics when the U.S. just banned Anthropic's models. The xAI merger hangover (all 11 co-founders departed by March 2026) means SpaceX is rebuilding AI from scratch. At 30x revenue ($60B for $2B ARR), the price is steep for a non-break-even company. And if the Anthropic ban is resolved, Claude Code's competitive pressure returns immediately."},{"type":"paragraph","text":"One thing is certain: the AI industry woke up on June 16, 2026 to a new competitive reality. The company that launches rockets now also launches code. The company that builds Starlink terminals now also builds the tools that write the software for them. And the company run by the world's first trillionaire just placed a $60 billion bet that the future of AI isn't just about models — it's about owning the entire chain from the developer's hands to the satellites in orbit."}]};
 let tab = 0;
 
+// Theme switching functionality
+function setTheme(themeName) {
+  const root = document.getElementById('root');
+  root.setAttribute('data-theme', themeName);
+
+  // Update active state on theme dots
+  document.querySelectorAll('.theme-dot').forEach(dot => {
+    if (dot.getAttribute('data-theme') === themeName) {
+      dot.classList.add('active');
+    } else {
+      dot.classList.remove('active');
+    }
+  });
+
+  // Persist theme preference to localStorage
+  try {
+    localStorage.setItem('digest-theme', themeName);
+  } catch(e) {
+    console.error('Failed to save theme preference:', e);
+  }
+}
+
+// Load saved theme on page load
+function loadSavedTheme() {
+  try {
+    const savedTheme = localStorage.getItem('digest-theme');
+    if (savedTheme && ['parchment', 'sepia', 'nordic', 'dusk', 'graphite'].includes(savedTheme)) {
+      setTheme(savedTheme);
+    } else {
+      setTheme('parchment');
+    }
+  } catch(e) {
+    console.error('Failed to load theme preference:', e);
+    setTheme('parchment');
+  }
+}
+
 function renderTechNews() {
-  return `<div style="background: var(--tn-bg); padding: 48px 24px 80px; min-height: 100%;">
+  return `<div class="tech-news-container" style="background: var(--tn-bg); padding: 48px 24px 80px; min-height: 100%;">
     <h1 style="font-family: Georgia, serif; font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: var(--tn-accent); border-bottom: 4px solid var(--tn-accent); padding-bottom: 24px; margin-bottom: 48px;">Tech News — ${data.date}</h1>
     <div id="tech-grid" style="display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px;">
       ${data.articles.map(a => `<div style="grid-column: span ${a.cols}; background: var(--tn-card); border: 2px solid var(--tn-border); padding: 24px;">
         <span style="display: inline-block; background: var(--tn-accent); color: var(--tn-bg); font-size: 10px; font-weight: 700; letter-spacing: 0.12em; padding: 3px 10px; margin-bottom: 16px; font-family: 'IBM Plex Mono'; text-transform: uppercase;">${a.category}</span>
-        <h2 style="font-family: Georgia, serif; font-size: ${a.cols === 12 ? '36px' : '20px'}; font-weight: 700; color: var(--tn-ink); line-height: 1.12; margin-bottom: ${a.cols === 12 ? '20px' : '12px'};">${a.title}</h2>
+        <h2 class="${a.cols === 12 ? 'article-title-large' : 'article-title-small'}" style="font-family: Georgia, serif; font-size: ${a.cols === 12 ? '36px' : '20px'}; font-weight: 700; color: var(--tn-ink); line-height: 1.12; margin-bottom: ${a.cols === 12 ? '20px' : '12px'};">${a.title}</h2>
         <p style="font-family: 'IBM Plex Mono'; font-size: 11px; color: var(--tn-meta); margin-bottom: 14px;">${a.source} · ${a.date}</p>
-        <p style="font-family: 'IBM Plex Sans'; font-size: ${a.cols === 12 ? '16px' : '14px'}; line-height: 1.65; color: var(--tn-ink); opacity: 0.78;">${a.summary}</p>
+        <p class="article-summary" style="font-family: 'IBM Plex Sans'; font-size: ${a.cols === 12 ? '16px' : '14px'}; line-height: 1.65; color: var(--tn-ink); opacity: 0.78;">${a.summary}</p>
         <a href="${a.url}" target="_blank" style="display: inline-block; font-size: 12px; font-weight: 600; color: var(--tn-accent); border-bottom: 1.5px solid var(--tn-accent); margin-top: 20px; text-decoration: none;">Read Full Article →</a>
       </div>`).join('')}
     </div>
@@ -77,11 +232,11 @@ function renderTechNews() {
 function renderContent(blocks, bgVar, textVar, accentVar, fbgVar) {
   return blocks.map(b => {
     if (b.type === 'section_heading') return `<p style="font-family: 'IBM Plex Mono'; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(${accentVar}); opacity: 0.65; margin-bottom: 16px;">${b.text}</p>`;
-    if (b.type === 'heading') return `<h2 style="font-family: Georgia, serif; font-size: 30px; font-weight: 700; color: var(${accentVar}); margin-bottom: 24px;">${b.text}</h2>`;
-    if (b.type === 'paragraph') return `<p style="font-family: Georgia, serif; font-size: 18px; line-height: 1.8; color: var(${textVar}); text-align: justify; margin-bottom: 20px;">${b.text}</p>`;
-    if (b.type === 'formula') return `<div style="padding: 28px 20px; margin: 32px 0; text-align: center; border-left: 3px solid var(${accentVar}); background: var(${fbgVar}); color: var(${textVar});">${b.text}</div>`;
-    if (b.type === 'subheading') return `<h3 style="font-family: Georgia, serif; font-size: 22px; font-weight: 600; color: var(${textVar}); margin-top: 44px; margin-bottom: 20px;">${b.text}</h3>`;
-    if (b.type === 'video') return `<div style="background: var(--mt-vbg); border: 2px solid var(${accentVar}); border-radius: 6px; padding: 24px; margin: 32px 0; display: flex; align-items: center; gap: 20px;">
+    if (b.type === 'heading') return `<h2 class="content-heading" style="font-family: Georgia, serif; font-size: 30px; font-weight: 700; color: var(${accentVar}); margin-bottom: 24px;">${b.text}</h2>`;
+    if (b.type === 'paragraph') return `<p class="content-paragraph" style="font-family: Georgia, serif; font-size: 18px; line-height: 1.8; color: var(${textVar}); text-align: justify; margin-bottom: 20px;">${b.text}</p>`;
+    if (b.type === 'formula') return `<div class="formula-block" style="padding: 28px 20px; margin: 32px 0; text-align: center; border-left: 3px solid var(${accentVar}); background: var(${fbgVar}); color: var(${textVar});">${b.text}</div>`;
+    if (b.type === 'subheading') return `<h3 class="content-subheading" style="font-family: Georgia, serif; font-size: 22px; font-weight: 600; color: var(${textVar}); margin-top: 44px; margin-bottom: 20px;">${b.text}</h3>`;
+    if (b.type === 'video') return `<div class="video-card" style="background: var(--mt-vbg); border: 2px solid var(${accentVar}); border-radius: 6px; padding: 24px; margin: 32px 0; display: flex; align-items: center; gap: 20px;">
       <span style="font-size: 30px;">🎥</span>
       <div style="flex: 1;">
         <p style="font-family: 'IBM Plex Sans'; font-weight: 700; font-size: 16px; margin-bottom: 6px;">${b.video.title}</p>
@@ -104,18 +259,10 @@ function showTab(n) {
 
   const content = document.getElementById('content');
   if (n === 0) content.innerHTML = renderTechNews();
-  else if (n === 1) content.innerHTML = `<div style="background: var(--ph-bg); padding: 64px 32px 96px; min-height: 100%;"><div style="max-width: 896px; margin: 0 auto;">${renderContent(data.physicsContent, '--ph-bg', '--ph-text', '--ph-accent', '--ph-fbg')}</div></div>`;
-  else if (n === 2) content.innerHTML = `<div style="background: var(--mt-bg); padding: 64px 32px 96px; min-height: 100%;"><div style="max-width: 896px; margin: 0 auto;">${renderContent(data.mathContent, '--mt-bg', '--mt-text', '--mt-accent', '--mt-fbg')}</div></div>`;
-  else content.innerHTML = `<div style="background: var(--mt-bg); padding: 64px 32px 96px; min-height: 100%;"><div style="max-width: 896px; margin: 0 auto;">${renderContent(data.deepContent, '--mt-bg', '--mt-text', '--mt-accent', '--mt-fbg')}</div></div>`;
+  else if (n === 1) content.innerHTML = `<div class="content-container" style="background: var(--ph-bg); padding: 64px 32px 96px; min-height: 100%;"><div style="max-width: 896px; margin: 0 auto;">${renderContent(data.physicsContent, '--ph-bg', '--ph-text', '--ph-accent', '--ph-fbg')}</div></div>`;
+  else if (n === 2) content.innerHTML = `<div class="content-container" style="background: var(--mt-bg); padding: 64px 32px 96px; min-height: 100%;"><div style="max-width: 896px; margin: 0 auto;">${renderContent(data.mathContent, '--mt-bg', '--mt-text', '--mt-accent', '--mt-fbg')}</div></div>`;
+  else content.innerHTML = `<div class="content-container" style="background: var(--mt-bg); padding: 64px 32px 96px; min-height: 100%;"><div style="max-width: 896px; margin: 0 auto;">${renderContent(data.deepContent, '--mt-bg', '--mt-text', '--mt-accent', '--mt-fbg')}</div></div>`;
 
-  if (window.katex) {
-    document.querySelectorAll('.katex').forEach(el => {
-      try {
-        const math = el.textContent.replace(/^\[/, '').replace(/\]$/, '').trim();
-        el.innerHTML = window.katex.renderToString(math, { displayMode: true });
-      } catch(e) {}
-    });
-  }
   if (window.MathJax) {
     MathJax.typesetPromise([document.getElementById('content')]).catch(e => {});
   }
@@ -124,6 +271,8 @@ function showTab(n) {
 function nextTab() { if (tab < 3) showTab(tab + 1); }
 function prevTab() { if (tab > 0) showTab(tab - 1); }
 
+// Initialize on page load
+loadSavedTheme();
 showTab(0);
 </script>
 </body>
