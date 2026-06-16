@@ -40,6 +40,16 @@ html, body { height: 100%; font-family: 'IBM Plex Sans', system-ui, sans-serif; 
   --mt-bg: #F8F6EE; --mt-text: #1E1C18; --mt-accent: #9B6C00; --mt-fbg: rgba(155,108,0,0.05); --mt-vbg: rgba(155,108,0,0.07);
 }
 .mjx-chtml { color: inherit; }
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-thumb { background: rgba(128,128,128,0.2); border-radius: 3px; }
+@media (max-width: 1024px) {
+  #tech-grid > * { grid-column: span 6 !important; }
+  #tech-grid > *:first-child { grid-column: span 12 !important; }
+}
+@media (max-width: 767px) {
+  #tech-grid { grid-template-columns: 1fr !important; }
+  #tech-grid > * { grid-column: auto !important; }
+}
 </style>
 </head>
 <body>
@@ -67,7 +77,7 @@ let tab = 0;
 function renderTechNews() {
   return \`<div style="background: var(--tn-bg); padding: 48px 24px 80px; min-height: 100%;">
     <h1 style="font-family: Georgia, serif; font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: var(--tn-accent); border-bottom: 4px solid var(--tn-accent); padding-bottom: 24px; margin-bottom: 48px;">Tech News — \${data.date}</h1>
-    <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px;">
+    <div id="tech-grid" style="display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px;">
       \${data.articles.map(a => \`<div style="grid-column: span \${a.cols}; background: var(--tn-card); border: 2px solid var(--tn-border); padding: 24px;">
         <span style="display: inline-block; background: var(--tn-accent); color: var(--tn-bg); font-size: 10px; font-weight: 700; letter-spacing: 0.12em; padding: 3px 10px; margin-bottom: 16px; font-family: 'IBM Plex Mono'; text-transform: uppercase;">\${a.category}</span>
         <h2 style="font-family: Georgia, serif; font-size: \${a.cols === 12 ? '36px' : '20px'}; font-weight: 700; color: var(--tn-ink); line-height: 1.12; margin-bottom: \${a.cols === 12 ? '20px' : '12px'};">\${a.title}</h2>

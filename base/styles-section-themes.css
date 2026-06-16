@@ -1,0 +1,127 @@
+/* =============================================
+   Section-scoped theme variable overrides
+   Loaded AFTER theme files to scope per section
+   ============================================= */
+
+/* --- Modern News (Light) --- */
+[data-theme-section="modern-news"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --bg-accent: #000000;
+  --text-primary: #000000;
+  --text-secondary: #666666;
+  --text-inverse: #ffffff;
+  --border-color: #e0e0e0;
+  --accent-color: #0066ff;
+  --accent-hover: #0052cc;
+  --highlight-bg: #fff3cd;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 25px rgba(0,0,0,0.15);
+  --bg-paper: #ffffff;
+  --text-accent: #000000;
+  --bg-tertiary: #fafafa;
+  --bg-hover: #f0f0f0;
+  --border-secondary: #d0d0d0;
+}
+
+/* --- Modern News (Dark) --- */
+body[data-theme="dark"] [data-theme-section="modern-news"] {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a1a;
+  --bg-accent: #ffffff;
+  --text-primary: #ffffff;
+  --text-secondary: #999999;
+  --text-inverse: #000000;
+  --border-color: #333333;
+  --accent-color: #4d94ff;
+  --accent-hover: #66a3ff;
+  --highlight-bg: #2a2a1a;
+  --bg-paper: #0a0a0a;
+  --text-accent: #ffffff;
+  --bg-tertiary: #1a1a1a;
+  --bg-hover: #2a2a2a;
+  --border-secondary: #444444;
+}
+
+/* --- Vintage Scholar (Light) --- */
+[data-theme-section="vintage-scholar"] {
+  --bg-primary: #f9f7f1;
+  --bg-secondary: #eee8d5;
+  --bg-accent: #704214;
+  --bg-paper: #fefdfb;
+  --text-primary: #2b2722;
+  --text-secondary: #6b6660;
+  --text-accent: #8b4513;
+  --text-inverse: #ffffff;
+  --border-color: #d4c5a9;
+  --accent-color: #704214;
+  --accent-hover: #522f0f;
+  --highlight-bg: #fff8dc;
+  --shadow-sm: 0 2px 4px rgba(43, 39, 34, 0.1);
+  --shadow-md: 0 4px 8px rgba(43, 39, 34, 0.15);
+  --shadow-lg: 0 10px 25px rgba(43, 39, 34, 0.2);
+  --bg-tertiary: #fefdfb;
+  --bg-hover: #eee8d5;
+  --border-secondary: #c4b595;
+}
+
+/* --- Vintage Scholar (Dark) --- */
+body[data-theme="dark"] [data-theme-section="vintage-scholar"] {
+  --bg-primary: #1c1815;
+  --bg-secondary: #2a2520;
+  --bg-accent: #d4a574;
+  --bg-paper: #242019;
+  --text-primary: #e8e0d5;
+  --text-secondary: #a89f8f;
+  --text-accent: #c9a068;
+  --text-inverse: #000000;
+  --border-color: #3d3630;
+  --accent-color: #d4a574;
+  --accent-hover: #e5b685;
+  --highlight-bg: #2d2820;
+  --bg-tertiary: #2a2520;
+  --bg-hover: #332e28;
+  --border-secondary: #4d4640;
+}
+
+/* --- Claude / Default (Light) --- */
+[data-theme-section="claude"] {
+  --bg-primary: #f7f5f2;
+  --bg-secondary: #ffffff;
+  --bg-accent: #c4622d;
+  --bg-paper: #ffffff;
+  --bg-tertiary: #faf9f7;
+  --bg-hover: #eeeae4;
+  --text-primary: #2c2416;
+  --text-secondary: #5c5346;
+  --text-accent: #c4622d;
+  --text-inverse: #ffffff;
+  --border-color: #e0dbd3;
+  --border-secondary: #d1cbc1;
+  --accent-color: #c4622d;
+  --accent-hover: #b35525;
+  --highlight-bg: #fff8f0;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 8px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* --- Claude (Dark) --- */
+body[data-theme="dark"] [data-theme-section="claude"] {
+  --bg-primary: #1a1611;
+  --bg-secondary: #231f1a;
+  --bg-accent: #e88b5c;
+  --bg-paper: #231f1a;
+  --bg-tertiary: #2a2520;
+  --bg-hover: #332e28;
+  --text-primary: #ebe6dd;
+  --text-secondary: #c9c2b8;
+  --text-accent: #e88b5c;
+  --text-inverse: #000000;
+  --border-color: #3a3530;
+  --border-secondary: #4d4640;
+  --accent-color: #e88b5c;
+  --accent-hover: #f39d6c;
+  --highlight-bg: #2a2018;
+}

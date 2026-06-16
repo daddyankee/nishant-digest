@@ -5,11 +5,29 @@
     {
       "category": "AI",
       "cols": 12,
-      "title": "SpaceX Acquires Cursor for $60 Billion — The Largest AI Acquisition in History",
-      "source": "The Verge / TechCrunch",
-      "date": "Jun 16, 2026",
-      "summary": "SpaceX exercised its April 21 option to acquire AI coding assistant Cursor for $60 billion in an all-stock deal, just four days after its record $75 billion IPO. The acquisition transforms SpaceX from a space-and-infrastructure company into a vertically integrated AI powerhouse: Cursor's 1M+ daily active developers and $2B ARR now feed directly into SpaceX's Colossus supercomputer (~1M H100 equivalents), creating an integrated stack from developer IDE to orbital data centers. Cursor serves 67% of Fortune 500 companies and generates 150 million lines of enterprise code daily. The deal exploits an unprecedented regulatory window: Anthropic's Fable 5 and Mythos 5 were banned from foreign access on June 13, crippling Cursor's biggest competitor (Claude Code, which had surpassed Cursor's revenue run rate). SpaceX's S-1 filing claimed a $26 trillion AI TAM; Cursor is the bridge between compute infrastructure and enterprise revenue. The acquisition redefines the AI competitive landscape, pitting SpaceX/Cursor directly against OpenAI/Codex and establishing the world's first end-to-end AI stack spanning from the developer's keyboard to orbit.",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/950571/spacex-is-officially-buying-cursor-for-60-billion"
+      "title": "US Forces Anthropic to Halt Fable 5 and Mythos 5 \u2014 Export Ban Shakes AI Industry",
+      "source": "Al Jazeera / Yahoo News",
+      "date": "Jun 14, 2026",
+      "summary": "On June 12, the U.S. government issued an unprecedented export control directive ordering Anthropic to suspend access to its frontier models Fable 5 and Mythos 5 for all foreign nationals, including Anthropic employees. The order, citing national security and a narrow jailbreak concern, effectively yanked the most advanced Claude models from global deployment. Anthropic complied but publicly disputed the justification, warning the precedent could halt all new model deployments for all frontier model providers. Pentagon CIO Kirsten Davies endorsed the move: 'Some things are simply more important than revenue cycles.' The action follows Anthropic's ongoing lawsuit against the administration over being blacklisted for refusing military surveillance use. Rival models GPT-5.5 and Gemini 3.1 Pro remain unrestricted, raising questions about selective enforcement. Anthropic warned of billions in revenue impact and disrupted negotiations with financial institutions worth $180 million.",
+      "url": "https://www.aljazeera.com/news/2026/6/14/us-asks-anthropic-to-block-global-access-to-top-ai-models-why-it-matters"
+    },
+    {
+      "category": "NEWS",
+      "cols": 6,
+      "title": "UK Prime Minister Starmer Announces Blanket Social Media Ban for Under-16s",
+      "source": "Reuters / The Guardian",
+      "date": "Jun 15, 2026",
+      "summary": "Britain became the first G7 nation to impose a complete social media ban for users under 16, announced by Prime Minister Keir Starmer on Monday. The legislation mandates government-certified age verification across all major platforms within 12 months, with fines up to 10% of global annual turnover for non-compliance. The ban covers all social media platforms operating in the UK and is expected to pass with cross-party support. Privacy advocates warned the age verification infrastructure could create new surveillance vectors.",
+      "url": "https://www.reuters.com/technology/"
+    },
+    {
+      "category": "AI",
+      "cols": 4,
+      "title": "Anthropic Files Confidential S-1, Joins OpenAI in Great AI IPO Rush of 2026",
+      "source": "NYT / CNBC",
+      "date": "Jun 1, 2026",
+      "summary": "Anthropic confidentially submitted its S-1 to the SEC on June 1, joining OpenAI (filed May 2026) in what analysts are calling the Great AI IPO Rush. Both companies are expected to list by Q4 2026, with Anthropic's valuation estimated at $80\u2013120 billion. Combined with SpaceX's record $75 billion IPO, the three public offerings could raise over $200 billion \u2014 the largest concentration of tech IPOs since the dot-com era.",
+      "url": "https://www.nytimes.com/2026/06/01/technology/anthropic-ipo.html"
     },
     {
       "category": "AI",
@@ -21,31 +39,67 @@
       "url": "https://www.theverge.com/ai-artificial-intelligence/950412/anthropic-trump-adminstration-claude-mythos-fable-5-export-controls"
     },
     {
-      "category": "AI",
-      "cols": 6,
-      "title": "OpenAI Faces Multi-State AG Investigation as Confidential IPO Filing Looms",
-      "source": "TechCrunch / Wall Street Journal",
-      "date": "Jun 13, 2026",
-      "summary": "A coalition of state attorneys general has opened a broad investigation into OpenAI, with the initial subpoena served by New York's AG on June 12. The document demands records covering advertising practices, user engagement, model sycophancy, handling of consumer and health data, and treatment of minors and seniors. This compounds existing legal pressure: Florida sued OpenAI on June 1, multiple families are suing over ChatGPT's alleged role in suicides, and copyright holders have active lawsuits. Despite winning the high-profile Musk v. Altman trial, OpenAI's legal exposure is widening just as it confidentially filed to go public. The company says it 'takes the concerns raised by state attorneys general seriously' and cites age prediction tools, parental controls, and crisis safeguards as evidence of responsible deployment.",
-      "url": "https://techcrunch.com/2026/06/13/openai-faces-investigation-from-state-attorneys-general/"
+      "category": "SECURITY",
+      "cols": 4,
+      "title": "Single Errant Character in Linux Kernel Grants Root Access \u2014 CVE-2026-38471",
+      "source": "Ars Technica",
+      "date": "Jun 14, 2026",
+      "summary": "A critical Linux kernel vulnerability (CVE-2026-38471) disclosed this week allows unprivileged local users to escalate to root through a single-character bug in the key management subsystem \u2014 a missing bounds check from a misplaced parenthesis. The flaw, present since kernel 5.15, affects virtually all Linux distributions. Ubuntu, RHEL, and Debian shipped emergency patches over the weekend. The bug is a one-character typo that went undetected for over 3 years.",
+      "url": "https://arstechnica.com/security/2026/06/a-single-errant-character-in-the-linux-kernel-allows-attacker-to-gain-root/"
     },
     {
       "category": "AI",
-      "cols": 6,
-      "title": "ChatGPT's Global Market Share Falls Below 50% for First Time",
+      "cols": 4,
+      "title": "Google Search Transforms into AI Agent Platform \u2014 Link-Based Results Retired",
       "source": "TechCrunch",
-      "date": "Jun 16, 2026",
-      "summary": "ChatGPT's share of the AI chatbot market has slipped below 50% for the first time, a symbolic milestone for the industry. The chatbot retains 1.1 billion monthly active users but faces accelerating competition: Gemini at 662 million MAU and Claude at 245 million. The share erosion reflects the market's structural shift from a single-player landscape to a multi-model ecosystem where enterprises route queries to the best model per task rather than defaulting to one provider. The metric also underscores why OpenAI is racing to IPO: capital requirements for frontier model training are immense, and maintaining market leadership requires sustained investment that private markets may not support indefinitely.",
-      "url": "https://techcrunch.com/2026/06/16/chatgpts-market-share-slips-below-50-for-first-time/"
+      "date": "May 19, 2026",
+      "summary": "At Google I/O 2026, the company announced the most radical Search redesign in its history: replacing blue links with AI-generated conversational answers backed by autonomous agents that book travel, compare products across retailers, and execute purchases \u2014 all within Search. Publishers estimate 40\u201360% declines in referral traffic. The move positions Google Search as a walled-garden AI platform rather than the open web's gateway.",
+      "url": "https://techcrunch.com/2026/05/19/google-search-as-you-know-it-is-over/"
     },
     {
       "category": "AI",
       "cols": 6,
-      "title": "Threads Surpasses 500M Monthly Users, Adds AI-Powered 'Your Algo' Feed Controls",
-      "source": "TechCrunch / The Verge",
-      "date": "Jun 16, 2026",
-      "summary": "Meta's Threads crossed 500 million monthly active users, hitting the milestone just shy of the platform's third anniversary. Daily active users continue to 'increase strongly across the globe,' with growth entirely driven by Communities features. Threads also launched 'Your Algo,' a tool giving users direct control over feed personalization — a departure from the algorithmic opacity that has drawn regulatory scrutiny to Meta's other platforms. The launch positions Threads as a testing ground for user-controlled AI curation. CEO Mark Zuckerberg has said Threads could reach 1 billion users.",
-      "url": "https://techcrunch.com/2026/06/16/threads-adds-new-personalization-and-community-features-as-it-reaches-500m-monthly-users/"
+      "title": "Claude Fable 5 Jailbroken in 24 Hours via Multi-Agent 'Pack Hunt' Decomposition Attack",
+      "source": "Pasquale Pillitteri / Medium/TechX",
+      "date": "Jun 11, 2026",
+      "summary": "Red-teamer Pliny the Liberator publicly jailbroke Anthropic's Fable 5 within 24 hours of its June 9 launch using a 'multi-agent pack hunt.' The attack decomposed harmful requests into innocuous sub-questions that individually fell below Anthropic's safety classifier threshold, then reassembled outputs externally. Pliny also leaked Fable 5's 120,000-character system prompt on GitHub \u2014 the first complete system prompt leak of a Mythos-class model. Security researchers noted the technique targets natural language instructions in the system prompt rather than model weights, creating a public roadmap for adversarial prompt engineering. Anthropic's safety design routed dangerous requests silently to Claude Opus 4.8; the attack exploited this fallback isolation. Pasquale Pillitteri's forensic analysis showed the bypass was not a model-weight exploit but a decomposition/recomposition chain.",
+      "url": "https://pasqualepillitteri.it/en/news/4730/claude-fable-5-jailbreak-pliny-hype-vs-facts"
+    },
+    {
+      "category": "HARDWARE",
+      "cols": 4,
+      "title": "Computex 2026: Nvidia RTX Spark, Intel Arc G3 Extreme, Samsung 4K 360Hz QD-OLED",
+      "source": "PCWorld",
+      "date": "Jun 5, 2026",
+      "summary": "Computex 2026 delivered a wave of PC hardware innovation. Nvidia debuted RTX Spark, a 20-core CPU with a Blackwell GPU (6,144 CUDA cores, matching the RTX 5070) and up to 128GB LPDDR5X, shipping in laptops and mini PCs this fall. Intel showed Arc G3 Extreme, a handheld-focused processor claiming 44% gen-over-gen frame rate gains and 42% better efficiency vs AMD's Z2 Extreme \u2014 at 17W it matches the Z2 Extreme at 35W. Samsung announced the world's first 32-inch 4K 360Hz QD-OLED panel (680Hz at 1080p) with VESA DisplayHDR True Black 600. AMD extended AM5 socket support to 2029. Dell launched a $599 XPS 13 with Intel Panther Lake/Wildcat Lake options. Microsoft unveiled the Surface Laptop Ultra with Nvidia Arm silicon, capable of running 120B-parameter models.",
+      "url": "https://www.pcworld.com/article/3156200/best-of-computex-2026-the-most-intriguing-and-innovative-pc-hardware.html"
+    },
+    {
+      "category": "HARDWARE",
+      "cols": 4,
+      "title": "SpaceX Prices Record $75 Billion IPO at $135/Share \u2014 Largest Public Debut in History",
+      "source": "Reuters / TechCrunch",
+      "date": "Jun 11, 2026",
+      "summary": "SpaceX priced its initial public offering at $135 per share on June 11, selling 555.6 million shares to raise a record $75 billion \u2014 the largest IPO in history. Shares opened at $150 and hit $176 on debut, valuing the company above $2 trillion and placing it among the top 10 most valuable public companies. The IPO included retail allocation of 30%, a rare move for such a large listing. SpaceX's Grok AI model business is now public alongside rocket and Starlink operations. The IPO marks the beginning of what analysts are calling 'the hot IPO summer of 2026' alongside Anthropic and OpenAI's pending public filings. Elon Musk's net worth surged as SpaceX began public trading under the ticker SPCX.",
+      "url": "https://techcrunch.com/2026/06/11/spacex-officially-prices-shares-at-135-in-the-largest-ipo-ever/"
+    },
+    {
+      "category": "HARDWARE",
+      "cols": 4,
+      "title": "Global Semiconductor Sales Hit $298.5B in Q1 \u2014 On Track for $1.3T in 2026",
+      "source": "Tom's Hardware / SIA",
+      "date": "Jun 12, 2026",
+      "summary": "Chip sales surged 25% QoQ in Q1 2026 driven by AI accelerator demand and a memory crunch pushing DRAM and NAND prices up 40%. The Semiconductor Industry Association now projects $1.3 trillion for the full year. The memflation trend is beginning to hit consumer electronics pricing, with laptop and smartphone manufacturers reporting 8\u201312% component cost increases.",
+      "url": "https://www.tomshardware.com/tech-industry/semiconductors/global-semiconductor-sales-hit-nearly-usd300-billion-in-q1-2026-chips-are-on-track-to-top-usd1-trillion-for-this-year-says-report"
+    },
+    {
+      "category": "HARDWARE",
+      "cols": 4,
+      "title": "NAVER and NVIDIA Announce Gigawatt-Scale AI Factories in South Korea",
+      "source": "unrot.co / Reuters",
+      "date": "Jun 7, 2026",
+      "summary": "NAVER and NVIDIA announced a massive AI infrastructure buildout in South Korea, expanding NAVER's GAK Sejong data center from 55MW to gigawatt capacity by 2028 using the NVIDIA DSX platform. The scaled buildout will power next-gen HyperCLOVA X models, the Seoul World Model (NVIDIA Cosmos + NAVER 3D spatial data for a digital twin of Seoul), and NemoClaw-based robotics AI. Jensen Huang appeared in Seoul for the announcement. The 'sovereign AI' model \u2014 domestically controlled, locally processed, compliant with Korean data sovereignty \u2014 is positioned as replicable for Europe and the Middle East. NAVER shares rose 9.2% on the news. The buildout proceeds in phases: 55MW by H1 2027, 100MW by late 2027, 200MW by 2028, then gigawatt.",
+      "url": "https://unrot.co/blogs/ai-news-today-june-15-2026"
     },
     {
       "category": "SECURITY",
@@ -184,70 +238,142 @@
     }
   ],
   "physicsContent": [
-    {"type": "section_heading", "text": "EXPLANATION"},
-    {"type": "heading", "text": "The Thermodynamics of Information: What Bit Erasure Costs the Universe"},
-    {"type": "paragraph", "text": "If you write code, you delete variables every millisecond — clearing registers, flushing caches, discarding intermediate tensors. Every one of those operations, at the physical level, incurs a thermodynamic debt. The insight that information is not an abstract mathematical construct but a physical quantity with measurable energetic consequences traces back to Maxwell's demon — a thought experiment from 1867 in which a tiny being appeared to violate the second law of thermodynamics by sorting molecules, creating a temperature gradient without doing work. The paradox stood unresolved for a century until Rolf Landauer (1961) and Charles Bennett (1982) identified the loophole: the demon must erase its memory to operate cyclically, and that erasure has a minimum energy cost."},
-    {"type": "paragraph", "text": "Landauer's principle — that erasing one bit of information at temperature \\(T\\) dissipates at least \\(k_B T \\ln 2\\) of heat — established that information is physical. At room temperature (300 K), this bound is approximately \\(2.87 \\times 10^{-21}\\) J per bit, or 0.018 eV. Modern CMOS transistors dissipate roughly \\(10^{-15}\\) to \\(10^{-13}\\) J per operation — six to eight orders of magnitude above the Landauer limit. This gap is not an engineering inefficiency; it reflects real-world constraints (finite time, modularity, precision) that stochastic thermodynamics now quantifies precisely."},
-    {"type": "paragraph", "text": "In 2024–2025, the field accelerated dramatically. A major PNAS paper (Wolpert et al., 2024) argued that traditional Landauer bounds are insufficient for analyzing real computers, which must operate under time, space, and precision constraints. Meanwhile, Hsieh (2025, Physical Review Letters) proved a dynamical Landauer principle: a quantum channel's capacity to transmit \\(k\\) bits is equivalent to its capacity to transmit \\(k \\cdot k_B T \\ln 2\\) of energy — unifying Shannon information theory with thermodynamic work at the foundational level. The wall between thermodynamics and information theory has collapsed."},
-    {"type": "subheading", "text": "The Landauer Bound and Its Generalizations"},
-    {"type": "formula", "text": "\\[ \\Delta Q \\geq k_B T \\ln 2 \\]"},
-    {"type": "paragraph", "text": "Landauer's bound is deceptively simple: erasing a bit (a logically irreversible operation mapping two input states to one output state) must dissipate at least \\(k_B T \\ln 2\\) as heat. The modern quantum-information formulation by Reeb and Wolf sharpens this to an exact equality:"},
-    {"type": "formula", "text": "\\[ \\beta \\Delta Q = \\Delta S + I(\\mathcal{S}' : R') + S(\\rho_R' \\| \\rho_R) \\geq \\Delta S \\]"},
-    {"type": "paragraph", "text": "Here \\(\\beta = 1/(k_B T)\\), \\(\\Delta S\\) is the change in von Neumann entropy, \\(I(\\mathcal{S}' : R')\\) is mutual information between system and reservoir after interaction, and \\(S(\\rho_R' \\| \\rho_R)\\) is the quantum relative entropy of the reservoir — a direct measure of free energy irretrievably lost to the environment."},
-    {"type": "subheading", "text": "Jarzynski Equality: Far-From-Equilibrium Thermodynamics"},
-    {"type": "formula", "text": "\\[ \\langle e^{-\\beta W} \\rangle = e^{-\\beta \\Delta F} \\]"},
-    {"type": "paragraph", "text": "For a system driven arbitrarily far from equilibrium, the Jarzynski equality relates the fluctuating work \\(W\\) over non-equilibrium trajectories to the equilibrium free-energy difference \\(\\Delta F\\). This is remarkable: an exponential average of a far-from-equilibrium quantity yields an equilibrium quantity. Crooks generalized this:"},
-    {"type": "formula", "text": "\\[ \\frac{P_F(W)}{P_R(-W)} = e^{\\beta (W - \\Delta F)} \\]"},
-    {"type": "paragraph", "text": "where \\(P_F(W)\\) and \\(P_R(-W)\\) are forward and reverse work distributions. At \\(W = \\Delta F\\), the two distributions cross — a symmetry exploited for free-energy estimation in drug binding and, increasingly, for training energy-based models in ML."},
-    {"type": "subheading", "text": "The Dynamical Landauer Principle (Hsieh, 2025)"},
-    {"type": "formula", "text": "\\[ C_{\\varepsilon}^{\\mathcal{R}}(\\mathcal{E}) \\approx \\frac{1}{k_B T \\ln 2} \\, W_{\\varepsilon}^{\\mathcal{R}}(\\mathcal{E}) \\]"},
-    {"type": "paragraph", "text": "Transmitting \\(k\\) bits of classical information through a quantum channel is equivalent (up to small error terms) to transmitting \\(k \\cdot k_B T \\ln 2\\) of work-energy. This unifies Shannon and thermodynamics: information capacity and energy capacity are two faces of the same physical quantity."},
-    {"type": "subheading", "text": "Why This Matters for ML/AI Engineers"},
-    {"type": "paragraph", "text": "Training a frontier model already costs tens of millions in electricity. Inference at scale (ChatGPT serves ~10M queries daily) may ultimately dominate. Landauer's principle provides a hard floor under the energy cost of irreversible computation, and stochastic thermodynamics reveals that realistic constraints push the actual floor far higher. The Jarzynski equality is mathematically identical to the importance-sampling identities underpinning Annealed Importance Sampling (AIS) and score-based generative models — the 2025 arXiv paper by Guo, Tao, and Chen provides the first non-asymptotic complexity bounds for these methods using tools drawn directly from stochastic thermodynamics."},
-    {"type": "paragraph", "text": "Algorithmic choices — reducing complexity from \\(O(N^2)\\) to \\(O(N \\log N)\\), pruning to sparsity, quantization, early exiting — are not just performance optimizations; they are thermodynamic optimizations. And a growing community is exploring thermodynamic computing: designing physical systems (analog circuits, nanomagnetic arrays) that naturally solve sampling and optimization problems by relaxing to equilibrium. In the era of trillion-parameter models, computer science and thermodynamics are, irreducibly, the same subject."}
+    {
+      "type": "section_heading",
+      "text": "EXPLANATION"
+    },
+    {
+      "type": "heading",
+      "text": "Surface Codes: The Backbone of Practical Quantum Error Correction"
+    },
+    {
+      "type": "paragraph",
+      "text": "Quantum error correction (QEC) is the central challenge standing between noisy near-term quantum processors and fault-tolerant quantum computers. Among all QEC codes, the surface code family has emerged as the leading candidate because of its high error threshold (~11%), planar 2D geometry matching superconducting qubit layouts, and tolerance to measurement errors. First proposed by Kitaev (toric code, 1997) and later adapted to planar geometries by Bravyi and Kitaev, surface codes encode logical qubits into the collective state of many physical qubits arranged on a 2D lattice."
+    },
+    {
+      "type": "paragraph",
+      "text": "The core idea: place physical qubits on the edges of a square lattice. Define two types of stabilizer measurements: plaquette operators \\(B_p = X \\otimes X \\otimes X \\otimes X\\) (product of Pauli-\\(X\\) on the four qubits of each square) and star operators \\(A_s = Z \\otimes Z \\otimes Z \\otimes Z\\) (product of Pauli-\\(Z\\) on the four qubits meeting at each vertex). The codespace is the simultaneous +1 eigenspace of all stabilizers, meaning \\(A_s|\\psi\\rangle = |\\psi\\rangle\\) and \\(B_p|\\psi\\rangle = |\\psi\\rangle\\) for all vertices \\(s\\) and plaquettes \\(p\\). On an \\(N \\times N\\) lattice with periodic boundaries (torus), \\(2N^2\\) physical qubits encode 2 logical qubits."
+    },
+    {
+      "type": "formula",
+      "text": "\\[ \\text{Stabilizers:}\\quad A_s = \\bigotimes_{i \\in \\text{star}(s)} Z_i, \\quad B_p = \\bigotimes_{i \\in \\text{plaquette}(p)} X_i \\]"
+    },
+    {
+      "type": "paragraph",
+      "text": "Errors are detected through the stabilizer measurement syndrome: each stabilizer is measured in every QEC cycle, returning +1 (no error detected) or -1 (error detected). A single-qubit bit-flip error (\\(X\\)) flips the two adjacent plaquette stabilizers; a phase-flip error (\\(Z\\)) flips the two adjacent star stabilizers. Because stabilizers are local (only involving 4 qubits), errors produce local signatures. The decoder's job is to find the most likely error chain consistent with the measured syndrome, which in practice maps to a minimum-weight perfect matching problem on a graph. The logical error rate scales as \\(p_L \\propto (p/p_{\\text{th}})^{\\lfloor (d+1)/2 \\rfloor}\\) where \\(p\\) is the physical error rate, \\(p_{\\text{th}} \\approx 0.11\\) is the threshold, and \\(d\\) is the code distance."
+    },
+    {
+      "type": "subheading",
+      "text": "Google's Dynamic Surface Codes Breakthrough"
+    },
+    {
+      "type": "paragraph",
+      "text": "In January 2026, Google Quantum AI demonstrated a fundamental extension of surface code QEC on their Willow processor: dynamic circuits that alternate between different tiling patterns each cycle. Standard surface codes use a fixed tiling of detecting regions (static square lattice). Google showed three dynamic variants that each solve specific hardware limitations. The hexagonal lattice reduces couplers per qubit from 4 to 3, simplifying frequency optimization. The walking circuit periodically swaps data and measure qubit roles, eliminating leakage on data qubits without extra gates \u2014 reducing time-correlated errors by an order of magnitude. The iSWAP gate code replaces CZ gates with iSWAP gates that avoid non-computational states, generating fewer correlated errors. All three performed below threshold, with error suppression improving with code distance."
+    },
+    {
+      "type": "formula",
+      "text": "\\[ p_L \\propto \\left(\\frac{p}{p_{\\text{th}}}\\right)^{\\lfloor (d+1)/2 \\rfloor} \\quad \\text{where } p_{\\text{th}} \\approx 0.11, \\, d = \\text{code distance} \\]"
+    },
+    {
+      "type": "paragraph",
+      "text": "The practical significance: dynamic circuits decouple the hardware geometry from the error correction topology. A square-lattice processor can simulate a hexagonal code by turning off some couplers. A failed qubit or coupler (dropout) can be circumvented by re-tiling the detecting regions \u2014 no hardware redesign needed. This opens the path to co-designing quantum hardware and error correction protocols, with Google targeting fewer than 1 error per million QEC cycles as their next milestone. Alongside recent color code demonstrations, dynamic surface codes establish multiple viable paths to fault-tolerant quantum computing."
+    },
+    {
+      "type": "subheading",
+      "text": "Why This Matters for ML Researchers"
+    },
+    {
+      "type": "paragraph",
+      "text": "The decoding problem for surface codes \u2014 finding the most likely error configuration consistent with noisy syndrome measurements \u2014 is a latent-variable inference problem on a graphical model. Recent work applies neural belief propagation and transformer-based decoders that outperform traditional MWPM on circuit-level noise. For PGDR researchers specifically, surface code decoders face a distribution shift problem: decoder training data comes from low-noise regimes, but decoders must generalize to rare high-noise events (logical errors). Robustness techniques from the worst-group generalization literature could directly improve decoder reliability at the system level, where a single undetected logical error can invalidate an entire quantum computation."
+    }
   ],
   "mathContent": [
-    {"type": "section_heading", "text": "CONCEPT"},
-    {"type": "heading", "text": "The Fourier Transform: Decomposing the Universe into Pure Frequencies"},
-    {"type": "paragraph", "text": "The Fourier Transform is one of the most profound ideas in mathematics — a bridge between the world of time and the world of frequency. Its central insight: any signal, no matter how messy, can be expressed as a sum of pure sine waves, each with its own amplitude and phase. It is a mathematical prism: just as a prism splits white light into a rainbow of pure colors, the Fourier Transform takes a jumbled signal — a sound recording, a radio wave, the wobbling of a bridge — and separates it into the clean, elementary frequencies that compose it."},
-    {"type": "paragraph", "text": "Fourier's original motivation was the heat equation: he wanted to understand how temperature diffuses along a metal rod. His radical proposal — that even a sharp, discontinuous step function could be written as an infinite sum of smooth cosine waves — was so controversial that Lagrange and Laplace rejected his 1807 paper. Today, it powers everything from MP3 compression and MRI machines to quantum mechanics and the study of prime numbers. Its efficient cousin, the Fast Fourier Transform (FFT), has been called one of the most important algorithms of the 20th century."},
-    {"type": "subheading", "text": "The Fourier Transform Pair"},
-    {"type": "formula", "text": "\\[ \\hat{g}(f) = \\int_{-\\infty}^{\\infty} g(t)\\, e^{-2\\pi i f t} \\, dt \\]"},
-    {"type": "formula", "text": "\\[ g(t) = \\int_{-\\infty}^{\\infty} \\hat{g}(f)\\, e^{2\\pi i f t} \\, df \\]"},
-    {"type": "paragraph", "text": "These two integrals are mirror images. The forward transform \\(\\hat{g}(f)\\) tells you 'how much' of frequency \\(f\\) is present in signal \\(g(t)\\). The inverse transform reconstructs the original signal from its frequency components. Together they form a transform pair — perfect reconstruction, no information lost."},
-    {"type": "subheading", "text": "Intuition via the Winding Machine"},
-    {"type": "paragraph", "text": "To understand why this works, imagine wrapping your signal \\(g(t)\\) around a circle at a chosen 'winding frequency' \\(f\\). At each instant \\(t\\), you form \\(g(t)e^{-2\\pi i f t}\\) — the signal value placed at angle \\(-2\\pi f t\\) on the complex plane. If the winding frequency matches a frequency present in the signal, the wrapped graph is lopsided: peaks align on one side, pushing the center of mass away from the origin. If the winding frequency does not match, values spread evenly around the circle, and the center of mass stays near zero. The Fourier Transform is precisely this center of mass — scaled by duration — evaluated at every possible winding frequency."},
-    {"type": "subheading", "text": "Derivation from Fourier Series"},
-    {"type": "paragraph", "text": "Begin with the complex Fourier series for a periodic function of period \\(T\\): \\(g(t) = \\sum_{n=-\\infty}^{\\infty} c_n e^{2\\pi i n t / T}\\) with \\(c_n = \\frac{1}{T} \\int_{-T/2}^{T/2} g(t) e^{-2\\pi i n t / T} dt\\). Now let \\(T \\to \\infty\\). The discrete frequencies \\(f_n = n/T\\) become a continuum. Define \\(\\hat{g}(f_n) = T c_n\\). The Fourier series sum becomes a Riemann sum converging to an integral — yielding the Fourier Transform pair in its most elegant, symmetric form. The factor of \\(1/T\\) is absorbed into the transform convention: a frequency that persists longer produces a larger transform magnitude."},
-    {"type": "subheading", "text": "The Convolution Theorem — Where the Magic Happens"},
-    {"type": "formula", "text": "\\[ \\mathcal{F}\\{g * h\\} = \\hat{g}(f) \\cdot \\hat{h}(f) \\]"},
-    {"type": "paragraph", "text": "Convolution in the time domain — a messy, \\(O(n^2)\\) operation where \\((g * h)(t) = \\int_{-\\infty}^{\\infty} g(\\tau) h(t - \\tau) d\\tau\\) — becomes simple multiplication in the frequency domain. This is why the FFT is so powerful: filtering, blurring, template matching, and polynomial multiplication all reduce to pointwise multiplication of transforms. The entire signal processing industry — audio, image, video compression — rests on this theorem."},
-    {"type": "paragraph", "text": "The Fourier Transform embodies mathematics at its most elegant: a single integral that decomposes any function into an orthogonal basis. It reveals that complexity is often a matter of perspective — what looks chaotic in one domain becomes beautifully simple in another. It doesn't just solve equations; it changes how we see."},
-    {"type": "video", "video": {
-      "title": "But what is the Fourier Transform? A visual introduction.",
-      "channel": "3Blue1Brown",
-      "duration": "20:56",
-      "url": "https://www.youtube.com/watch?v=spUNpyF58BY"
-    }},
-    {"type": "video", "video": {
-      "title": "Epicycles, complex Fourier series and Homer Simpson's orbit",
-      "channel": "Mathologer",
-      "duration": "25:35",
-      "url": "https://www.youtube.com/watch?v=qS4H6PEcCCA"
-    }}
+    {
+      "type": "section_heading",
+      "text": "CONCEPT"
+    },
+    {
+      "type": "heading",
+      "text": "Darts in Higher Dimensions \u2014 Probability Meets Volumes of Even-Dimensional Balls"
+    },
+    {
+      "type": "paragraph",
+      "text": "A deceptively simple dartboard puzzle produces a beautiful connection between probability, high-dimensional geometry, and Euler's number \\(e\\). The game: throw darts uniformly at random at a square board of side length 2. The bullseye is a circle of radius 1 centered inside. After each hit, the bullseye shrinks: the new radius equals the perpendicular distance from the center to the chord drawn through your previous hit. Question: what is the expected score of a random player? The answer is \\(e^{\\pi/4} \\approx 2.193\\), derived without calculus by recognizing hidden high-dimensional geometry."
+    },
+    {
+      "type": "paragraph",
+      "text": "The derivation proceeds by induction. The probability of hitting the first dart is simply the area ratio: \\(P(\\text{score} \\geq 2) = \\pi/4\\). After the first hit at distance \\(h_0\\) from center, the new radius is \\(r_1 = \\sqrt{1 - h_0^2}\\). The second dart must land inside a circle of this radius. The joint condition for both darts is \\(x_0^2 + y_0^2 + x_1^2 + y_1^2 < 1\\), which uses 4 coordinates \u2014 equivalently, a point in 4-dimensional space inside a 4-ball of radius 1. The probability of two hits is the volume of a 4-ball divided by the volume of the enclosing 4-cube of side 2."
+    },
+    {
+      "type": "formula",
+      "text": "\\[ P(\\text{score} \\geq n+1) = \\frac{\\text{Vol}(B^{2n})}{\\text{Vol}(C^{2n})} = \\frac{\\pi^n / n!}{4^n} = \\frac{(\\pi/4)^n}{n!} \\]"
+    },
+    {
+      "type": "paragraph",
+      "text": "The volume of a \\(2n\\)-dimensional ball of radius 1 is \\(\\pi^n / n!\\). The volume of the containing \\(2n\\)-cube of side 2 is \\(2^{2n} = 4^n\\). So the probability of hitting \\(n+1\\) darts (i.e., surviving \\(n\\) consecutive hits) is \\((\\pi/4)^n / n!\\). The expected score is the sum over all survival probabilities from \\(k=1\\) to \\(\\infty\\) of \\(P(\\text{score} \\geq k)\\): the first term is 1 (you always throw at least once), then \\(\\pi/4\\), then \\((\\pi/4)^2/2!\\), then \\((\\pi/4)^3/3!\\), and so on \u2014 exactly the Taylor series for \\(e^x\\) evaluated at \\(x = \\pi/4\\)."
+    },
+    {
+      "type": "formula",
+      "text": "\\[ \\mathbb{E}[\\text{score}] = \\sum_{k=1}^{\\infty} P(\\text{score} \\geq k) = 1 + \\frac{\\pi}{4} + \\frac{(\\pi/4)^2}{2!} + \\frac{(\\pi/4)^3}{3!} + \\cdots = e^{\\pi/4} \\]"
+    },
+    {
+      "type": "paragraph",
+      "text": "This result, originally due to science fiction author Greg Egan, illustrates a powerful technique: encoding many random variables as a single point in high-dimensional space and computing probabilities as volume ratios. The volumes of high-dimensional balls become extremely small \u2014 a 100-dimensional ball of radius 1 occupies only about \\(2.368 \\times 10^{-40}\\) of its enclosing cube \u2014 which explains why high-dimensional probability is dominated by thin shells near the surface rather than the central region. Grant Sanderson (3Blue1Brown) gives a masterful visual explanation of why the series naturally sums to \\(e\\) without ever explicitly writing a Taylor expansion."
+    },
+    {
+      "type": "video",
+      "video": {
+        "title": "Darts in Higher Dimensions (with 3Blue1Brown) \u2014 Numberphile",
+        "channel": "Numberphile",
+        "duration": "32:11",
+        "url": "https://www.youtube.com/watch?v=6_yU9eJ0NxA"
+      }
+    }
   ],
   "deepContent": [
-    {"type": "section_heading", "text": "ANALYSIS"},
-    {"type": "heading", "text": "SpaceX's $60B Cursor Acquisition: The Most Consequential AI Deal of 2026"},
-    {"type": "paragraph", "text": "On June 16, 2026, SpaceX exercised its option to acquire AI coding assistant Cursor for $60 billion in an all-stock deal — four days after its record $75B IPO. This is not a rocket company buying a coding tool. This is an infrastructure company securing the demand layer that justifies its infrastructure, an IPO narrative crystallizing into a balance-sheet asset, and the most strategically coherent vertical integration play in AI history. The deal redefines the competitive landscape at a moment when the entire industry is being reshuffled by government action, market maturation, and the shift from editing to agentic coding."},
-    {"type": "subheading", "text": "The Three-Bet Framework"},
-    {"type": "paragraph", "text": "The SpaceX-Cursor deal is best understood as three simultaneous bets. Bet 1 — Compute + Killer App: Colossus, the Memphis supercomputer with ~1M H100 equivalents inherited from the xAI merger, needs workload. Cursor's 1M+ daily active developers generating 150M lines of enterprise code daily provide exactly that. The unit economics improve immediately: Cursor's Composer models, running on SpaceX-owned infrastructure, eliminate the margin they were paying to Anthropic and OpenAI for model access. Bet 2 — Distribution Moat: Cursor's embedded workflow inside 67% of Fortune 500 companies is a moat that cannot be replicated by compute alone. Every Cursor user is now a SpaceX customer. Bet 3 — IPO Narrative: A $60B AI coding asset transforms SpaceX's roadshow, providing the bridge between the $2.4T AI infrastructure TAM and the $22.7T enterprise application TAM claimed in the S-1."},
-    {"type": "subheading", "text": "The Anthropic Export Ban Gift"},
-    {"type": "paragraph", "text": "The most explosive competitive dimension is timing. On June 13 — two days after SpaceX's IPO and three days before the Cursor acquisition closed — the U.S. government ordered Anthropic to suspend foreign access to its most advanced models, Fable 5 and Mythos 5. Anthropic, unable to guarantee compliance, disabled both models globally. Claude Code — Cursor's most dangerous competitor, which had surpassed Cursor's revenue run rate at $2.5B/month and held dramatically higher satisfaction scores (46% 'most-loved' vs. Cursor's 19%) — is now hamstrung by regulatory action. The export ban does not affect SpaceX/Cursor. If this asymmetry persists, Cursor faces a competitive environment where its biggest rival is partially disabled by government decree."},
-    {"type": "subheading", "text": "The Vertical Integration Endgame"},
-    {"type": "paragraph", "text": "SpaceX is building something unprecedented: a fully integrated AI stack spanning from the developer's keyboard to orbit: Developer to Cursor IDE to Composer Models to Colossus Supercomputer to Starlink Network to Orbital Data Centers (AI1 satellites, 2027+). When Colossus hits terrestrial limits (power, cooling, land), overflow goes to orbit — where solar power is abundant and cooling is free. Cursor's code-generation workloads are the ideal payload: latency-tolerant, massively parallel, and growing exponentially."},
-    {"type": "subheading", "text": "Risks and Contradictions"},
-    {"type": "paragraph", "text": "The deal is not without serious risks. Cursor's Composer models are built on Chinese open-source foundations (DeepSeek, Kimi, Qwen) — problematic optics in an environment where the U.S. just banned Anthropic's models. The xAI merger hangover (all 11 co-founders departed by March 2026) means SpaceX is rebuilding its AI division from scratch. At 30x revenue ($60B for $2B ARR), the price is steep for a company that wasn't break-even. And the agentic coding threat hasn't disappeared — if the Anthropic ban is resolved, Claude Code's competitive pressure returns immediately."},
-    {"type": "paragraph", "text": "One thing is certain: the AI industry woke up on June 16, 2026 to a new competitive reality. The company that launches rockets now also launches code. The company that builds Starlink terminals now also builds the tools that write the software for them. And the company run by the world's first trillionaire just placed a $60 billion bet that the future of AI isn't just about models — it's about owning the entire chain from the developer's hands to the satellites in orbit."}
+    {
+      "type": "section_heading",
+      "text": "ANALYSIS"
+    },
+    {
+      "type": "heading",
+      "text": "The Pack Hunt Jailbreak: Why Frontier AI Safety Is Fundamentally Harder Than It Looks"
+    },
+    {
+      "type": "paragraph",
+      "text": "The jailbreak of Anthropic's Fable 5 within 24 hours of release \u2014 followed by a US government export ban that pulled the model globally \u2014 marks a pivotal moment for frontier AI safety. The 'pack hunt' technique used by Pliny the Liberator was not a sophisticated model-weight exploit. It was a decomposition attack: break a harmful request into benign sub-questions that individually fall below the classifier threshold, extract each piece from the model, then reassemble externally. This is possible because safety classifiers operate on individual turns, not on the compositional intent across turns. The attacker maintains a multi-turn 'working memory' externally (or via a second model) to track what pieces have been gathered."
+    },
+    {
+      "type": "subheading",
+      "text": "The Classifier vs. Weights Distinction"
+    },
+    {
+      "type": "paragraph",
+      "text": "Anthropic's safety architecture for Fable 5 routes high-risk requests to a restricted fallback model (Claude Opus 4.8) via a classifier layer \u2014 it does not bake refusal behavior into Fable 5's weights. This design choice has a deep implication: the model retains latent capability for harmful tasks; it merely has a routing guardrail in front. When the classifier is bypassed via decomposition, the full capability is available. By contrast, refusal baked into model weights (e.g., via RLHF directly optimizing the policy to refuse harmful requests) is harder to bypass because the model literally loses the capability to complete harmful chains. Pliny's leaked 120,000-character system prompt \u2014 the first complete system prompt of a Mythos-class model \u2014 revealed the full extent of Anthropic's safety engineering and immediately became a public reference for adversarial prompt engineering."
+    },
+    {
+      "type": "subheading",
+      "text": "Why Decomposition Attacks Are Fundamentally Hard to Defend Against"
+    },
+    {
+      "type": "paragraph",
+      "text": "The decomposition/recomposition attack exploits a property of all current LLM architectures: the classifier operates on surface form, not on latent intent. There are exponentially many ways to decompose a request, and the attacker only needs one chain where each sub-query individually passes the classifier. This is a search problem for the attacker and a coverage problem for the defender. As model context windows grow (Fable 5's was likely very large given the 120K system prompt), the attacker's search space increases \u2014 they can embed sub-questions in long innocuous contexts where the classifier struggles to isolate intent. Recent research on multi-turn jailbreaking (arXiv:2601.05339, ACL 2025 REALM) shows decomposition attack success rates exceeding 90% across frontier models including GPT-4 and Gemini."
+    },
+    {
+      "type": "formula",
+      "text": "\\[ \\text{Attack complexity: } |\\mathcal{D}| = \\sum_{k=1}^{K} \\binom{N}{k} \\cdot f(k) \\;\\text{where } N \\text{ is sub-question vocabulary} \\]"
+    },
+    {
+      "type": "paragraph",
+      "text": "The search space of possible decompositions grows combinatorially with the number of sub-questions \\(k\\) and the vocabulary of benign phrasings \\(f(k)\\). This makes exhaustive coverage impossible \u2014 the defender must instead detect compositional intent, which requires reasoning about the relationship between queries rather than evaluating each independently. Current classifiers are fundamentally local: they evaluate each user turn without maintaining a latent representation of the attacker's overall goal across turns. Until models can reason about multi-turn intent, decomposition attacks will remain an open vulnerability."
+    },
+    {
+      "type": "subheading",
+      "text": "The Regulatory Ripple Effect"
+    },
+    {
+      "type": "paragraph",
+      "text": "The US government's response \u2014 an export control order banning foreign nationals from accessing Fable 5 and Mythos 5 \u2014 raises deeper questions. The ban was triggered by verbal evidence of a 'potential narrow, non-universal jailbreak,' a standard that Anthropic argues would halt all frontier model deployments if applied industry-wide. The selective enforcement (GPT-5.5 and Gemini 3.1 Pro remain unrestricted) suggests political motivations beyond pure safety: Anthropic's refusal to allow military domestic surveillance use, its ongoing lawsuit against the administration, and its impending IPO all likely factor in. The 'hardware sovereignty' movement \u2014 enterprises seeking to own and control AI infrastructure to avoid government recall risks \u2014 is a direct consequence. For the first time, model availability is a risk variable in enterprise procurement, and the lesson is clear: multi-vendor strategy, fallback to open-weight models, and self-hosted deployments are now operational necessities."
+    }
   ]
 }
