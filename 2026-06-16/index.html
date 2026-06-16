@@ -3,8 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.css">
+<script>
+MathJax = {
+  tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+  svg: { fontCache: 'global' },
+  options: { enableMenu: false }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 <script src="../claude design/support.js"></script>
 <link rel="stylesheet" href="../claude design/_ds/nishant-sharma-portfolio-design-system-acfe106c-c7e5-46cd-96cd-4b3b2923a881/tokens/fonts.css">
 <style>
@@ -19,7 +26,7 @@ html, body { height: 100%; font-family: 'IBM Plex Sans', system-ui, sans-serif; 
   --ph-bg: #FAF8F0; --ph-text: #2A2218; --ph-accent: #7A5218; --ph-fbg: rgba(122,82,24,0.05);
   --mt-bg: #F8F6EE; --mt-text: #1E1C18; --mt-accent: #9B6C00; --mt-fbg: rgba(155,108,0,0.05); --mt-vbg: rgba(155,108,0,0.07);
 }
-.katex { color: inherit; }
+.mjx-chtml { color: inherit; }
 </style>
 </head>
 <body>
@@ -94,10 +101,13 @@ function showTab(n) {
   if (window.katex) {
     document.querySelectorAll('.katex').forEach(el => {
       try {
-        const math = el.textContent.replace(/^\\[/, '').replace(/\\]$/, '').trim();
+        const math = el.textContent.replace(/^\[/, '').replace(/\]$/, '').trim();
         el.innerHTML = window.katex.renderToString(math, { displayMode: true });
       } catch(e) {}
     });
+  }
+  if (window.MathJax) {
+    MathJax.typesetPromise([document.getElementById('content')]).catch(e => {});
   }
 }
 
