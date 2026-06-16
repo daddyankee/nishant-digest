@@ -6,8 +6,14 @@
     <meta name="description" content="Britain bans social media for under-16s, Anthropic's internal turmoil exposes AI governance fault lines, SpaceX IPO reshapes the tech-finance landscape, and the Linux kernel falls to a single-character bug.">
     <title>Daily Digest — Tuesday, June 16, 2026</title>
 
-    <!-- Theme styles -->
+    <!-- Per-section theme styles (loaded first — section overrides in styles-section-themes.css) -->
     <link rel="stylesheet" href="../base/styles-modern-news.css">
+    <link rel="stylesheet" href="../base/styles-vintage-scholar.css">
+    <link rel="stylesheet" href="../base/styles.css">
+
+
+    <!-- Section-scoped theme variable overrides (loaded LAST to win specificity) -->
+    <link rel="stylesheet" href="../base/styles-section-themes.css">
 
     <!-- MathJax for mathematical notation -->
     <script>
@@ -68,7 +74,7 @@
 
             <!-- Sections -->
 
-    <section id="tech-news" class="section-card">
+    <section id="tech-news" class="section-card" data-theme-section="modern-news">
       <div class="section-header">
         <h2 class="section-title">Tech News & Industry Updates</h2>
         <span class="reading-time">8 min read</span>
@@ -186,7 +192,7 @@
 </section>
 
 
-    <section id="physics" class="section-card">
+    <section id="physics" class="section-card" data-theme-section="vintage-scholar">
       <div class="section-header">
         <h2 class="section-title">Physics — The Second Law and the Arrow of Time</h2>
         <span class="reading-time">7 min read</span>
@@ -213,7 +219,7 @@
 </section>
 
 
-    <section id="math" class="section-card">
+    <section id="math" class="section-card" data-theme-section="vintage-scholar">
       <div class="section-header">
         <h2 class="section-title">Mathematics — The Fourier Transform: From Circles to Signals</h2>
         <span class="reading-time">8 min read</span>
@@ -250,7 +256,7 @@
 </section>
 
 
-    <section id="random-topic" class="section-card">
+    <section id="random-topic" class="section-card" data-theme-section="claude">
       <div class="section-header">
         <h2 class="section-title">Deep Dive — The Transformer at 9: From Attention to Reasoning</h2>
         <span class="reading-time">10 min read</span>

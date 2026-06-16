@@ -139,8 +139,9 @@ function generateContentItem(item) {
  * Generate section HTML
  */
 function generateSection(section) {
+  const themeAttr = section.theme ? ` data-theme-section="${section.theme}"` : '';
   let html = `
-    <section id="${section.id}" class="section-card">
+    <section id="${section.id}" class="section-card"${themeAttr}>
       <div class="section-header">
         <h2 class="section-title">${section.title}</h2>
         <span class="reading-time">${section.readingMinutes} min read</span>
@@ -177,13 +178,34 @@ function getThemeStylesheet(theme) {
 }
 
 /**
+ * Collect all unique section themes
+ */
+function collectSectionThemes(sections) {
+  const themes = new Set();
+  sections.forEach(s => {
+    if (s.theme) themes.add(s.theme);
+  });
+  return Array.from(themes);
+}
+
+/**
  * Generate complete HTML document
  */
 function generateHTML(data) {
   const dateFormatted = formatDate(data.date);
   const dateShort = data.date;
-  const theme = data.theme || 'claude';
-  const themeStylesheet = getThemeStylesheet(theme);
+  const rootTheme = data.theme || 'claude';
+  const sectionThemes = collectSectionThemes(data.sections);
+
+  // Build CSS link tags: all section themes + section-scoped overrides
+  const themeLinks = sectionThemes.map(t => {
+    const href = getThemeStylesheet(t);
+    return `    <link rel="stylesheet" href="${href}">`;
+  }).join('\n');
+
+  // Ensure root theme is loaded last for global defaults (nav, body, footer)
+  const rootHref = getThemeStylesheet(rootTheme);
+  const rootLink = sectionThemes.includes(rootTheme) ? '' : `    <link rel="stylesheet" href="${rootHref}">`;
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -193,8 +215,12 @@ function generateHTML(data) {
     <meta name="description" content="${data.meta.topicTeaser}">
     <title>Daily Digest — ${dateFormatted}</title>
 
-    <!-- Theme styles -->
-    <link rel="stylesheet" href="${themeStylesheet}">
+    <!-- Per-section theme styles (loaded first — section overrides in styles-section-themes.css) -->
+${themeLinks}
+${rootLink}
+
+    <!-- Section-scoped theme variable overrides (loaded LAST to win specificity) -->
+    <link rel="stylesheet" href="../base/styles-section-themes.css">
 
     <!-- MathJax for mathematical notation -->
     <script>
