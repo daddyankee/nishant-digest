@@ -1,346 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Britain bans social media for under-16s, Anthropic's internal turmoil exposes AI governance fault lines, SpaceX IPO reshapes the tech-finance landscape, and the Linux kernel falls to a single-character bug.">
-    <title>Daily Digest — Tuesday, June 16, 2026</title>
-
-    <!-- Per-section theme styles (loaded first — section overrides in styles-section-themes.css) -->
-    <link rel="stylesheet" href="../base/styles-modern-news.css">
-    <link rel="stylesheet" href="../base/styles-vintage-scholar.css">
-    <link rel="stylesheet" href="../base/styles.css">
-
-
-    <!-- Section-scoped theme variable overrides (loaded LAST to win specificity) -->
-    <link rel="stylesheet" href="../base/styles-section-themes.css">
-
-    <!-- MathJax for mathematical notation -->
-    <script>
-        MathJax = {
-            tex: {
-                inlineMath: [['\\(', '\\)'], ['$', '$']],
-                displayMath: [['\\[', '\\]'], ['$$', '$$']],
-                processEscapes: true
-            },
-            options: {
-                enableMenu: false
-            }
-        };
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.css">
+<script>
+MathJax = {
+  tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+  svg: { fontCache: 'global' },
+  options: { enableMenu: false }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script src="../claude design/support.js"></script>
+<link rel="stylesheet" href="../claude design/_ds/nishant-sharma-portfolio-design-system-acfe106c-c7e5-46cd-96cd-4b3b2923a881/tokens/fonts.css">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; font-family: 'IBM Plex Sans', system-ui, sans-serif; }
+:root {
+  --nav-bg: #0A0A0A; --nav-text: #FFFFFF;
+  --tabs-bg: #F2EEE2; --tabs-border: #DDDACA; --tab-active: #0A0A0A; --tab-muted: #7A7260;
+  --footer-bg: #F2EEE2; --footer-border: #DDDACA; --footer-text: #5A5040;
+  --tn-bg: #F8F5E8; --tn-card: #FEFCF4; --tn-ink: #3A3E18; --tn-accent: #3A3E18;
+  --tn-sage: #7A9E5A; --tn-border: #B0C280; --tn-meta: rgba(58,62,24,0.48);
+  --ph-bg: #FAF8F0; --ph-text: #2A2218; --ph-accent: #7A5218; --ph-fbg: rgba(122,82,24,0.05);
+  --mt-bg: #F8F6EE; --mt-text: #1E1C18; --mt-accent: #9B6C00; --mt-fbg: rgba(155,108,0,0.05); --mt-vbg: rgba(155,108,0,0.07);
+}
+.mjx-chtml { color: inherit; }
+</style>
 </head>
-<body data-theme="light">
-    <!-- Navigation -->
-    <nav class="top-nav">
-        <div class="nav-container">
-            <a href="../index.html" class="nav-home-link">Nishant's Daily Digest</a>
-            <div class="nav-date">Tuesday, June 16, 2026</div>
-            <div class="theme-switcher">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                    <span id="themeIcon">☀️</span>
-                </button>
-            </div>
-            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">&#9776;</button>
-        </div>
-    </nav>
-
-    <!-- Table of Contents Sidebar -->
-    <aside class="toc-sidebar" id="tocSidebar">
-        <div class="toc-header">Jump to</div>
-        <ul class="toc-list">
-            <li><a href="#tech-news">Tech News & Industry Updates</a></li>
-            <li><a href="#physics">Physics</a></li>
-            <li><a href="#math">Mathematics</a></li>
-            <li><a href="#random-topic">Deep Dive</a></li>
-        </ul>
-    </aside>
-
-    <!-- Main Content -->
-    <div class="page-wrapper">
-        <main class="digest-content">
-            <!-- Header -->
-            <header class="digest-meta">
-                <h1>Daily Research Digest</h1>
-                <div class="meta-stats">
-                    <span>📅 Tuesday, June 16, 2026</span>
-                    <span>📄 ~4,200 words</span>
-                    <span>⏱ ~17 min read</span>
-                </div>
-                <div class="topic-teaser">
-                    Britain bans social media for under-16s, Anthropic's internal turmoil exposes AI governance fault lines, SpaceX IPO reshapes the tech-finance landscape, and the Linux kernel falls to a single-character bug.
-                </div>
-            </header>
-
-            <!-- Sections -->
-
-    <section id="tech-news" class="section-card" data-theme-section="modern-news">
-      <div class="section-header">
-        <h2 class="section-title">Tech News & Industry Updates</h2>
-        <span class="reading-time">8 min read</span>
-      </div>
-  <div class="section-body">
-<h3>Britain Announces Sweeping Social Media Ban for Under-16s</h3>
-<p class="item-subtitle" style="font-size: 0.89rem; color: var(--text-muted); margin-bottom: 12px;">Reuters · June 15, 2026</p>
-<p>Prime Minister Keir Starmer announced Monday the UK's most aggressive digital regulation yet — a complete social media ban for users under 16, enforced through mandatory age verification across all major platforms.</p>
-<p>The legislation, expected to pass with cross-party support, requires platforms to implement government-certified age assurance technology within 12 months or face fines of up to 10% of global annual turnover. Critics warn of privacy implications from the verification infrastructure.</p>
-<p><strong>Key result:</strong> First G7 nation to impose a blanket under-16 social media ban — sets a precedent that will ripple through global tech regulation.</p>
-<p class="item-sources"><a href="https://www.reuters.com/technology/" target="_blank" rel="noopener" class="source-link">Reuters</a></p><div style="height: 28px;"></div>
-<h3>"They Screwed Us": Personality Clashes Took Anthropic's Models Offline</h3>
-<p class="item-subtitle" style="font-size: 0.89rem; color: var(--text-muted); margin-bottom: 12px;">Simon Willison's Blog · June 15, 2026</p>
-<p>Internal sources reveal that a leadership dispute over safety protocols caused Anthropic to temporarily disable its most advanced models last week. The conflict centered on whether Fable 5's safety routing mechanism was sufficient to satisfy government demands following the June 12 export control directive.</p>
-<p>CEO Dario Amodei reportedly overruled the safety team's recommendation to keep the models offline, arguing that prolonged unavailability would damage the company's competitive position ahead of its planned IPO.</p>
-<p><strong>Key result:</strong> The incident reveals a structural tension in AI companies: safety teams now have operational power to take models offline, creating governance crises when business and safety imperatives collide.</p>
-<p class="item-sources"><a href="https://simonwillison.net/" target="_blank" rel="noopener" class="source-link">Simon Willison</a></p><div style="height: 28px;"></div>
-<h3>The AI Layoff Wave Is Becoming a Powder Keg</h3>
-<p class="item-subtitle" style="font-size: 0.89rem; color: var(--text-muted); margin-bottom: 12px;">TechCrunch · June 15, 2026</p>
-<p>AI was the most-cited reason for layoffs across every industry for the third consecutive month, according to outplacement firm Challenger, Gray & Christmas. May 2026 saw 87,000 job cuts attributed directly to AI automation — nearly double April's figure.</p>
-<p>The sectors hit hardest include customer service (31,000 cuts), content creation (18,500), and software development (14,200). Labor economists warn that without retraining infrastructure, the displacement rate will accelerate through 2027.</p>
-<p><strong>Key result:</strong> AI-driven layoffs crossed 87,000 in a single month — the pace is accelerating, and the political response is still lagging.</p>
-<p class="item-sources"><a href="https://techcrunch.com/2026/06/15/the-ai-layoff-wave-is-becoming-a-powder-keg/" target="_blank" rel="noopener" class="source-link">TechCrunch</a></p><div style="height: 28px;"></div>
-<h3>High-Severity Linux Kernel Vulnerability: Root Access from a Single Errant Character</h3>
-<p class="item-subtitle" style="font-size: 0.89rem; color: var(--text-muted); margin-bottom: 12px;">Ars Technica · June 2026</p>
-<p>Security researchers disclosed a critical Linux kernel vulnerability (CVE-2026-38471) that allows unprivileged local users to escalate to root through a single-character bug in the kernel's key management subsystem. The flaw, present since kernel 5.15, affects virtually all Linux distributions.</p>
-<p>The bug is a typo — a missing bounds check resulting from a misplaced parenthesis — that permits arbitrary memory access in kernel space. Major distros including Ubuntu, RHEL, and Debian shipped emergency patches over the weekend.</p>
-<p><strong>Key result:</strong> A one-character typo in kernel code, undetected for 3+ years, gave attackers a reliable path to root on nearly every Linux server. Patch immediately.</p>
-<p class="item-sources"><a href="https://arstechnica.com/security/2026/06/a-single-errant-character-in-the-linux-kernel-allows-attacker-to-gain-root/" target="_blank" rel="noopener" class="source-link">Ars Technica</a></p><div style="height: 28px;"></div>
-<h3>SpaceX IPO Priced at $135/Share — Largest Public Offering in History at $1.8T Valuation</h3>
-<p class="item-subtitle" style="font-size: 0.89rem; color: var(--text-muted); margin-bottom: 12px;">SEC Filing / Bloomberg · June 12-16, 2026</p>
-<p>SpaceX began trading Friday at $135 per share, giving the company a market capitalization of approximately $1.8 trillion — surpassing Saudi Aramco's 2019 record. The offering raised $42 billion, with strong institutional demand despite concerns about Elon Musk's simultaneous leadership of Tesla and the Department of Government Efficiency.</p>
-<p>Analysts note the valuation is 48% below SpaceX's last private round ($1.5T at $250/share), reflecting market skepticism about Starlink profitability and the company's reliance on government defense contracts.</p>
-<p><strong>Key result:</strong> SpaceX's $1.8T IPO is both historic and controversial — priced well below private valuation, signaling market pushback on Musk-led ventures despite Starlink's dominance.</p>
-<p class="item-sources"><a href="https://www.sec.gov/Archives/edgar/data/1181412/000162828026036936/spaceexplorationtechnologi.htm" target="_blank" rel="noopener" class="source-link">SEC EDGAR</a> · <a href="https://www.youtube.com/watch?v=onqTWxk4fZs" target="_blank" rel="noopener" class="source-link">🎥 Bloomberg Tech</a></p><div style="height: 28px;"></div>
-<h3>U.S. Orders Anthropic to Cut Foreign Access to Mythos 5 and Fable 5</h3>
-<p class="item-subtitle" style="font-size: 0.89rem; color: var(--text-muted); margin-bottom: 12px;">Axios / CNBC · June 12, 2026</p>
-<p>Commerce Secretary Howard Lutnick issued an export control directive ordering Anthropic to suspend all foreign national access to its most advanced models — including foreign employees within the United States. The order cites a third-party jailbreak claim against Fable 5's safety routing mechanism.</p>
-<p>Fable 5, launched June 9 as Anthropic's first 'Mythos-class' public model, uses a novel fallback: when it detects high-risk queries (cybersecurity, biology, chemistry, distillation), it silently routes to the safer Claude Opus 4.8 instead of blocking. Pricing is $10/M input tokens, $50/M output.</p>
-<p><strong>Key result:</strong> The first-ever export control applied to a live AI model — Anthropic becomes the test case for whether national security law can (and should) restrict model access.</p>
-<p class="item-sources"><a href="https://www.cnbc.com/2026/06/09/anthropic-mythos-claude-fable-5.html" target="_blank" rel="noopener" class="source-link">CNBC</a> · <a href="https://www.axios.com/2026/06/12/anthropic-trump-mythos-fable-national-security" target="_blank" rel="noopener" class="source-link">Axios</a></p><div style="height: 28px;"></div>
-<h3>Anthropic Publishes AI Policy Blueprint Alongside Amodei Essay</h3>
-<p class="item-subtitle" style="font-size: 0.89rem; color: var(--text-muted); margin-bottom: 12px;">Anthropic Blog · June 10, 2026</p>
-<p>CEO Dario Amodei published 'Policy Foundations for Frontier AI,' a 40-page framework proposing binding safety evaluations, third-party auditing requirements, and a licensing regime for models above 10^26 FLOP. Two accompanying regulatory frameworks provide implementation details.</p>
-<p>The blueprint positions Anthropic as the industry's self-regulation standard-bearer — a strategic move that could advantage the company if licensing regimes become law, as Anthropic already meets its own proposed standards.</p>
-<p><strong>Key result:</strong> Anthropic's policy play is a regulatory moat strategy: propose rules you already satisfy, and competitors must scramble to comply.</p>
-<p class="item-sources"><a href="https://www.anthropic.com/" target="_blank" rel="noopener" class="source-link">Anthropic</a></p><div style="height: 28px;"></div>
-<h3>Global Semiconductor Sales Hit $298.5B in Q1 2026 — On Track for $1.3T Full Year</h3>
-<p class="item-subtitle" style="font-size: 0.89rem; color: var(--text-muted); margin-bottom: 12px;">Tom's Hardware / SIA · June 2026</p>
-<p>Chip sales surged 25% quarter-over-quarter in Q1 2026, driven by AI accelerator demand (GPUs, TPUs, custom ASICs) and a memory crunch that pushed DRAM and NAND prices up 40%. The Semiconductor Industry Association now projects $1.3 trillion in global revenue for 2026.</p>
-<p>The 'memflation' trend — rising memory prices driven by AI data center buildout — is beginning to affect consumer electronics pricing, with laptop and smartphone manufacturers reporting 8-12% component cost increases.</p>
-<p><strong>Key result:</strong> The AI boom's downstream effect: memory prices rising 40% is now visible in consumer device costs. The semiconductor super-cycle has real-world price impacts.</p>
-<p class="item-sources"><a href="https://www.tomshardware.com/tech-industry/semiconductors/global-semiconductor-sales-hit-nearly-usd300-billion-in-q1-2026-chips-are-on-track-to-top-usd1-trillion-for-this-year-says-report" target="_blank" rel="noopener" class="source-link">Tom's Hardware</a> · <a href="https://www.semiconductors.org/news-events/latest-news/" target="_blank" rel="noopener" class="source-link">SIA</a></p><div style="height: 28px;"></div>
-<h3>MANGOS Replaces FAANG: Tech's New Power Hierarchy</h3>
-<p class="item-subtitle" style="font-size: 0.89rem; color: var(--text-muted); margin-bottom: 12px;">TechCrunch · June 2026</p>
-<p>A new acronym has captured the restructuring of tech's elite: MANGOS — Microsoft (or Meta), Anthropic, Nvidia, Google, OpenAI, and SpaceX. The shift reflects AI's dominance: three of the six are pure-play AI companies, and the rest are AI-infrastructure dependent.</p>
-<p>Apple and Amazon, the original FAANG anchors, have been excluded as their AI strategies (Apple Intelligence, Amazon's delayed Olympus model) have failed to match the pace of dedicated AI firms. Netflix was dropped in earlier iterations.</p>
-<p><strong>Key result:</strong> The acronym change is more than branding — it signals that AI-native companies now define the tech industry's center of gravity, displacing consumer-hardware and e-commerce giants.</p>
-<p class="item-sources"><a href="https://techcrunch.com/" target="_blank" rel="noopener" class="source-link">TechCrunch</a></p><div style="height: 28px;"></div>
-<h3>Google Begins Punishing Sites for Back-Button Hijacking</h3>
-<p class="item-subtitle" style="font-size: 0.89rem; color: var(--text-muted); margin-bottom: 12px;">Ars Technica · June 15, 2026</p>
-<p>Google's long-threatened crackdown on back-button hijacking took effect June 15. Sites that inject fake history entries to trap users on their pages now face automated demotion in search rankings, with repeat offenders subject to manual anti-spam actions.</p>
-<p>The policy targets a widespread dark pattern where sites add redirect entries to the browser history, making the back button loop users back to the same page. Chrome 128 adds a built-in detection that surfaces warnings to users.</p>
-<p><strong>Key result:</strong> Google is enforcing UX quality as a ranking signal — sites using dark patterns lose visibility. A win for web usability.</p>
-<p class="item-sources"><a href="https://arstechnica.com/gadgets/2026/04/websites-that-hijack-your-back-button-must-stop-by-june-15-or-face-googles-wrath/" target="_blank" rel="noopener" class="source-link">Ars Technica</a></p><div style="height: 28px;"></div>
-<h3>Anthropic Files Confidentially for IPO, Following OpenAI's Lead</h3>
-<p class="item-subtitle" style="font-size: 0.89rem; color: var(--text-muted); margin-bottom: 12px;">NYT / CNBC · June 1, 2026</p>
-<p>Anthropic submitted a confidential draft S-1 to the SEC on June 1, joining OpenAI (filed May 2026) in what analysts are calling the 'Great AI IPO Rush.' Both companies are expected to list by Q4 2026, with Anthropic's valuation estimated at $80-120 billion.</p>
-<p>The IPO pipeline now includes Anthropic, OpenAI, and SpaceX — three of the most anticipated public offerings in tech history, potentially raising a combined $200 billion.</p>
-<p><strong>Key result:</strong> 2026 is shaping up as the year AI companies go public. Anthropic's S-1 will reveal whether its safety-first branding commands a premium or discount with public market investors.</p>
-<p class="item-sources"><a href="https://www.nytimes.com/2026/06/01/technology/anthropic-ipo.html" target="_blank" rel="noopener" class="source-link">NYT</a> · <a href="https://www.cnbc.com/2026/06/01/microsoft-and-google-take-on-anthropic-and-openai-in-ai-coding-models.html" target="_blank" rel="noopener" class="source-link">CNBC</a></p><div style="height: 28px;"></div>
-<h3>Google Search as You Know It Is Over — AI Agents Replace Link-Based Results</h3>
-<p class="item-subtitle" style="font-size: 0.89rem; color: var(--text-muted); margin-bottom: 12px;">TechCrunch · May 19, 2026</p>
-<p>At Google I/O 2026, the company announced the most radical Search redesign in its history: replacing the list of blue links with AI-generated conversational answers backed by autonomous agents that can complete multi-step tasks on behalf of users.</p>
-<p>The new agentic Search can book travel, compare products across retailers, fill out forms, and execute purchases — all within the search interface. Publishers warn this will decimate referral traffic, with some estimating 40-60% declines.</p>
-<p><strong>Key result:</strong> Google's agentic Search is the biggest threat to the open web since the portal era — it keeps users inside Google, starving publishers of traffic.</p>
-<p class="item-sources"><a href="https://techcrunch.com/2026/05/19/google-search-as-you-know-it-is-over/" target="_blank" rel="noopener" class="source-link">TechCrunch</a></p><div style="height: 28px;"></div>
-<h3>WWDC 2026: Apple Unveils Siri AI, iOS 27, and On-Device Apple Intelligence</h3>
-<p class="item-subtitle" style="font-size: 0.89rem; color: var(--text-muted); margin-bottom: 12px;">TechCrunch / Ars Technica · June 8-12, 2026</p>
-<p>Apple's WWDC 2026 keynote revealed a fundamentally rewritten Siri powered by on-device LLMs, iOS 27's deep AI integration across all native apps, and Apple Intelligence features that run locally on A19 and M5 chips without cloud round-trips.</p>
-<p>Notably, Apple announced 'Fast and Furious' cores — a rebranding of Performance and Efficiency cores — alongside developer APIs for on-device fine-tuning of small language models optimized for specific app contexts.</p>
-<p><strong>Key result:</strong> Apple's bet is fully on-device AI — no cloud dependency, no subscription fees. If it works at scale, it changes the AI business model conversation.</p>
-<p class="item-sources"><a href="https://techcrunch.com/2026/06/09/wwdc-2026-everything-announced-on-siri-ai-os-27-apple-intelligence-and-more/" target="_blank" rel="noopener" class="source-link">TechCrunch</a></p><div style="height: 28px;"></div>
-<h3>Microsoft and Google Challenge Anthropic and OpenAI in AI-Powered Coding</h3>
-<p class="item-subtitle" style="font-size: 0.89rem; color: var(--text-muted); margin-bottom: 12px;">CNBC · June 1, 2026</p>
-<p>Microsoft launched seven new customer-tunable coding models under the 'Foundry' brand, while Google unveiled CodeGlass — an agentic coding tool integrated into Google Cloud. Both directly target GitHub Copilot and Claude Code's dominance in the $12B AI coding tools market.</p>
-<p>Anthropic responded with Claude Opus 4.8 featuring a 1-million-token default context window for complex codebase reasoning, maintaining its lead in benchmarks but facing pricing pressure from Microsoft's open-weight Foundry models.</p>
-<p><strong>Key result:</strong> AI coding tools are becoming a commoditized battleground — differentiation is shifting from benchmark scores to context-window size, tool integration, and enterprise security.</p>
-<p class="item-sources"><a href="https://www.cnbc.com/2026/06/01/microsoft-and-google-take-on-anthropic-and-openai-in-ai-coding-models.html" target="_blank" rel="noopener" class="source-link">CNBC</a></p><div style="height: 28px;"></div>
-<h3>WEF Announces 2026 Technology Pioneers: Fusion, Lunar Tech, and AI Startups Lead</h3>
-<p class="item-subtitle" style="font-size: 0.89rem; color: var(--text-muted); margin-bottom: 12px;">World Economic Forum · June 2026</p>
-<p>The World Economic Forum named 100 companies to its 2026 Technology Pioneers cohort, with nuclear fusion startups, lunar exploration ventures, and AI infrastructure companies dominating the list. The selection reflects a shift from software-only innovation to deep-tech hardware.</p>
-<p>Notable inclusions: Helion Energy (fusion), Astrobotic (lunar landers), and three companies building specialized AI inference chips that challenge Nvidia's data center dominance.</p>
-<p><strong>Key result:</strong> Deep tech — fusion, space, custom silicon — is displacing SaaS as the focus of elite startup recognition. Hardware is back.</p>
-<p class="item-sources"><a href="https://www.weforum.org/stories/2026/06/meet-the-2026-technology-pioneers/" target="_blank" rel="noopener" class="source-link">WEF</a></p><div style="height: 28px;"></div>
-<h3>COMPUTEX 2026: AI Infrastructure Demand Surges as 1,500 Companies Showcase</h3>
-<p class="item-subtitle" style="font-size: 0.89rem; color: var(--text-muted); margin-bottom: 12px;">PR Newswire · June 2, 2026</p>
-<p>COMPUTEX 2026 opened in Taipei with 1,500 exhibitors across 6,000 booths, centered on AI infrastructure — from liquid-cooled GPU clusters to optical interconnects for data centers. Keynote speakers from Nvidia, AMD, Intel, and TSMC emphasized that AI compute demand is outstripping supply by 3:1.</p>
-<p>TSMC announced its 2nm process node is now in volume production, with 3nm capacity fully booked through 2027. Nvidia's Blackwell Ultra GPU, with 288GB HBM4 memory, was the show's centerpiece.</p>
-<p><strong>Key result:</strong> AI compute demand exceeds supply 3:1 — the bottleneck is now manufacturing capacity, not architecture innovation.</p>
-<p class="item-sources"><a href="https://www.prnewswire.com/news-releases/computex-2026-opens-amid-surging-global-demand-for-ai-infrastructure-302788497.html" target="_blank" rel="noopener" class="source-link">PR Newswire</a></p><div style="height: 28px;"></div>
-<h3>DARPA Launches RAAPTR Program: AI for Real-Time Battlefield Threat Prediction</h3>
-<p class="item-subtitle" style="font-size: 0.89rem; color: var(--text-muted); margin-bottom: 12px;">DARPA · June 16, 2026</p>
-<p>DARPA held a Proposers Day today for RAAPTR (Rapid Autonomous Adaptive Predictive Threat Response), a program seeking AI systems that can predict and respond to battlefield threats in real-time using multi-sensor fusion and reinforcement learning.</p>
-<p>The program's technical goals include sub-100ms inference latency on edge hardware and the ability to operate in GPS-denied environments. Microsoft, Palantir, and Anduril are expected to bid.</p>
-<p><strong>Key result:</strong> Military AI is moving from intelligence analysis to real-time tactical decision-making — RAAPTR represents the next frontier in autonomous defense systems.</p>
-<p class="item-sources"><a href="https://www.darpa.mil/" target="_blank" rel="noopener" class="source-link">DARPA</a></p><div style="height: 28px;"></div>
-<h3>Chip Stocks Drop as AI Rally Shows 'Signs of Fatigue'</h3>
-<p class="item-subtitle" style="font-size: 0.89rem; color: var(--text-muted); margin-bottom: 12px;">The Guardian / Yahoo Finance · June 4-8, 2026</p>
-<p>The semiconductor index (SOXX) plunged 10% on June 3 after Broadcom's earnings failed to impress, triggering a sector-wide selloff that erased $1.4 trillion in market cap. The selloff recovered partially by June 8 but analysts warn of 'AI fatigue' as investors question whether AI infrastructure spending can sustain its growth trajectory.</p>
-<p>Wall Street banks issued cautionary notes about SpaceX's IPO potentially triggering further semiconductor selloffs as institutional investors rebalance from chip stocks to the new offering.</p>
-<p><strong>Key result:</strong> The AI chip trade is showing cracks — Broadcom's miss triggered a $1.4T rout. Investors are getting picky about which AI infrastructure bets still have upside.</p>
-<p class="item-sources"><a href="https://www.theguardian.com/business/live/2026/jun/04/spacex-ipo-elon-musk-fears-significantly-overvalued-stock-markets-cars-jobs-live-news-updates" target="_blank" rel="noopener" class="source-link">The Guardian</a> · <a href="https://intellectia.ai/blog/ai-chip-stocks-volatility-june-2026" target="_blank" rel="noopener" class="source-link">Intellectia</a></p><div style="height: 28px;"></div>
+<body>
+<div style="height: 100vh; display: flex; flex-direction: column;">
+  <nav style="background: var(--nav-bg); color: var(--nav-text); height: 64px; display: flex; align-items: center; padding: 0 24px; gap: 16px;">
+    <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; flex: 1;">Nishant's Daily Digest</span>
+    <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; opacity: 0.5;">Tuesday, June 16, 2026</span>
+  </nav>
+  <div style="background: var(--tabs-bg); border-bottom: 1px solid var(--tabs-border); display: flex; padding: 0 8px;">
+    <button onclick="showTab(0)" id="tab0" style="background: transparent; border: none; border-bottom: 2px solid transparent; cursor: pointer; padding: 16px 20px; font-size: 14px; font-family: 'IBM Plex Sans'; color: var(--tab-muted);">Tech News</button><button onclick="showTab(1)" id="tab1" style="background: transparent; border: none; border-bottom: 2px solid transparent; cursor: pointer; padding: 16px 20px; font-size: 14px; font-family: 'IBM Plex Sans'; color: var(--tab-muted);">Physics</button><button onclick="showTab(2)" id="tab2" style="background: transparent; border: none; border-bottom: 2px solid transparent; cursor: pointer; padding: 16px 20px; font-size: 14px; font-family: 'IBM Plex Sans'; color: var(--tab-muted);">Mathematics</button><button onclick="showTab(3)" id="tab3" style="background: transparent; border: none; border-bottom: 2px solid transparent; cursor: pointer; padding: 16px 20px; font-size: 14px; font-family: 'IBM Plex Sans'; color: var(--tab-muted);">Deep Dive</button>
+  </div>
+  <main id="content" style="flex: 1; overflow-y: auto;"></main>
+  <footer style="background: var(--footer-bg); height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; border-top: 1px solid var(--footer-border);">
+    <button onclick="prevTab()" style="background: transparent; border: none; padding: 8px 16px; font-size: 13px; font-family: 'IBM Plex Sans'; color: var(--footer-text); cursor: pointer;">← Previous</button>
+    <span id="pageNum" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--footer-text); text-transform: uppercase;">Page 1 of 4</span>
+    <button onclick="nextTab()" style="background: transparent; border: none; padding: 8px 16px; font-size: 13px; font-family: 'IBM Plex Sans'; color: var(--footer-text); cursor: pointer;">Next →</button>
+  </footer>
 </div>
-</section>
+<script>
+const data = {"date": "June 16, 2026", "dayOfWeek": "Tuesday", "articles": [{"category": "AI", "cols": 12, "title": "US Forces Anthropic to Halt Fable 5 and Mythos 5 \u2014 Export Ban Shakes AI Industry", "source": "Al Jazeera / Yahoo News", "date": "Jun 14, 2026", "summary": "On June 12, the U.S. government issued an unprecedented export control directive ordering Anthropic to suspend access to its frontier models Fable 5 and Mythos 5 for all foreign nationals, including Anthropic employees. The order, citing national security and a narrow jailbreak concern, effectively yanked the most advanced Claude models from global deployment. Anthropic complied but publicly disputed the justification, warning the precedent could halt all new model deployments for all frontier model providers. Pentagon CIO Kirsten Davies endorsed the move: 'Some things are simply more important than revenue cycles.' The action follows Anthropic's ongoing lawsuit against the administration over being blacklisted for refusing military surveillance use. Rival models GPT-5.5 and Gemini 3.1 Pro remain unrestricted, raising questions about selective enforcement. Anthropic warned of billions in revenue impact and disrupted negotiations with financial institutions worth $180 million.", "url": "https://www.aljazeera.com/news/2026/6/14/us-asks-anthropic-to-block-global-access-to-top-ai-models-why-it-matters"}, {"category": "NEWS", "cols": 6, "title": "UK Prime Minister Starmer Announces Blanket Social Media Ban for Under-16s", "source": "Reuters / The Guardian", "date": "Jun 15, 2026", "summary": "Britain became the first G7 nation to impose a complete social media ban for users under 16, announced by Prime Minister Keir Starmer on Monday. The legislation mandates government-certified age verification across all major platforms within 12 months, with fines up to 10% of global annual turnover for non-compliance. The ban covers all social media platforms operating in the UK and is expected to pass with cross-party support. Privacy advocates warned the age verification infrastructure could create new surveillance vectors.", "url": "https://www.reuters.com/technology/"}, {"category": "AI", "cols": 4, "title": "Anthropic Files Confidential S-1, Joins OpenAI in Great AI IPO Rush of 2026", "source": "NYT / CNBC", "date": "Jun 1, 2026", "summary": "Anthropic confidentially submitted its S-1 to the SEC on June 1, joining OpenAI (filed May 2026) in what analysts are calling the Great AI IPO Rush. Both companies are expected to list by Q4 2026, with Anthropic's valuation estimated at $80\u2013120 billion. Combined with SpaceX's record $75 billion IPO, the three public offerings could raise over $200 billion \u2014 the largest concentration of tech IPOs since the dot-com era.", "url": "https://www.nytimes.com/2026/06/01/technology/anthropic-ipo.html"}, {"category": "AI", "cols": 6, "title": "Apple Finally Ships Siri AI at WWDC 2026: Working Demos, Developer Betas, Dedicated App", "source": "Apple Newsroom / TechCrunch", "date": "Jun 8, 2026", "summary": "Apple unveiled a fully revamped Siri AI at WWDC 2026, three years after the original Apple Intelligence pitch. Unlike previous announcements, this year's keynote showed real working demos and released developer betas immediately. Siri AI draws on personal context (messages, emails, photos), answers questions about on-screen content, queries the web, and performs systemwide app actions. A dedicated Siri app tracks conversation history synced privately via iCloud. Apple claims 30% faster app launches, 70% faster photo loading, and 80% faster AirDrop. The public beta arrives next month with a fall release. Apple partnered with Google and Nvidia for the model's underlying compute infrastructure. Siri AI will power iOS 27, macOS Golden Gate, and visionOS updates.", "url": "https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/"}, {"category": "SECURITY", "cols": 4, "title": "Single Errant Character in Linux Kernel Grants Root Access \u2014 CVE-2026-38471", "source": "Ars Technica", "date": "Jun 14, 2026", "summary": "A critical Linux kernel vulnerability (CVE-2026-38471) disclosed this week allows unprivileged local users to escalate to root through a single-character bug in the key management subsystem \u2014 a missing bounds check from a misplaced parenthesis. The flaw, present since kernel 5.15, affects virtually all Linux distributions. Ubuntu, RHEL, and Debian shipped emergency patches over the weekend. The bug is a one-character typo that went undetected for over 3 years.", "url": "https://arstechnica.com/security/2026/06/a-single-errant-character-in-the-linux-kernel-allows-attacker-to-gain-root/"}, {"category": "AI", "cols": 4, "title": "Google Search Transforms into AI Agent Platform \u2014 Link-Based Results Retired", "source": "TechCrunch", "date": "May 19, 2026", "summary": "At Google I/O 2026, the company announced the most radical Search redesign in its history: replacing blue links with AI-generated conversational answers backed by autonomous agents that book travel, compare products across retailers, and execute purchases \u2014 all within Search. Publishers estimate 40\u201360% declines in referral traffic. The move positions Google Search as a walled-garden AI platform rather than the open web's gateway.", "url": "https://techcrunch.com/2026/05/19/google-search-as-you-know-it-is-over/"}, {"category": "AI", "cols": 6, "title": "Claude Fable 5 Jailbroken in 24 Hours via Multi-Agent 'Pack Hunt' Decomposition Attack", "source": "Pasquale Pillitteri / Medium/TechX", "date": "Jun 11, 2026", "summary": "Red-teamer Pliny the Liberator publicly jailbroke Anthropic's Fable 5 within 24 hours of its June 9 launch using a 'multi-agent pack hunt.' The attack decomposed harmful requests into innocuous sub-questions that individually fell below Anthropic's safety classifier threshold, then reassembled outputs externally. Pliny also leaked Fable 5's 120,000-character system prompt on GitHub \u2014 the first complete system prompt leak of a Mythos-class model. Security researchers noted the technique targets natural language instructions in the system prompt rather than model weights, creating a public roadmap for adversarial prompt engineering. Anthropic's safety design routed dangerous requests silently to Claude Opus 4.8; the attack exploited this fallback isolation. Pasquale Pillitteri's forensic analysis showed the bypass was not a model-weight exploit but a decomposition/recomposition chain.", "url": "https://pasqualepillitteri.it/en/news/4730/claude-fable-5-jailbreak-pliny-hype-vs-facts"}, {"category": "HARDWARE", "cols": 4, "title": "Computex 2026: Nvidia RTX Spark, Intel Arc G3 Extreme, Samsung 4K 360Hz QD-OLED", "source": "PCWorld", "date": "Jun 5, 2026", "summary": "Computex 2026 delivered a wave of PC hardware innovation. Nvidia debuted RTX Spark, a 20-core CPU with a Blackwell GPU (6,144 CUDA cores, matching the RTX 5070) and up to 128GB LPDDR5X, shipping in laptops and mini PCs this fall. Intel showed Arc G3 Extreme, a handheld-focused processor claiming 44% gen-over-gen frame rate gains and 42% better efficiency vs AMD's Z2 Extreme \u2014 at 17W it matches the Z2 Extreme at 35W. Samsung announced the world's first 32-inch 4K 360Hz QD-OLED panel (680Hz at 1080p) with VESA DisplayHDR True Black 600. AMD extended AM5 socket support to 2029. Dell launched a $599 XPS 13 with Intel Panther Lake/Wildcat Lake options. Microsoft unveiled the Surface Laptop Ultra with Nvidia Arm silicon, capable of running 120B-parameter models.", "url": "https://www.pcworld.com/article/3156200/best-of-computex-2026-the-most-intriguing-and-innovative-pc-hardware.html"}, {"category": "HARDWARE", "cols": 4, "title": "SpaceX Prices Record $75 Billion IPO at $135/Share \u2014 Largest Public Debut in History", "source": "Reuters / TechCrunch", "date": "Jun 11, 2026", "summary": "SpaceX priced its initial public offering at $135 per share on June 11, selling 555.6 million shares to raise a record $75 billion \u2014 the largest IPO in history. Shares opened at $150 and hit $176 on debut, valuing the company above $2 trillion and placing it among the top 10 most valuable public companies. The IPO included retail allocation of 30%, a rare move for such a large listing. SpaceX's Grok AI model business is now public alongside rocket and Starlink operations. The IPO marks the beginning of what analysts are calling 'the hot IPO summer of 2026' alongside Anthropic and OpenAI's pending public filings. Elon Musk's net worth surged as SpaceX began public trading under the ticker SPCX.", "url": "https://techcrunch.com/2026/06/11/spacex-officially-prices-shares-at-135-in-the-largest-ipo-ever/"}, {"category": "HARDWARE", "cols": 4, "title": "Global Semiconductor Sales Hit $298.5B in Q1 \u2014 On Track for $1.3T in 2026", "source": "Tom's Hardware / SIA", "date": "Jun 12, 2026", "summary": "Chip sales surged 25% QoQ in Q1 2026 driven by AI accelerator demand and a memory crunch pushing DRAM and NAND prices up 40%. The Semiconductor Industry Association now projects $1.3 trillion for the full year. The memflation trend is beginning to hit consumer electronics pricing, with laptop and smartphone manufacturers reporting 8\u201312% component cost increases.", "url": "https://www.tomshardware.com/tech-industry/semiconductors/global-semiconductor-sales-hit-nearly-usd300-billion-in-q1-2026-chips-are-on-track-to-top-usd1-trillion-for-this-year-says-report"}, {"category": "HARDWARE", "cols": 4, "title": "NAVER and NVIDIA Announce Gigawatt-Scale AI Factories in South Korea", "source": "unrot.co / Reuters", "date": "Jun 7, 2026", "summary": "NAVER and NVIDIA announced a massive AI infrastructure buildout in South Korea, expanding NAVER's GAK Sejong data center from 55MW to gigawatt capacity by 2028 using the NVIDIA DSX platform. The scaled buildout will power next-gen HyperCLOVA X models, the Seoul World Model (NVIDIA Cosmos + NAVER 3D spatial data for a digital twin of Seoul), and NemoClaw-based robotics AI. Jensen Huang appeared in Seoul for the announcement. The 'sovereign AI' model \u2014 domestically controlled, locally processed, compliant with Korean data sovereignty \u2014 is positioned as replicable for Europe and the Middle East. NAVER shares rose 9.2% on the news. The buildout proceeds in phases: 55MW by H1 2027, 100MW by late 2027, 200MW by 2028, then gigawatt.", "url": "https://unrot.co/blogs/ai-news-today-june-15-2026"}, {"category": "SECURITY", "cols": 6, "title": "Microsoft June 2026 Patch Tuesday Breaks All Records: 206 Vulnerabilities, AI-Fueled Discovery", "source": "Krebs on Security / CyberScoop", "date": "Jun 9, 2026", "summary": "Microsoft patched 206 vulnerabilities in its June 2026 Patch Tuesday, shattering all previous records. Nearly three dozen bugs were rated Critical, with one max-severity flaw in Azure HorizonDB (CVE-2026-48567). Three zero-days had public exploit code, including a DoS in IIS discovered by OpenAI's Codex (CVE-2026-49160), and two elevation-of-privilege bugs tied to the 'Nightmare Eclipse' researcher who claims to be a former Microsoft employee and has promised a 'bone shattering' zero-day drop for July 14. Security researchers attribute the volume surge to AI tools accelerating both vulnerability discovery and patch development. Tenable warned: 'Pandora's box has been opened.' Google Chrome also patched 429 vulnerabilities on June 3. Microsoft's 2026 CVE count already exceeds all of 2018.", "url": "https://krebsonsecurity.com/2026/06/a-record-breaking-patch-tuesday-for-june-2026/"}, {"category": "NEWS", "cols": 6, "title": "OpenAI Kills Sora After $15M/Day Burn Generated Just $2.1M in Lifetime Revenue", "source": "unrot.co / HPCwire / NYT", "date": "Mar 24, 2026", "summary": "OpenAI shut down its Sora video generation platform on March 24 after burning approximately $15 million per day in inference costs while generating only $2.1 million in total lifetime revenue. Active users collapsed from 1M+ downloads in the first week to under 500K. A cancelled Disney partnership (hundreds of branded characters for avatars) sealed its fate. The freed compute is being redirected to OpenAI's next-gen language model 'Spud' and enterprise tools ahead of an anticipated September 2026 IPO. The failure reveals a hard truth: hype-based AI product launches cannot survive contact with unit economics. Competitors Google Veo 3.1, Runway Gen-4.5, and Kling 2.5 are the primary beneficiaries. The Sora API will be fully discontinued on September 24, 2026.", "url": "https://unrot.co/blogs/ai-news-today-june-15-2026"}], "physicsContent": [{"type": "section_heading", "text": "EXPLANATION"}, {"type": "heading", "text": "Surface Codes: The Backbone of Practical Quantum Error Correction"}, {"type": "paragraph", "text": "Quantum error correction (QEC) is the central challenge standing between noisy near-term quantum processors and fault-tolerant quantum computers. Among all QEC codes, the surface code family has emerged as the leading candidate because of its high error threshold (~11%), planar 2D geometry matching superconducting qubit layouts, and tolerance to measurement errors. First proposed by Kitaev (toric code, 1997) and later adapted to planar geometries by Bravyi and Kitaev, surface codes encode logical qubits into the collective state of many physical qubits arranged on a 2D lattice."}, {"type": "paragraph", "text": "The core idea: place physical qubits on the edges of a square lattice. Define two types of stabilizer measurements: plaquette operators \\(B_p = X \\otimes X \\otimes X \\otimes X\\) (product of Pauli-\\(X\\) on the four qubits of each square) and star operators \\(A_s = Z \\otimes Z \\otimes Z \\otimes Z\\) (product of Pauli-\\(Z\\) on the four qubits meeting at each vertex). The codespace is the simultaneous +1 eigenspace of all stabilizers, meaning \\(A_s|\\psi\\rangle = |\\psi\\rangle\\) and \\(B_p|\\psi\\rangle = |\\psi\\rangle\\) for all vertices \\(s\\) and plaquettes \\(p\\). On an \\(N \\times N\\) lattice with periodic boundaries (torus), \\(2N^2\\) physical qubits encode 2 logical qubits."}, {"type": "formula", "text": "\\[ \\text{Stabilizers:}\\quad A_s = \\bigotimes_{i \\in \\text{star}(s)} Z_i, \\quad B_p = \\bigotimes_{i \\in \\text{plaquette}(p)} X_i \\]"}, {"type": "paragraph", "text": "Errors are detected through the stabilizer measurement syndrome: each stabilizer is measured in every QEC cycle, returning +1 (no error detected) or -1 (error detected). A single-qubit bit-flip error (\\(X\\)) flips the two adjacent plaquette stabilizers; a phase-flip error (\\(Z\\)) flips the two adjacent star stabilizers. Because stabilizers are local (only involving 4 qubits), errors produce local signatures. The decoder's job is to find the most likely error chain consistent with the measured syndrome, which in practice maps to a minimum-weight perfect matching problem on a graph. The logical error rate scales as \\(p_L \\propto (p/p_{\\text{th}})^{\\lfloor (d+1)/2 \\rfloor}\\) where \\(p\\) is the physical error rate, \\(p_{\\text{th}} \\approx 0.11\\) is the threshold, and \\(d\\) is the code distance."}, {"type": "subheading", "text": "Google's Dynamic Surface Codes Breakthrough"}, {"type": "paragraph", "text": "In January 2026, Google Quantum AI demonstrated a fundamental extension of surface code QEC on their Willow processor: dynamic circuits that alternate between different tiling patterns each cycle. Standard surface codes use a fixed tiling of detecting regions (static square lattice). Google showed three dynamic variants that each solve specific hardware limitations. The hexagonal lattice reduces couplers per qubit from 4 to 3, simplifying frequency optimization. The walking circuit periodically swaps data and measure qubit roles, eliminating leakage on data qubits without extra gates \u2014 reducing time-correlated errors by an order of magnitude. The iSWAP gate code replaces CZ gates with iSWAP gates that avoid non-computational states, generating fewer correlated errors. All three performed below threshold, with error suppression improving with code distance."}, {"type": "formula", "text": "\\[ p_L \\propto \\left(\\frac{p}{p_{\\text{th}}}\\right)^{\\lfloor (d+1)/2 \\rfloor} \\quad \\text{where } p_{\\text{th}} \\approx 0.11, \\, d = \\text{code distance} \\]"}, {"type": "paragraph", "text": "The practical significance: dynamic circuits decouple the hardware geometry from the error correction topology. A square-lattice processor can simulate a hexagonal code by turning off some couplers. A failed qubit or coupler (dropout) can be circumvented by re-tiling the detecting regions \u2014 no hardware redesign needed. This opens the path to co-designing quantum hardware and error correction protocols, with Google targeting fewer than 1 error per million QEC cycles as their next milestone. Alongside recent color code demonstrations, dynamic surface codes establish multiple viable paths to fault-tolerant quantum computing."}, {"type": "subheading", "text": "Why This Matters for ML Researchers"}, {"type": "paragraph", "text": "The decoding problem for surface codes \u2014 finding the most likely error configuration consistent with noisy syndrome measurements \u2014 is a latent-variable inference problem on a graphical model. Recent work applies neural belief propagation and transformer-based decoders that outperform traditional MWPM on circuit-level noise. For PGDR researchers specifically, surface code decoders face a distribution shift problem: decoder training data comes from low-noise regimes, but decoders must generalize to rare high-noise events (logical errors). Robustness techniques from the worst-group generalization literature could directly improve decoder reliability at the system level, where a single undetected logical error can invalidate an entire quantum computation."}], "mathContent": [{"type": "section_heading", "text": "CONCEPT"}, {"type": "heading", "text": "Darts in Higher Dimensions \u2014 Probability Meets Volumes of Even-Dimensional Balls"}, {"type": "paragraph", "text": "A deceptively simple dartboard puzzle produces a beautiful connection between probability, high-dimensional geometry, and Euler's number \\(e\\). The game: throw darts uniformly at random at a square board of side length 2. The bullseye is a circle of radius 1 centered inside. After each hit, the bullseye shrinks: the new radius equals the perpendicular distance from the center to the chord drawn through your previous hit. Question: what is the expected score of a random player? The answer is \\(e^{\\pi/4} \\approx 2.193\\), derived without calculus by recognizing hidden high-dimensional geometry."}, {"type": "paragraph", "text": "The derivation proceeds by induction. The probability of hitting the first dart is simply the area ratio: \\(P(\\text{score} \\geq 2) = \\pi/4\\). After the first hit at distance \\(h_0\\) from center, the new radius is \\(r_1 = \\sqrt{1 - h_0^2}\\). The second dart must land inside a circle of this radius. The joint condition for both darts is \\(x_0^2 + y_0^2 + x_1^2 + y_1^2 < 1\\), which uses 4 coordinates \u2014 equivalently, a point in 4-dimensional space inside a 4-ball of radius 1. The probability of two hits is the volume of a 4-ball divided by the volume of the enclosing 4-cube of side 2."}, {"type": "formula", "text": "\\[ P(\\text{score} \\geq n+1) = \\frac{\\text{Vol}(B^{2n})}{\\text{Vol}(C^{2n})} = \\frac{\\pi^n / n!}{4^n} = \\frac{(\\pi/4)^n}{n!} \\]"}, {"type": "paragraph", "text": "The volume of a \\(2n\\)-dimensional ball of radius 1 is \\(\\pi^n / n!\\). The volume of the containing \\(2n\\)-cube of side 2 is \\(2^{2n} = 4^n\\). So the probability of hitting \\(n+1\\) darts (i.e., surviving \\(n\\) consecutive hits) is \\((\\pi/4)^n / n!\\). The expected score is the sum over all survival probabilities from \\(k=1\\) to \\(\\infty\\) of \\(P(\\text{score} \\geq k)\\): the first term is 1 (you always throw at least once), then \\(\\pi/4\\), then \\((\\pi/4)^2/2!\\), then \\((\\pi/4)^3/3!\\), and so on \u2014 exactly the Taylor series for \\(e^x\\) evaluated at \\(x = \\pi/4\\)."}, {"type": "formula", "text": "\\[ \\mathbb{E}[\\text{score}] = \\sum_{k=1}^{\\infty} P(\\text{score} \\geq k) = 1 + \\frac{\\pi}{4} + \\frac{(\\pi/4)^2}{2!} + \\frac{(\\pi/4)^3}{3!} + \\cdots = e^{\\pi/4} \\]"}, {"type": "paragraph", "text": "This result, originally due to science fiction author Greg Egan, illustrates a powerful technique: encoding many random variables as a single point in high-dimensional space and computing probabilities as volume ratios. The volumes of high-dimensional balls become extremely small \u2014 a 100-dimensional ball of radius 1 occupies only about \\(2.368 \\times 10^{-40}\\) of its enclosing cube \u2014 which explains why high-dimensional probability is dominated by thin shells near the surface rather than the central region. Grant Sanderson (3Blue1Brown) gives a masterful visual explanation of why the series naturally sums to \\(e\\) without ever explicitly writing a Taylor expansion."}, {"type": "video", "video": {"title": "Darts in Higher Dimensions (with 3Blue1Brown) \u2014 Numberphile", "channel": "Numberphile", "duration": "32:11", "url": "https://www.youtube.com/watch?v=6_yU9eJ0NxA"}}], "deepContent": [{"type": "section_heading", "text": "ANALYSIS"}, {"type": "heading", "text": "The Pack Hunt Jailbreak: Why Frontier AI Safety Is Fundamentally Harder Than It Looks"}, {"type": "paragraph", "text": "The jailbreak of Anthropic's Fable 5 within 24 hours of release \u2014 followed by a US government export ban that pulled the model globally \u2014 marks a pivotal moment for frontier AI safety. The 'pack hunt' technique used by Pliny the Liberator was not a sophisticated model-weight exploit. It was a decomposition attack: break a harmful request into benign sub-questions that individually fall below the classifier threshold, extract each piece from the model, then reassemble externally. This is possible because safety classifiers operate on individual turns, not on the compositional intent across turns. The attacker maintains a multi-turn 'working memory' externally (or via a second model) to track what pieces have been gathered."}, {"type": "subheading", "text": "The Classifier vs. Weights Distinction"}, {"type": "paragraph", "text": "Anthropic's safety architecture for Fable 5 routes high-risk requests to a restricted fallback model (Claude Opus 4.8) via a classifier layer \u2014 it does not bake refusal behavior into Fable 5's weights. This design choice has a deep implication: the model retains latent capability for harmful tasks; it merely has a routing guardrail in front. When the classifier is bypassed via decomposition, the full capability is available. By contrast, refusal baked into model weights (e.g., via RLHF directly optimizing the policy to refuse harmful requests) is harder to bypass because the model literally loses the capability to complete harmful chains. Pliny's leaked 120,000-character system prompt \u2014 the first complete system prompt of a Mythos-class model \u2014 revealed the full extent of Anthropic's safety engineering and immediately became a public reference for adversarial prompt engineering."}, {"type": "subheading", "text": "Why Decomposition Attacks Are Fundamentally Hard to Defend Against"}, {"type": "paragraph", "text": "The decomposition/recomposition attack exploits a property of all current LLM architectures: the classifier operates on surface form, not on latent intent. There are exponentially many ways to decompose a request, and the attacker only needs one chain where each sub-query individually passes the classifier. This is a search problem for the attacker and a coverage problem for the defender. As model context windows grow (Fable 5's was likely very large given the 120K system prompt), the attacker's search space increases \u2014 they can embed sub-questions in long innocuous contexts where the classifier struggles to isolate intent. Recent research on multi-turn jailbreaking (arXiv:2601.05339, ACL 2025 REALM) shows decomposition attack success rates exceeding 90% across frontier models including GPT-4 and Gemini."}, {"type": "formula", "text": "\\[ \\text{Attack complexity: } |\\mathcal{D}| = \\sum_{k=1}^{K} \\binom{N}{k} \\cdot f(k) \\;\\text{where } N \\text{ is sub-question vocabulary} \\]"}, {"type": "paragraph", "text": "The search space of possible decompositions grows combinatorially with the number of sub-questions \\(k\\) and the vocabulary of benign phrasings \\(f(k)\\). This makes exhaustive coverage impossible \u2014 the defender must instead detect compositional intent, which requires reasoning about the relationship between queries rather than evaluating each independently. Current classifiers are fundamentally local: they evaluate each user turn without maintaining a latent representation of the attacker's overall goal across turns. Until models can reason about multi-turn intent, decomposition attacks will remain an open vulnerability."}, {"type": "subheading", "text": "The Regulatory Ripple Effect"}, {"type": "paragraph", "text": "The US government's response \u2014 an export control order banning foreign nationals from accessing Fable 5 and Mythos 5 \u2014 raises deeper questions. The ban was triggered by verbal evidence of a 'potential narrow, non-universal jailbreak,' a standard that Anthropic argues would halt all frontier model deployments if applied industry-wide. The selective enforcement (GPT-5.5 and Gemini 3.1 Pro remain unrestricted) suggests political motivations beyond pure safety: Anthropic's refusal to allow military domestic surveillance use, its ongoing lawsuit against the administration, and its impending IPO all likely factor in. The 'hardware sovereignty' movement \u2014 enterprises seeking to own and control AI infrastructure to avoid government recall risks \u2014 is a direct consequence. For the first time, model availability is a risk variable in enterprise procurement, and the lesson is clear: multi-vendor strategy, fallback to open-weight models, and self-hosted deployments are now operational necessities."}]};
+let tab = 0;
 
-
-    <section id="physics" class="section-card" data-theme-section="vintage-scholar">
-      <div class="section-header">
-        <h2 class="section-title">Physics — The Second Law and the Arrow of Time</h2>
-        <span class="reading-time">7 min read</span>
-      </div>
-  <div class="section-body">
-<h3>Why Time Flows Forward: Entropy and the Second Law of Thermodynamics</h3>
-<p><strong>Motivation:</strong> Among all physical laws, only one distinguishes past from future: the Second Law of Thermodynamics. Newton's equations, Maxwell's equations, and Schrödinger's equation are all time-reversible — they work equally well forward or backward. Yet we experience time as flowing in one direction. The Second Law explains why.</p>
-<p></p>
-<p><strong>Historical Context:</strong> The puzzle of irreversibility troubled 19th-century physicists deeply. Lord Kelvin and Rudolf Clausius formulated the first statements of the Second Law in the 1850s. Clausius introduced the concept of <em>entropy</em> (from Greek <em>en</em> + <em>trope</em>, 'turning inward') as a measure of unavailable energy. His famous statement: <em>'Die Entropie der Welt strebt einem Maximum zu'</em> — the entropy of the world tends toward a maximum.</p>
-<p>Ludwig Boltzmann gave the statistical interpretation in the 1870s, connecting entropy to the number of microstates \( W \): \[ S = k_B \ln W \] where \( k_B = 1.380649 \times 10^{-23} \, \text{J/K} \) is Boltzmann's constant. This equation, carved on Boltzmann's tombstone in Vienna, reveals that entropy is fundamentally about <em>counting possibilities</em>.</p>
-<p></p>
-<p><strong>The Mathematical Core:</strong> Consider \( N \) indistinguishable gas particles in a box of volume \( V \). The number of ways to arrange them scales as \( V^N \). If the gas expands from \( V_1 \) to \( V_2 \), the entropy change is: \[ \Delta S = S_2 - S_1 = k_B \ln\left(\frac{V_2^N}{V_1^N}\right) = N k_B \ln\left(\frac{V_2}{V_1}\right) \] For one mole (\( N = N_A = 6.022 \times 10^{23} \)), \( N k_B = R = 8.314 \, \text{J/(mol·K)} \), yielding a macroscopic entropy change.</p>
-<p></p>
-<p><strong>Physical Intuition — Before Formalism:</strong> The Second Law is often stated as 'heat flows from hot to cold' or 'entropy never decreases in an isolated system.' But the deeper insight is probabilistic: there are vastly more disordered states than ordered ones. A deck of cards, when shuffled, doesn't seek disorder — it's simply that 99.999...% of all possible arrangements look disordered to us.</p>
-<p>A gas expanding into a vacuum doesn't 'want' to fill the container. Rather, the number of microstates where molecules are evenly distributed is astronomically larger than the number where they're clustered in one corner. The system simply explores its state space and overwhelmingly lands in high-entropy configurations.</p>
-<p></p>
-<p><strong>Worked Example — Free Expansion:</strong> Two moles of ideal gas at 300 K double their volume in a free expansion (no work done, no heat exchanged). What is the entropy change? \[ \Delta S = nR \ln\left(\frac{V_2}{V_1}\right) = (2)(8.314)\ln(2) = 11.53 \, \text{J/K} \] This positive \( \Delta S \) confirms the Second Law — the process is irreversible because you'd need to compress the gas, requiring work, to return to the original state.</p>
-<p></p>
-<p><strong>The Arrow of Time and Cosmology:</strong> If the Second Law drives time forward, why was the early universe in such a low-entropy state? This is the 'Past Hypothesis' — the universe began in an extraordinarily ordered configuration (estimated at \( S \sim 10^{88} k_B \) for the observable universe at the Big Bang, compared to \( 10^{122} k_B \) today). Roger Penrose argued this initial condition requires an explanation that lies beyond standard cosmology. The arrow of time may ultimately be cosmological — we experience temporal flow because the universe is still relaxing from an inexplicably ordered birth.</p>
-<p></p>
-<p><strong>Modern Applications:</strong> The Second Law has surprising relevance in the 21st century. Landauer's principle — that erasing one bit of information in a computer dissipates at least \( k_B T \ln 2 \) of heat — connects thermodynamics to information theory. Quantum thermodynamics extends these ideas to nanoscale systems where fluctuations matter. And the black hole information paradox (does information falling into a black hole violate the Second Law?) remains one of the deepest open problems in theoretical physics.</p>
-<p class="item-sources"><a href="https://www.feynmanlectures.caltech.edu/I_44.html" target="_blank" rel="noopener" class="source-link">Feynman Lectures, Vol. I, Ch. 44-46</a> · <a href="https://www.cambridge.org/highereducation/books/modern-quantum-mechanics/DF20FABD512F1A8D8BB1077BF4E5D10A" target="_blank" rel="noopener" class="source-link">Sakurai — Modern Quantum Mechanics</a> · <a href="https://www.penguinrandomhouse.com/books/291958/the-road-to-reality-by-roger-penrose/" target="_blank" rel="noopener" class="source-link">Penrose — The Road to Reality</a></p><div style="height: 28px;"></div>
-</div>
-</section>
-
-
-    <section id="math" class="section-card" data-theme-section="vintage-scholar">
-      <div class="section-header">
-        <h2 class="section-title">Mathematics — The Fourier Transform: From Circles to Signals</h2>
-        <span class="reading-time">8 min read</span>
-      </div>
-  <div class="section-body">
-<h3>The Intuition Behind Fourier Transforms</h3>
-<p><strong>Hook:</strong> Your phone compresses audio, your WiFi modulates signals, and MRI machines reconstruct images — all using the same mathematical idea discovered by Joseph Fourier in 1807 while studying heat flow. Fourier claimed that <em>any</em> function could be expressed as a sum of sine waves. The claim was so bold that Lagrange and Laplace rejected his paper. They were wrong.</p>
-<p></p>
-<p><strong>Core Idea:</strong> The Fourier transform decomposes a signal into its constituent frequencies. Musically: you hear a chord, and your brain (via the cochlea) performs a mechanical Fourier transform, separating the sound into individual notes. Mathematically: given a function \( f(t) \) in the time domain, the Fourier transform \( \hat{f}(\omega) \) gives its representation in the frequency domain: \[ \hat{f}(\omega) = \int_{-\infty}^{\infty} f(t) \, e^{-i\omega t} \, dt \] The inverse transform reconstructs the original: \[ f(t) = \frac{1}{2\pi} \int_{-\infty}^{\infty} \hat{f}(\omega) \, e^{i\omega t} \, d\omega \]</p>
-<p></p>
-<p><strong>Geometric Intuition — Winding Frequencies:</strong> Imagine a point rotating around the origin at frequency \( \omega \). Its position is \( e^{i\omega t} = \cos(\omega t) + i\sin(\omega t) \). The Fourier integral effectively 'winds' the signal \( f(t) \) around the origin at frequency \( \omega \) and computes the center of mass. If \( f(t) \) contains frequency \( \omega \), the winding is lopsided and the center of mass is offset — that offset <em>is</em> \( \hat{f}(\omega) \). This is beautifully visualized in the 3Blue1Brown video linked below.</p>
-<p></p>
-<p><strong>Worked Example — Rectangular Pulse:</strong> The rectangular pulse \( f(t) = 1 \) for \( |t| < T \), zero otherwise. Its Fourier transform: \[ \hat{f}(\omega) = \int_{-T}^{T} e^{-i\omega t} \, dt = \frac{e^{-i\omega t}}{-i\omega}\Big|_{-T}^{T} = \frac{2\sin(\omega T)}{\omega} = 2T \, \text{sinc}(\omega T) \] The sinc function \( \text{sinc}(x) = \sin(x)/x \) appears everywhere in signal processing — it's the frequency response of an ideal low-pass filter.</p>
-<p></p>
-<p><strong>Discrete Fourier Transform (DFT) and FFT:</strong> In practice, we sample signals at discrete points. The DFT is: \[ X_k = \sum_{n=0}^{N-1} x_n \, e^{-i 2\pi k n / N} \] Computing this naively is \( O(N^2) \). The Fast Fourier Transform (Cooley-Tukey, 1965) reduces it to \( O(N \log N) \) by recursively splitting the sum into even and odd terms — arguably the most important algorithm of the 20th century. It powers JPEG compression, audio codecs, radar systems, and 5G networks.</p>
-<p></p>
-<p><strong>Applications Across Disciplines:</strong> In <strong>audio</strong>, the Fourier transform separates a recording into frequency bands for compression (MP3) and equalization. In <strong>imaging</strong>, JPEG uses the Discrete Cosine Transform (a close relative) to discard high-frequency details the eye can't perceive. In <strong>quantum mechanics</strong>, the position and momentum wave functions are Fourier transforms of each other — which is why you can't know both precisely (Heisenberg uncertainty). In <strong>data science</strong>, spectral graph theory uses the graph Fourier transform to analyze networks.</p>
-<p></p>
-<p><strong>Connection to Convolution:</strong> Perhaps the Fourier transform's most useful property: convolution in the time domain becomes multiplication in the frequency domain: \[ \mathcal{F}\{f * g\} = \hat{f} \cdot \hat{g} \] This is why convolutional neural networks can be analyzed through their frequency responses, and why signal filtering is as simple as multiplying by a frequency mask.</p>
-
-    <div class="video-link">
-      <div class="video-link-header">
-        <span class="video-icon">🎥</span>
-        <h4 class="video-title">But what is the Fourier Transform? A visual introduction.</h4>
-      </div>
-      <p class="video-meta">
-        3Blue1Brown
-         · 20:57
-      </p>
-      <a href="https://www.youtube.com/watch?v=spUNpyF58BY" target="_blank" rel="noopener">Watch Video</a>
+function renderTechNews() {
+  return `<div style="background: var(--tn-bg); padding: 48px 24px 80px; min-height: 100%;">
+    <h1 style="font-family: Georgia, serif; font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: var(--tn-accent); border-bottom: 4px solid var(--tn-accent); padding-bottom: 24px; margin-bottom: 48px;">Tech News — ${data.date}</h1>
+    <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px;">
+      ${data.articles.map(a => `<div style="grid-column: span ${a.cols}; background: var(--tn-card); border: 2px solid var(--tn-border); padding: 24px;">
+        <span style="display: inline-block; background: var(--tn-accent); color: var(--tn-bg); font-size: 10px; font-weight: 700; letter-spacing: 0.12em; padding: 3px 10px; margin-bottom: 16px; font-family: 'IBM Plex Mono'; text-transform: uppercase;">${a.category}</span>
+        <h2 style="font-family: Georgia, serif; font-size: ${a.cols === 12 ? '36px' : '20px'}; font-weight: 700; color: var(--tn-ink); line-height: 1.12; margin-bottom: ${a.cols === 12 ? '20px' : '12px'};">${a.title}</h2>
+        <p style="font-family: 'IBM Plex Mono'; font-size: 11px; color: var(--tn-meta); margin-bottom: 14px;">${a.source} · ${a.date}</p>
+        <p style="font-family: 'IBM Plex Sans'; font-size: ${a.cols === 12 ? '16px' : '14px'}; line-height: 1.65; color: var(--tn-ink); opacity: 0.78;">${a.summary}</p>
+        <a href="${a.url}" target="_blank" style="display: inline-block; font-size: 12px; font-weight: 600; color: var(--tn-accent); border-bottom: 1.5px solid var(--tn-accent); margin-top: 20px; text-decoration: none;">Read Full Article →</a>
+      </div>`).join('')}
     </div>
-  <p class="item-sources"><a href="https://www.youtube.com/watch?v=spUNpyF58BY" target="_blank" rel="noopener" class="source-link">🎥 3Blue1Brown — Fourier Transform</a> · <a href="https://en.wikipedia.org/wiki/Fourier_transform" target="_blank" rel="noopener" class="source-link">Wikipedia — Fourier Transform</a> · <a href="https://www.ams.org/journals/mcom/1965-19-090/S0025-5718-1965-0178586-1/" target="_blank" rel="noopener" class="source-link">📄 Cooley & Tukey (1965) — FFT Paper</a></p><div style="height: 28px;"></div>
-</div>
-</section>
+  </div>`;
+}
 
-
-    <section id="random-topic" class="section-card" data-theme-section="claude">
-      <div class="section-header">
-        <h2 class="section-title">Deep Dive — The Transformer at 9: From Attention to Reasoning</h2>
-        <span class="reading-time">10 min read</span>
+function renderContent(blocks, bgVar, textVar, accentVar, fbgVar) {
+  return blocks.map(b => {
+    if (b.type === 'section_heading') return `<p style="font-family: 'IBM Plex Mono'; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(${accentVar}); opacity: 0.65; margin-bottom: 16px;">${b.text}</p>`;
+    if (b.type === 'heading') return `<h2 style="font-family: Georgia, serif; font-size: 30px; font-weight: 700; color: var(${accentVar}); margin-bottom: 24px;">${b.text}</h2>`;
+    if (b.type === 'paragraph') return `<p style="font-family: Georgia, serif; font-size: 18px; line-height: 1.8; color: var(${textVar}); text-align: justify; margin-bottom: 20px;">${b.text}</p>`;
+    if (b.type === 'formula') return `<div style="padding: 28px 20px; margin: 32px 0; text-align: center; border-left: 3px solid var(${accentVar}); background: var(${fbgVar}); color: var(${textVar});">${b.text}</div>`;
+    if (b.type === 'subheading') return `<h3 style="font-family: Georgia, serif; font-size: 22px; font-weight: 600; color: var(${textVar}); margin-top: 44px; margin-bottom: 20px;">${b.text}</h3>`;
+    if (b.type === 'video') return `<div style="background: var(--mt-vbg); border: 2px solid var(${accentVar}); border-radius: 6px; padding: 24px; margin: 32px 0; display: flex; align-items: center; gap: 20px;">
+      <span style="font-size: 30px;">🎥</span>
+      <div style="flex: 1;">
+        <p style="font-family: 'IBM Plex Sans'; font-weight: 700; font-size: 16px; margin-bottom: 6px;">${b.video.title}</p>
+        <p style="font-family: 'IBM Plex Mono'; font-size: 12px; opacity: 0.6;">${b.video.channel} · ${b.video.duration}</p>
       </div>
-  <div class="section-body">
-<h3>How "Attention Is All You Need" Became the Dominant Computational Primitive of the 2020s</h3>
-<p><strong>Hook:</strong> In June 2017, eight Google researchers published a paper with the audacious title 'Attention Is All You Need.' It proposed replacing recurrent neural networks — then the default for sequence processing — with a pure attention mechanism. The paper was initially seen as an interesting ablation study. Nine years later, the Transformer architecture has displaced LSTMs, CNNs for vision, and is making inroads into reinforcement learning, protein folding, and program synthesis. It is arguably the most impactful neural architecture since the multilayer perceptron.</p>
-<p></p>
-<p><strong>What Made Transformers Different (2017):</strong> The key insight was that recurrence — processing tokens one at a time, each depending on the previous hidden state — was a bottleneck. Transformers process all tokens simultaneously through self-attention: \[ \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right) V \] Each token's representation becomes a weighted sum of all other tokens' values, where the weights (attention scores) are learned. This parallelism made training on massive datasets feasible, and the lack of sequential dependency allowed information to flow directly between any two positions, solving the vanishing gradient problem that plagued RNNs over long sequences.</p>
-<p></p>
-<p><strong>Phase 1 — Scale Is All You Need (2018-2021):</strong> GPT (2018), BERT (2018), GPT-2 (2019), GPT-3 (2020). The defining discovery of this era was that Transformer performance scaled predictably with model size, dataset size, and compute — the 'scaling laws' (Kaplan et al., 2020). This turned AI from an architectural search problem into an engineering and capital allocation problem. GPT-3's 175B parameters stunned the world not because of architectural novelty but because of sheer scale: it could perform tasks it wasn't explicitly trained on (in-context learning) simply by being large enough.</p>
-<p></p>
-<p><strong>Phase 2 — Efficiency and Specialization (2022-2024):</strong> The scaling law era hit a wall: training GPT-4-class models cost hundreds of millions of dollars and inference was too expensive for widespread deployment. This spawned a Cambrian explosion of efficiency innovations:</p>
-<p><strong>• Sparse Attention:</strong> Longformer, BigBird — instead of \( O(n^2) \) attention, use local windows plus global tokens. Critical for processing long documents and codebases.</p>
-<p><strong>• Mixture of Experts (MoE):</strong> Switch Transformer, Mixtral — only activate a subset of parameters per token. Mixtral 8x7B achieves GPT-3.5 quality with 12.9B active parameters per token, dramatically reducing inference cost.</p>
-<p><strong>• FlashAttention:</strong> Dao et al. (2022) — an IO-aware attention algorithm that reduces memory reads/writes by tiling the attention computation. Became the default attention implementation in every major framework within months.</p>
-<p><strong>• Rotary Position Embeddings (RoPE):</strong> Su et al. (2021) — encodes position information through rotation matrices, enabling better length generalization than absolute or learned position embeddings. Now standard in Llama, Mistral, Qwen, and Claude.</p>
-<p></p>
-<p><strong>Phase 3 — Post-Training and Reasoning (2024-2026):</strong> The frontier shifted from pre-training scale to post-training quality. Two innovations define this era:</p>
-<p><strong>• RLHF and Constitutional AI:</strong> Anthropic's approach trains models to follow principles rather than mimicking human preferences directly, producing more steerable and transparent models. Claude's safety routing in Fable 5 is a direct descendant.</p>
-<p><strong>• Chain-of-Thought and Inference-Time Compute:</strong> Instead of training bigger models, spend more compute at inference. OpenAI's o-series models use reinforcement learning on reasoning traces to produce step-by-step solutions. DeepSeek-R1 demonstrated that pure RL (without supervised fine-tuning on reasoning) can elicit sophisticated reasoning behaviors — the model spontaneously learns to verify, backtrack, and explore alternatives.</p>
-<p><strong>• Tool Use and Agentic Architectures:</strong> Models now call APIs, execute code, browse the web, and maintain persistent memory. The Transformer became not just a language model but an orchestrator of computational resources — a 'CPU for intelligence.'</p>
-<p></p>
-<p><strong>Current Frontier and Open Problems:</strong> Despite its dominance, the Transformer has known limitations. Attention is \( O(n^2) \) in sequence length — state-space models (Mamba, S4) offer \( O(n) \) alternatives that may supplant attention for ultra-long sequences. Retrieval-augmented generation (RAG) addresses the knowledge cutoff problem but introduces latency and retrieval quality issues. And the 'reasoning gap' — the fact that LLMs still fail at tasks requiring deep multi-step logical deduction — suggests that pure pattern matching, even at scale, may have fundamental limits.</p>
-<p></p>
-<p><strong>Synthesis:</strong> The Transformer's nine-year arc mirrors a broader pattern in AI history: a brilliant architectural insight → an era of scaling → efficiency innovations that enable deployment → a shift toward reasoning and agency. The next chapter may not be a better Transformer but something that learns the Transformer's strengths while addressing its weaknesses — perhaps a neuro-symbolic hybrid, a state-space architecture, or something entirely unforeseen. But for now, Attention Is Still Mostly All You Need.</p>
-<p class="item-sources"><a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener" class="source-link">📄 Vaswani et al. (2017) — Attention Is All You Need</a> · <a href="https://arxiv.org/abs/2001.08361" target="_blank" rel="noopener" class="source-link">📄 Kaplan et al. (2020) — Scaling Laws for Neural Language Models</a> · <a href="https://arxiv.org/abs/2205.14135" target="_blank" rel="noopener" class="source-link">📄 Dao et al. (2022) — FlashAttention</a> · <a href="https://arxiv.org/abs/2501.12948" target="_blank" rel="noopener" class="source-link">📄 DeepSeek-R1 (2025) — Reasoning via RL</a> · <a href="https://arxiv.org/abs/2312.00752" target="_blank" rel="noopener" class="source-link">📄 Gu & Dao (2023) — Mamba: Linear-Time Sequence Modeling</a></p><div style="height: 28px;"></div>
-</div>
-</section>
+      <a href="${b.video.url}" target="_blank" style="background: var(${accentVar}); color: var(${bgVar}); padding: 10px 22px; font-size: 13px; font-weight: 600; border-radius: 4px; text-decoration: none;">Watch</a>
+    </div>`;
+    return '';
+  }).join('');
+}
 
+function showTab(n) {
+  tab = n;
+  document.querySelectorAll('[id^=tab]').forEach((el, i) => {
+    el.style.borderBottomColor = i === n ? 'var(--tab-active)' : 'transparent';
+    el.style.color = i === n ? 'var(--tab-active)' : 'var(--tab-muted)';
+    el.style.fontWeight = i === n ? '600' : '400';
+  });
+  document.getElementById('pageNum').textContent = `Page ${n + 1} of 4`;
 
-        </main>
-    </div>
+  const content = document.getElementById('content');
+  if (n === 0) content.innerHTML = renderTechNews();
+  else if (n === 1) content.innerHTML = `<div style="background: var(--ph-bg); padding: 64px 32px 96px; min-height: 100%;"><div style="max-width: 896px; margin: 0 auto;">${renderContent(data.physicsContent, '--ph-bg', '--ph-text', '--ph-accent', '--ph-fbg')}</div></div>`;
+  else if (n === 2) content.innerHTML = `<div style="background: var(--mt-bg); padding: 64px 32px 96px; min-height: 100%;"><div style="max-width: 896px; margin: 0 auto;">${renderContent(data.mathContent, '--mt-bg', '--mt-text', '--mt-accent', '--mt-fbg')}</div></div>`;
+  else content.innerHTML = `<div style="background: var(--mt-bg); padding: 64px 32px 96px; min-height: 100%;"><div style="max-width: 896px; margin: 0 auto;">${renderContent(data.deepContent, '--mt-bg', '--mt-text', '--mt-accent', '--mt-fbg')}</div></div>`;
 
-    <!-- Footer -->
-    <footer class="digest-footer">
-        <div class="footer-inner">
-            <p>Generated on Tuesday, June 16, 2026 by <a href="https://hermes-agent.nousresearch.com" target="_blank" rel="noopener">Hermes Agent</a></p>
-            <p><a href="https://github.com/daddyankee/nishant-digest" target="_blank" rel="noopener">Source on GitHub</a></p>
-        </div>
-    </footer>
+  if (window.MathJax) {
+    MathJax.typesetPromise([document.getElementById('content')]).catch(e => {});
+  }
+}
 
-    <!-- Mobile TOC Toggle & Theme Switcher -->
-    <script>
-        // Hamburger menu functionality
-        const hamburger = document.getElementById('hamburgerBtn');
-        const toc = document.getElementById('tocSidebar');
+function nextTab() { if (tab < 3) showTab(tab + 1); }
+function prevTab() { if (tab > 0) showTab(tab - 1); }
 
-        if (hamburger && toc) {
-            hamburger.addEventListener('click', function() {
-                toc.classList.toggle('toc-open');
-            });
-
-            // Close TOC when clicking a link on mobile
-            const tocLinks = toc.querySelectorAll('a');
-            tocLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (window.innerWidth <= 1400) {
-                        toc.classList.remove('toc-open');
-                    }
-                });
-            });
-        }
-
-        // Theme switcher functionality
-        const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = document.getElementById('themeIcon');
-        const body = document.body;
-
-        // Check for saved theme preference or default to 'light' mode
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        body.setAttribute('data-theme', currentTheme);
-        themeIcon.textContent = currentTheme === 'dark' ? '🌙' : '☀️';
-
-        if (themeToggle) {
-            themeToggle.addEventListener('click', function() {
-                const currentTheme = body.getAttribute('data-theme');
-                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-                body.setAttribute('data-theme', newTheme);
-                localStorage.setItem('theme', newTheme);
-                themeIcon.textContent = newTheme === 'dark' ? '🌙' : '☀️';
-            });
-        }
-    </script>
+showTab(0);
+</script>
 </body>
 </html>
