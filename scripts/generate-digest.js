@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const date = new Date().toISOString().split('T')[0];
+const date = process.argv[2] || new Date().toISOString().split('T')[0];
 const dataPath = path.join(process.cwd(), date, 'data.json');
 
 if (!fs.existsSync(dataPath)) {

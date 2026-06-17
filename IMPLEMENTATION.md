@@ -4,7 +4,14 @@
 
 ### Daily Workflow
 1. Generate `YYYY-MM-DD/data.json` using `HERMES_SCHEMA.md`
-2. Run: `node scripts/generate-digest.js`
+2. Run digest generator:
+   ```bash
+   node scripts/generate-digest.js
+   # This generates YYYY-MM-DD/index.html with:
+   # - 5 theme options (parchment, sepia, nordic, dusk, graphite)
+   # - Full responsive design (mobile/tablet/desktop)
+   # - Theme switching with localStorage
+   ```
 3. Commit: `git add . && git commit -m "Daily digest YYYY-MM-DD"`
 4. Push: `git push origin main`
 

@@ -1,5 +1,12 @@
 # Hermes Agent Data Schema
 
+**IMPORTANT**: After generating data.json, run the generator script to create the HTML:
+```bash
+node scripts/generate-digest.js
+# Or for specific date:
+node scripts/generate-digest.js YYYY-MM-DD
+```
+
 Generate daily digest JSON matching this exact structure:
 
 ```json

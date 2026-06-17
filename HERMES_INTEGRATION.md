@@ -35,14 +35,38 @@ cat > $DATE/data.json << 'EOF'
 }
 EOF
 
-# 2. Generate HTML
-npm run generate
+# 2. Generate HTML (IMPORTANT: This creates the full UI)
+node scripts/generate-digest.js
+# Output: YYYY-MM-DD/index.html with complete theme system + responsive design
 
 # 3. Commit
 git add $DATE/
 git commit -m "Daily digest $DATE"
 git push origin main
 ```
+
+### ✨ What the Generator Creates
+
+The `generate-digest.js` script creates a complete, production-ready HTML file with:
+
+**🎨 5 Beautiful Themes:**
+- Parchment (default sage green)
+- Sepia (warm amber)
+- Nordic (cool blue)
+- Dusk (dark purple)
+- Graphite (dark teal)
+
+**📱 Responsive Design:**
+- Mobile (<768px): 1 column, touch-optimized
+- Tablet (768-1024px): 2 columns, hero full-width
+- Desktop (>1024px): Full 12-column grid
+
+**✨ Features:**
+- Theme switching dots in nav
+- localStorage persistence
+- Smooth transitions
+- Better scrollbars
+- MathJax support
 
 ### Hermes Config Updates Needed
 **Create new Hermes instruction file** that references:
