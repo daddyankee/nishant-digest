@@ -19,6 +19,25 @@
     <link rel="stylesheet" crossorigin href="./assets/main-DYQ9_1Aq.css">
   </head>
   <body>
+<div id="root" data-theme="parchment">
     <div id="root"></div>
-  </body>
+  </div>
+
+<script>
+// Theme switching
+function setTheme(t) {
+  document.getElementById('root').setAttribute('data-theme', t);
+  document.querySelectorAll('.theme-dot').forEach(d => {
+    d.classList.toggle('active', d.getAttribute('data-theme') === t);
+  });
+  try { localStorage.setItem('digest-theme', t); } catch(e) {}
+}
+(function(){
+  try {
+    var s = localStorage.getItem('digest-theme');
+    if (s && ['parchment','sepia','nordic','dusk','graphite'].includes(s)) setTheme(s);
+  } catch(e) {}
+})();
+</script>
+</body>
 </html>

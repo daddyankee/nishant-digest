@@ -23,6 +23,7 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 </head>
 <body>
+<div id="root" data-theme="parchment">
     <nav class="top-nav" id="topNav">
         <div class="nav-inner">
             <div class="nav-title">
@@ -30,6 +31,13 @@
             </div>
             <div class="nav-date">June 14, 2026</div>
             <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">&#9776;</button>
+<div style="display: flex; gap: 8px; align-items: center;" title="Theme">
+      <button class="theme-dot" data-theme="parchment" style="background: #8BAF6E;" title="Parchment" onclick="setTheme('parchment')"></button>
+      <button class="theme-dot" data-theme="sepia" style="background: #C4944A;" title="Sepia" onclick="setTheme('sepia')"></button>
+      <button class="theme-dot" data-theme="nordic" style="background: #4A90C4;" title="Nordic" onclick="setTheme('nordic')"></button>
+      <button class="theme-dot" data-theme="dusk" style="background: #9278E8;" title="Dusk" onclick="setTheme('dusk')"></button>
+      <button class="theme-dot" data-theme="graphite" style="background: #2AB8A8;" title="Graphite" onclick="setTheme('graphite')"></button>
+    </div>
         </div>
     </nav>
 
@@ -411,5 +419,23 @@
             });
         });
     </script>
+</div>
+
+<script>
+// Theme switching
+function setTheme(t) {
+  document.getElementById('root').setAttribute('data-theme', t);
+  document.querySelectorAll('.theme-dot').forEach(d => {
+    d.classList.toggle('active', d.getAttribute('data-theme') === t);
+  });
+  try { localStorage.setItem('digest-theme', t); } catch(e) {}
+}
+(function(){
+  try {
+    var s = localStorage.getItem('digest-theme');
+    if (s && ['parchment','sepia','nordic','dusk','graphite'].includes(s)) setTheme(s);
+  } catch(e) {}
+})();
+</script>
 </body>
 </html>
