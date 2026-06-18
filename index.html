@@ -1,94 +1,176 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nishant's Daily Digest — Archive</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Georgia&display=swap" rel="stylesheet">
+<title>Nishant's Daily Digest</title>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'IBM Plex Sans',system-ui,sans-serif;background:#0A0A0A;color:#E8E0D5;min-height:100vh}
-.container{max-width:900px;margin:0 auto;padding:64px 24px 96px}
-header{margin-bottom:64px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,0.08)}
-header h1{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#A098D0;margin-bottom:12px}
-header p{font-family:Georgia,serif;font-size:20px;line-height:1.6;color:rgba(255,255,255,0.45);max-width:540px}
-.grid{display:flex;flex-direction:column;gap:12px}
-.card{position:relative;display:block;padding:24px 28px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:6px;text-decoration:none;transition:all 200ms ease;overflow:hidden}
-.card:hover{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.12);transform:translateX(4px)}
-.card-hover{position:absolute;inset:0;background:linear-gradient(135deg,transparent 60%,rgba(146,120,232,0.08));opacity:0;transition:opacity 200ms ease}
-.card:hover .card-hover{opacity:1}
-.card-date{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;letter-spacing:0.06em;color:#A098D0;margin-bottom:8px}
-.card-preview{font-family:Georgia,serif;font-size:16px;line-height:1.55;color:rgba(255,255,255,0.7)}
-.card-arrow{position:absolute;right:28px;top:50%;transform:translateY(-50%);font-size:18px;color:rgba(255,255,255,0.2);transition:all 200ms ease}
-.card:hover .card-arrow{color:#9278E8;transform:translateY(-50%) translateX(4px)}
-footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06)}
-footer p{font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(255,255,255,0.25)}
-footer a{color:rgba(255,255,255,0.35);text-decoration:none}
-footer a:hover{color:rgba(255,255,255,0.6)}
-@media(max-width:767px){.container{padding:40px 16px 64px}header h1{font-size:11px}header p{font-size:17px}.card{padding:20px 20px}.card-preview{font-size:15px}.card-arrow{display:none}}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'IBM Plex Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  background: #0A0A0A;
+  color: #FFFFFF;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 80px 24px 60px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.header h1 {
+  font-family: 'IBM Plex Mono', 'SF Mono', monospace;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  color: rgba(255,255,255,0.5);
+}
+
+.header p {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #FFFFFF;
+}
+
+.digest-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.digest-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 200ms ease;
+  cursor: pointer;
+}
+
+.digest-card:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.16);
+  transform: translateX(4px);
+}
+
+.card-date {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #FFFFFF;
+  flex: 1;
+}
+
+.card-day {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.card-arrow {
+  font-size: 16px;
+  color: rgba(255,255,255,0.2);
+  transition: all 200ms ease;
+}
+
+.digest-card:hover .card-arrow {
+  color: rgba(255,255,255,0.6);
+  transform: translateX(2px);
+}
+
+.footer {
+  text-align: center;
+  margin-top: 48px;
+}
+
+.footer a {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.footer a:hover {
+  color: rgba(255,255,255,0.6);
+}
+
+@media (max-width: 480px) {
+  .container { padding: 48px 16px 40px; }
+  .header p { font-size: 28px; }
+  .digest-card { padding: 16px 20px; }
+  .card-date { font-size: 15px; }
+}
 </style>
 </head>
 <body>
 <div class="container">
-  <header>
-    <h1>Nishant's Daily Digest</h1>
-    <p>Daily deep-dives into tech news, physics, mathematics, and frontier AI — with five beautiful themes.</p>
+  <header class="header">
+    <h1>Index</h1>
+    <p>Nishant's Daily Digest</p>
   </header>
-  <div class="grid">
-    <a href="./2026-06-17/" class="card">
-      <div class="card-hover"></div>
-      <div class="card-date">, 2026-06-17</div>
-      <div class="card-preview"></div>
-      <div class="card-arrow">→</div>
+  <div class="digest-list">
+    <a href="./2026-06-10/" class="digest-card">
+      <span class="card-date">June 10, 2026</span>
+      <span class="card-day">Wednesday</span>
+      <span class="card-arrow">→</span>
     </a>
-    <a href="./2026-06-16/" class="card">
-      <div class="card-hover"></div>
-      <div class="card-date">Tuesday, 2026-06-16</div>
-      <div class="card-preview">SpaceX Acquires Cursor for $60 Billion — The Largest AI Acquisition in History</div>
-      <div class="card-arrow">→</div>
+    <a href="./2026-06-11/" class="digest-card">
+      <span class="card-date">June 11, 2026</span>
+      <span class="card-day">Thursday</span>
+      <span class="card-arrow">→</span>
     </a>
-    <a href="./2026-06-15/" class="card">
-      <div class="card-hover"></div>
-      <div class="card-date">, 2026-06-15</div>
-      <div class="card-preview"></div>
-      <div class="card-arrow">→</div>
+    <a href="./2026-06-12/" class="digest-card">
+      <span class="card-date">June 12, 2026</span>
+      <span class="card-day">Friday</span>
+      <span class="card-arrow">→</span>
     </a>
-    <a href="./2026-06-14/" class="card">
-      <div class="card-hover"></div>
-      <div class="card-date">, 2026-06-14</div>
-      <div class="card-preview"></div>
-      <div class="card-arrow">→</div>
+    <a href="./2026-06-13/" class="digest-card">
+      <span class="card-date">June 13, 2026</span>
+      <span class="card-day">Saturday</span>
+      <span class="card-arrow">→</span>
     </a>
-    <a href="./2026-06-13/" class="card">
-      <div class="card-hover"></div>
-      <div class="card-date">, 2026-06-13</div>
-      <div class="card-preview"></div>
-      <div class="card-arrow">→</div>
+    <a href="./2026-06-14/" class="digest-card">
+      <span class="card-date">June 14, 2026</span>
+      <span class="card-day">Sunday</span>
+      <span class="card-arrow">→</span>
     </a>
-    <a href="./2026-06-12/" class="card">
-      <div class="card-hover"></div>
-      <div class="card-date">, 2026-06-12</div>
-      <div class="card-preview"></div>
-      <div class="card-arrow">→</div>
+    <a href="./2026-06-15/" class="digest-card">
+      <span class="card-date">June 15, 2026</span>
+      <span class="card-day">Monday</span>
+      <span class="card-arrow">→</span>
     </a>
-    <a href="./2026-06-11/" class="card">
-      <div class="card-hover"></div>
-      <div class="card-date">, 2026-06-11</div>
-      <div class="card-preview"></div>
-      <div class="card-arrow">→</div>
+    <a href="./2026-06-16/" class="digest-card">
+      <span class="card-date">June 16, 2026</span>
+      <span class="card-day">Tuesday</span>
+      <span class="card-arrow">→</span>
     </a>
-    <a href="./2026-06-10/" class="card">
-      <div class="card-hover"></div>
-      <div class="card-date">, 2026-06-10</div>
-      <div class="card-preview"></div>
-      <div class="card-arrow">→</div>
+    <a href="./2026-06-17/" class="digest-card">
+      <span class="card-date">June 17, 2026</span>
+      <span class="card-day">Wednesday</span>
+      <span class="card-arrow">→</span>
     </a>
   </div>
-  <footer>
-    <p>Generated by <a href="https://hermes-agent.nousresearch.com">Hermes Agent</a> · <a href="https://github.com/daddyankee/nishant-digest">Source</a></p>
+  <footer class="footer">
+    <a href="https://github.com/daddyankee/nishant-digest" target="_blank">Source on GitHub</a>
   </footer>
 </div>
 </body>
