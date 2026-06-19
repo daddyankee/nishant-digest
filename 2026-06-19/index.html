@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.css">
+<script>
+MathJax = {
+  tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+  svg: { fontCache: 'global' },
+  options: { enableMenu: false }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script src="../claude design/support.js"></script>
+<link rel="stylesheet" href="../claude design/_ds/nishant-sharma-portfolio-design-system-acfe106c-c7e5-46cd-96cd-4b3b2923a881/tokens/fonts.css">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; font-family: 'IBM Plex Sans', system-ui, sans-serif; }
+html { scroll-behavior: smooth; }
+
+/* Parchment Theme (default) */
+:root, [data-theme="parchment"] {
+  --nav-bg: #0A0A0A; --nav-text: #FFFFFF;
+  --tabs-bg: #F2EEE2; --tabs-border: #DDDACA; --tab-active: #0A0A0A; --tab-muted: #7A7260;
+  --footer-bg: #F2EEE2; --footer-border: #DDDACA; --footer-text: #5A5040;
+  --tn-bg: #F8F5E8; --tn-card: #FEFCF4; --tn-ink: #3A3E18; --tn-accent: #3A3E18;
+  --tn-sage: #7A9E5A; --tn-border: #B0C280; --tn-meta: rgba(58,62,24,0.48);
+  --ph-bg: #FAF8F0; --ph-text: #2A2218; --ph-accent: #7A5218; --ph-fbg: rgba(122,82,24,0.05);
+  --mt-bg: #F8F6EE; --mt-text: #1E1C18; --mt-accent: #9B6C00; --mt-fbg: rgba(155,108,0,0.05); --mt-vbg: rgba(155,108,0,0.07);
+}
+
+/* Sepia Theme */
+[data-theme="sepia"] {
+  --nav-bg: #2C1A0E; --nav-text: #F5E8D4;
+  --tabs-bg: #F6EDD8; --tabs-border: #DCC898; --tab-active: #2C1A0E; --tab-muted: #906040;
+  --footer-bg: #F6EDD8; --footer-border: #DCC898; --footer-text: #704020;
+  --tn-bg: #FBF5E8; --tn-card: #FDF8EE; --tn-ink: #3A1E08; --tn-accent: #3A1E08;
+  --tn-sage: #A06828; --tn-border: #D0A870; --tn-meta: rgba(58,30,8,0.45);
+  --ph-bg: #FBF5E8; --ph-text: #3A1E08; --ph-accent: #8B2500; --ph-fbg: rgba(139,37,0,0.05);
+  --mt-bg: #FAF2E0; --mt-text: #2E1408; --mt-accent: #A84018; --mt-fbg: rgba(168,64,24,0.05); --mt-vbg: rgba(168,64,24,0.07);
+}
+
+/* Nordic Theme */
+[data-theme="nordic"] {
+  --nav-bg: #1E2D3A; --nav-text: #E8EFF8;
+  --tabs-bg: #ECF1F8; --tabs-border: #C4D4E8; --tab-active: #1E2D3A; --tab-muted: #5A7890;
+  --footer-bg: #ECF1F8; --footer-border: #C4D4E8; --footer-text: #3A5870;
+  --tn-bg: #F2F7FC; --tn-card: #FFFFFF; --tn-ink: #1E2D3A; --tn-accent: #1E2D3A;
+  --tn-sage: #2060B8; --tn-border: #88B4D8; --tn-meta: rgba(30,45,58,0.45);
+  --ph-bg: #ECF1F8; --ph-text: #1E2D3A; --ph-accent: #0A4CA0; --ph-fbg: rgba(10,76,160,0.06);
+  --mt-bg: #EEF3FA; --mt-text: #101C2E; --mt-accent: #007890; --mt-fbg: rgba(0,120,144,0.06); --mt-vbg: rgba(0,120,144,0.08);
+}
+
+/* Dusk Theme (dark) */
+[data-theme="dusk"] {
+  --nav-bg: #131022; --nav-text: #E2DBF8;
+  --tabs-bg: #1A1730; --tabs-border: #302C54; --tab-active: #9278E8; --tab-muted: #605880;
+  --footer-bg: #1A1730; --footer-border: #302C54; --footer-text: #807AAA;
+  --tn-bg: #171428; --tn-card: #1E1A38; --tn-ink: #E2DBF8; --tn-accent: #C0B0FF;
+  --tn-sage: #A090E0; --tn-border: #342E60; --tn-meta: rgba(226,219,248,0.42);
+  --ph-bg: #141228; --ph-text: #E2DBF8; --ph-accent: #9278E8; --ph-fbg: rgba(146,120,232,0.10);
+  --mt-bg: #12101E; --mt-text: #D8D0F4; --mt-accent: #B090F0; --mt-fbg: rgba(176,144,240,0.10); --mt-vbg: rgba(176,144,240,0.12);
+}
+
+/* Graphite Theme (dark) */
+[data-theme="graphite"] {
+  --nav-bg: #080B10; --nav-text: #DDE6F4;
+  --tabs-bg: #0E1320; --tabs-border: #1E2A3A; --tab-active: #2AB8A8; --tab-muted: #4A6070;
+  --footer-bg: #0E1320; --footer-border: #1E2A3A; --footer-text: #587080;
+  --tn-bg: #0C1220; --tn-card: #141E2C; --tn-ink: #DDE6F4; --tn-accent: #2AB8A8;
+  --tn-sage: #3DD4C4; --tn-border: #1C3048; --tn-meta: rgba(221,230,244,0.38);
+  --ph-bg: #080E18; --ph-text: #DDE6F4; --ph-accent: #2AB8A8; --ph-fbg: rgba(42,184,168,0.08);
+  --mt-bg: #080C16; --mt-text: #D4E0F0; --mt-accent: #26A898; --mt-fbg: rgba(38,168,152,0.08); --mt-vbg: rgba(38,168,152,0.10);
+}
+
+/* Smooth transitions for theme changes */
+#root, #root * {
+  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+
+.mjx-chtml { color: inherit; }
+
+/* Theme switching dots */
+.theme-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  transition: all 200ms ease;
+  display: block;
+}
+.theme-dot:hover {
+  transform: scale(1.3);
+}
+.theme-dot.active {
+  width: 15px;
+  height: 15px;
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.85);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-thumb { background: rgba(128,128,128,0.2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(128,128,128,0.4); }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* Tablet: 768px-1024px (iPad) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  #tech-grid > * { grid-column: span 6 !important; }
+  #tech-grid > *:first-child { grid-column: span 12 !important; }
+  #tech-grid { gap: 20px !important; }
+}
+
+/* Mobile: <768px */
+@media (max-width: 767px) {
+  #tech-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+  #tech-grid > * { grid-column: auto !important; }
+
+  nav { height: 56px !important; padding: 0 16px !important; }
+  .nav-title { font-size: 10px !important; }
+  .nav-date { font-size: 10px !important; }
+
+  .tabs-container { padding: 0 4px !important; }
+  .tab-button { padding: 14px 16px !important; font-size: 13px !important; }
+
+  footer { height: 56px !important; padding: 0 16px !important; }
+  .footer-button { font-size: 12px !important; padding: 6px 12px !important; }
+  .footer-page-num { font-size: 10px !important; }
+
+  .tech-news-container { padding: 24px 16px 40px !important; }
+  .tech-news-container h1 { font-size: 28px !important; padding-bottom: 16px !important; margin-bottom: 24px !important; }
+
+  .article-title-large { font-size: 28px !important; margin-bottom: 16px !important; }
+  .article-title-small { font-size: 20px !important; margin-bottom: 12px !important; }
+  .article-summary { font-size: 15px !important; }
+
+  .content-container { padding: 32px 16px 48px !important; }
+  .content-heading { font-size: 26px !important; }
+  .content-subheading { font-size: 20px !important; }
+  .content-paragraph { font-size: 17px !important; }
+
+  .video-card { flex-direction: column !important; }
+  .video-card a { width: 100% !important; text-align: center !important; }
+
+  .formula-block { overflow-x: auto !important; font-size: 14px !important; }
+}
+</style>
+</head>
+<body>
+<div id="root" data-theme="parchment" style="height: 100vh; display: flex; flex-direction: column;">
+  <nav style="background: var(--nav-bg); color: var(--nav-text); height: 64px; display: flex; align-items: center; padding: 0 24px; gap: 16px;">
+    <span class="nav-title" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; flex: 1;">Nishant's Daily Digest</span>
+    <span class="nav-date" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; opacity: 0.5;">Friday, June 19, 2026</span>
+    <div style="display: flex; gap: 8px; align-items: center;" title="Theme">
+      <button class="theme-dot" data-theme="parchment" style="background: #8BAF6E;" title="Parchment" onclick="setTheme('parchment')"></button>
+      <button class="theme-dot" data-theme="sepia" style="background: #C4944A;" title="Sepia" onclick="setTheme('sepia')"></button>
+      <button class="theme-dot" data-theme="nordic" style="background: #4A90C4;" title="Nordic" onclick="setTheme('nordic')"></button>
+      <button class="theme-dot" data-theme="dusk" style="background: #9278E8;" title="Dusk" onclick="setTheme('dusk')"></button>
+      <button class="theme-dot" data-theme="graphite" style="background: #2AB8A8;" title="Graphite" onclick="setTheme('graphite')"></button>
+    </div>
+  </nav>
+  <div class="tabs-container" style="background: var(--tabs-bg); border-bottom: 1px solid var(--tabs-border); display: flex; padding: 0 8px;">
+    <button onclick="showTab(0)" id="tab0" class="tab-button" style="background: transparent; border: none; border-bottom: 2px solid transparent; cursor: pointer; padding: 16px 20px; font-size: 14px; font-family: 'IBM Plex Sans'; color: var(--tab-muted);">Tech News</button><button onclick="showTab(1)" id="tab1" class="tab-button" style="background: transparent; border: none; border-bottom: 2px solid transparent; cursor: pointer; padding: 16px 20px; font-size: 14px; font-family: 'IBM Plex Sans'; color: var(--tab-muted);">Physics</button><button onclick="showTab(2)" id="tab2" class="tab-button" style="background: transparent; border: none; border-bottom: 2px solid transparent; cursor: pointer; padding: 16px 20px; font-size: 14px; font-family: 'IBM Plex Sans'; color: var(--tab-muted);">Mathematics</button><button onclick="showTab(3)" id="tab3" class="tab-button" style="background: transparent; border: none; border-bottom: 2px solid transparent; cursor: pointer; padding: 16px 20px; font-size: 14px; font-family: 'IBM Plex Sans'; color: var(--tab-muted);">Deep Dive</button>
+  </div>
+  <main id="content" style="flex: 1; overflow-y: auto;"></main>
+  <footer style="background: var(--footer-bg); height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; border-top: 1px solid var(--footer-border);">
+    <button onclick="prevTab()" class="footer-button" style="background: transparent; border: none; padding: 8px 16px; font-size: 13px; font-family: 'IBM Plex Sans'; color: var(--footer-text); cursor: pointer;">← Previous</button>
+    <span id="pageNum" class="footer-page-num" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--footer-text); text-transform: uppercase;">Page 1 of 4</span>
+    <button onclick="nextTab()" class="footer-button" style="background: transparent; border: none; padding: 8px 16px; font-size: 13px; font-family: 'IBM Plex Sans'; color: var(--footer-text); cursor: pointer;">Next →</button>
+  </footer>
+</div>
+<script>
+const data = {"date":"June 19, 2026","dayOfWeek":"Friday","articles":[{"category":"AI","cols":12,"title":"NVIDIA Launches Nemotron 3 Nano Omni — A 30B-A3B Multimodal MoE Model for AI Agents","source":"NVIDIA Blog","date":"Jun 18, 2026","summary":"NVIDIA released Nemotron 3 Nano Omni, a 30B-parameter mixture-of-experts model with 3B active parameters that unifies vision, audio, and text into a single efficient system — eliminating the need for separate perception models in AI agents. It achieves up to 9× higher throughput than other open omni models and leads six leaderboards for document intelligence, video, and audio understanding. Early adopters include H Company, Palantir, and Foxconn, with open weights available on Hugging Face. The architecture uses a novel multimodal token fusion approach that processes all modalities in a shared latent space.","url":"https://blogs.nvidia.com/blog/nemotron-3-nano-omni-multimodal-ai-agents/"},{"category":"HARDWARE","cols":6,"title":"Amazon Plans to Sell Trainium AI Chips Externally, Directly Challenging Nvidia","source":"TechCrunch","date":"Jun 18, 2026","summary":"AWS is in talks to sell its proprietary Trainium AI chips to external data-center operators, a move that would directly challenge Nvidia's near-monopoly on AI training hardware. CEO Andy Jassy previously estimated AWS's internal chip business run rate at ~$50 billion annually. The strategy shift comes despite Trainium2 selling out instantly and Trainium4 being fully reserved before availability, highlighting both massive demand and manufacturing capacity constraints at TSMC.","url":"https://techcrunch.com/2026/06/18/amazon-hopes-to-challenge-nvidia-more-directly-by-selling-its-ai-chips/"},{"category":"STARTUPS","cols":6,"title":"AI Inference Startup Baseten Reportedly Raising $1.5 Billion Months After Last Mega-Round","source":"TechCrunch","date":"Jun 18, 2026","summary":"AI inference platform Baseten is reportedly raising $1.5 billion just months after its last mega-round, reflecting frenzied investor appetite for AI infrastructure startups. The round underscores how inference — running deployed AI models at scale — has become one of the hottest sub-sectors as enterprises shift from training to production deployment. Baseten competes with Together AI, Fireworks, and Anyscale in the rapidly consolidating inference-as-a-service market.","url":"https://techcrunch.com/2026/06/18/ai-inference-startup-baseten-reportedly-raising-1-5b-months-after-its-last-mega-round/"},{"category":"AI","cols":6,"title":"Anthropic CEO Amodei Warns: 'Overspend on AI and You Go Bankrupt'","source":"TechStartups","date":"Jun 18, 2026","summary":"Dario Amodei issued a stark warning that if AI growth forecasts are off by even a year, companies betting hundreds of billions on multi-year GPU contracts 'go bankrupt.' The comment was an implicit rebuke of rivals like OpenAI, xAI, and hyperscalers making massive compute commitments. Anthropic, reportedly running at $30 billion annualized revenue, instead relies on partnerships like its 3.5 GW TPU deal with Google/Broadcom rather than owning all compute outright — a capital-light strategy that may prove prescient if the AI compute bubble deflates.","url":"https://techstartups.com/2026/06/18/top-tech-news-today-june-18-2026/"},{"category":"AI","cols":6,"title":"Elastic Agrees to Buy DeductiveAI for Up to $85 Million — AI-Powered Bug Detection","source":"TechCrunch","date":"Jun 18, 2026","summary":"Enterprise software company Elastic agreed to acquire DeductiveAI, a CRV-backed startup that uses AI to catch and resolve software bugs, for up to $85 million. The deal adds automated debugging and AI-powered site reliability engineering capabilities to Elastic's observability platform. It represents a sub-two-year exit from a $7.5 million seed round, signaling consolidation in the AI-for-DevOps space as enterprises seek to automate software quality.","url":"https://techcrunch.com/2026/06/18/source-elastic-agrees-to-buy-crv-backed-deductiveai-for-up-to-85m/"},{"category":"HARDWARE","cols":6,"title":"Intel Hires Former SK Hynix CEO Seok-Hee Lee to Lead Foundry Packaging","source":"Intel Newsroom","date":"Jun 18, 2026","summary":"Intel named Seok-Hee Lee, former CEO of SK Hynix, as executive vice president of Intel Foundry to lead all advanced packaging, system integration, and back-end manufacturing. The high-profile hire is part of CEO Lip-Bu Tan's push to revive Intel's contract chip-manufacturing business. Lee brings deep memory and packaging expertise at a time when AI chip demand is driving rapid evolution in chiplet and 3D stacking technologies, positioning Intel Foundry to compete with TSMC's advanced packaging dominance.","url":"https://newsroom.intel.com/corporate/intel-announces-leadership-appointment-at-intel-foundry-to-accelerate-development-and-manufacturing"},{"category":"SECURITY","cols":6,"title":"Quantum Cybersecurity Startup EigenQ to Go Public via $3 Billion SPAC Merger","source":"Reuters","date":"Jun 18, 2026","summary":"Austin-based EigenQ, a quantum-resistant cybersecurity company, is merging with Silicon Valley Acquisition Corp. (SVAQ) at a ~$3 billion valuation. The company focuses on post-quantum cryptography and hardware-rooted trust, reporting 25% revenue growth in 2025 and a $1.1 billion backlog. It is the first major quantum-cybersecurity public listing, testing whether Wall Street will pay premium multiples for post-quantum cryptography as NIST's PQC standards drive enterprise adoption.","url":"https://techstartups.com/2026/06/18/top-tech-news-today-june-18-2026/"},{"category":"POLICY","cols":6,"title":"UK CMA Forces Google to Let Publishers Opt Out of AI Search Training — No Compensation Required","source":"Sky News / TechStartups","date":"Jun 18, 2026","summary":"The UK's Competition and Markets Authority imposed binding conduct requirements on Google under the new digital markets regime, mandating that British publishers must be able to opt out of having their content used for AI training. Google has 9 months to comply. The rules require consent but not compensation — publishers can opt out of scraping but cannot demand payment. This is the first time a Western regulator has imposed binding AI search conduct rules on Google, setting a precedent for how governments may regulate AI training data access.","url":"https://techstartups.com/2026/06/18/top-tech-news-today-june-18-2026/"},{"category":"AUTONOMOUS","cols":6,"title":"Waymo Recalls Nearly 4,000 Robotaxis Over Construction Zone Failures","source":"TechCrunch","date":"Jun 18, 2026","summary":"Waymo issued a voluntary software recall for its entire fleet of ~4,000 robotaxis after 13 documented incidents where vehicles drove past closure signs into active highway construction zones in Phoenix and the Bay Area. The software was prioritizing avoidance of other freeway hazards over recognizing construction zones. This is Waymo's sixth recall and comes amid a massive expansion to 20+ cities including London and Tokyo, raising questions about scaling autonomous systems before edge cases are resolved.","url":"https://techcrunch.com/2026/06/18/waymo-recalls-nearly-4000-robotaxis-to-stop-them-driving-into-highway-construction-zones/"},{"category":"AI","cols":4,"title":"Snap Spins Off AI Video Team into New Company 'Dotmo' Focused on Gaming","source":"TechCrunch","date":"Jun 18, 2026","summary":"Snap is spinning off its generative AI video team into a standalone company called Dotmo, focused on interactive gaming experiences. CTO Bobby Murphy will be the lead investor while staying at Snap full-time. This is Snap's second major spin-off in 2026 following its AR glasses unit Specs, as the company works to cut costs after laying off ~1,000 employees.","url":"https://techcrunch.com/2026/06/18/snap-spins-off-ai-video-team-into-new-company-dotmo-due-to-costs/"},{"category":"AUTONOMOUS","cols":4,"title":"Rivian Owners File Class-Action Lawsuit Over False Self-Driving Claims","source":"TechCrunch","date":"Jun 18, 2026","summary":"A class-action lawsuit in California federal court alleges Rivian knowingly misled consumers for five years by advertising that first-gen R1T and R1S vehicles would achieve hands-free, eyes-off Level 3 autonomy. The complaint says the hardware can never support it. The suit follows Rivian's $250 million settlement in 2025 over sudden price hikes.","url":"https://techcrunch.com/2026/06/18/rivian-owners-file-lawsuit-alleging-false-promises-on-self-driving-features/"},{"category":"ROBOTICS","cols":4,"title":"Hyundai to Buy SoftBank's Remaining Boston Dynamics Stake for $325M","source":"Reuters / Maeil Business","date":"Jun 19, 2026","summary":"Hyundai Motor Group plans to purchase SoftBank's remaining 9.65% stake in Boston Dynamics for $325 million, making the iconic robotics firm a wholly owned subsidiary. Full ownership consolidates Hyundai's robotics ambitions as humanoid and industrial robotics markets accelerate, with Boston Dynamics reportedly eyeing an IPO on NASDAQ in 2027.","url":"https://money.usnews.com/investing/news/articles/2026-06-18/hyundai-to-buy-softbanks-remaining-stake-in-boston-dynamics-for-325-million-newspaper-says"},{"category":"POLICY","cols":4,"title":"France Mobilises €13 Billion for Tech Sovereignty Funding Push","source":"Reuters / Yahoo Finance","date":"Jun 19, 2026","summary":"France has mobilised €13 billion in additional institutional investor funding to finance French and European technology companies, aiming to strengthen the continent's digital autonomy. The push aligns with the broader EU Tech Sovereignty Package targeting €120 billion overall to compete in AI, semiconductors, and critical digital infrastructure.","url":"https://finance.yahoo.com/technology/articles/france-mobilises-13-billion-tech-105315052.html"},{"category":"HARDWARE","cols":4,"title":"China Tightens Indium Phosphide Export Checks Amid AI Data Center Boom","source":"Reuters / Yahoo Finance","date":"Jun 19, 2026","summary":"China is tightening export controls on indium phosphide, a critical semiconductor material essential for next-generation AI data center optical interconnects. First put on an export control list in February 2025, the restrictions have become a significant bottleneck for AI infrastructure buildout worldwide as InP is crucial for high-speed optical connections in hyperscale data centers.","url":"https://finance.yahoo.com/technology/ai/articles/china-tightens-indium-export-checks-063922632.html"},{"category":"POLICY","cols":4,"title":"Meta Lobbies Congress for Immunity from Child-Harm Lawsuits","source":"Reuters","date":"Jun 18, 2026","summary":"Meta Platforms has been lobbying the U.S. Congress for legal immunity from child-harm claims tied to social media products as part of negotiations around the Kids Online Safety Act. Meta faces lawsuits from 42 state attorneys general alleging Instagram and Facebook were knowingly designed to hook teens, making the immunity push a high-stakes legislative battle.","url":"https://www.reuters.com/world/meta-lobbies-congress-protection-child-harm-lawsuits-2026-06-18/"},{"category":"POLICY","cols":4,"title":"US Court Rules Ohio Can Restrict Children's Social Media Use","source":"Reuters","date":"Jun 19, 2026","summary":"A U.S. court ruled that Ohio can enforce restrictions on children's social media use, finding the state has a compelling interest in protecting minors from online harms. The decision provides legal momentum for the growing wave of state-level child online safety laws, even as federal legislation like the Kids Online Safety Act remains contested.","url":"https://www.reuters.com/technology/"},{"category":"HARDWARE","cols":4,"title":"ASML Denies EUV Tool Reached China After US Raises Concerns","source":"TechCrunch","date":"Jun 19, 2026","summary":"ASML has denied reports that its most advanced extreme ultraviolet lithography tool may have reached China after U.S. officials expressed concern. The Dutch company maintains no EUV systems have been shipped to Chinese entities. The dispute highlights ongoing tensions over chip technology leakage as the U.S. and allies seek to limit China's access to cutting-edge semiconductor manufacturing equipment.","url":"https://techcrunch.com/2026/06/19/the-us-says-asmls-top-chip-tool-may-be-in-china-asml-says-it-isnt/"},{"category":"AI","cols":4,"title":"OpenAI Launches Enhanced Usage Analytics for ChatGPT Enterprise","source":"Reuters","date":"Jun 18, 2026","summary":"OpenAI launched new usage analytics and updated spend controls for ChatGPT Enterprise, giving corporate clients greater visibility and management over AI deployments. Features include detailed usage dashboards, cost allocation tools, and granular access controls for large organizations as OpenAI prepares for a blockbuster IPO and seeks to demonstrate enterprise-grade governance.","url":"https://www.reuters.com/technology/"},{"category":"POLICY","cols":4,"title":"Apple Allows Alternative App Stores and Payments in Brazil After Antitrust Deal","source":"Reuters","date":"Jun 18, 2026","summary":"Apple agreed to allow developers in Brazil to distribute iOS apps through alternative marketplaces and process payments outside its proprietary system following a deal with Brazilian antitrust watchdog CADE. The concession mirrors forced openings in the EU under the Digital Markets Act, as regulatory pressure continues to erode Apple's walled-garden model globally.","url":"https://www.reuters.com/technology/"},{"category":"RESEARCH","cols":4,"title":"New arXiv: Current AI World Models 'Lack a Persistent State Core'","source":"arXiv (cs.CV)","date":"Jun 19, 2026","summary":"A 39-page study systematically evaluates leading AI world models and argues they fundamentally lack a persistent state core, limiting their ability to track objects and maintain consistent representations over time. The paper proposes architectural principles for stateful world models with implications for robotics, autonomous driving, and any AI system needing long-term environmental understanding.","url":"https://arxiv.org/abs/2606.20545"},{"category":"RESEARCH","cols":4,"title":"JanusMesh: Fast Zero-Shot 3D Visual Illusion Generation Accepted at ECCV 2026","source":"arXiv (cs.CV)","date":"Jun 19, 2026","summary":"Researchers present JanusMesh, a method for fast zero-shot generation of 3D visual illusions via cross-space denoising, accepted at ECCV 2026. The technique enables creation of ambiguous 3D shapes that appear different from multiple viewpoints — advancing creative tooling for 3D content creation and building on recent breakthroughs in diffusion-based 3D generation.","url":"https://arxiv.org/abs/2606.20563"}],"physicsContent":[{"type":"section_heading","text":"ELECTROMAGNETISM"},{"type":"heading","text":"Maxwell's Displacement Current and the Birth of Photonic Computing"},{"type":"paragraph","text":"In 1861, James Clerk Maxwell identified an inconsistency in Ampère's law. The original form, \\(\\nabla \\times \\mathbf{B} = \\mu_0\\mathbf{J}\\), worked for steady currents but failed when charge accumulated — the divergence of both sides no longer balanced. Maxwell's solution was to add the displacement current term \\(\\mu_0\\varepsilon_0\\frac{\\partial\\mathbf{E}}{\\partial t}\\), creating the Ampère-Maxwell law. This single addition had two monumental consequences: mathematical consistency with charge conservation, and the prediction that changing electric fields generate magnetic fields even in empty space — implying electromagnetic waves."},{"type":"subheading","text":"The Prediction of Electromagnetic Waves"},{"type":"formula","text":"\\[\\nabla \\times \\mathbf{B} = \\mu_0\\mathbf{J} + \\mu_0\\varepsilon_0\\frac{\\partial\\mathbf{E}}{\\partial t}\\]"},{"type":"paragraph","text":"In free space (\\(\\mathbf{J} = 0\\), \\(\\rho = 0\\)), combining the Ampère-Maxwell law with Faraday's law produces the wave equation \\(\\nabla^2\\mathbf{E} = \\mu_0\\varepsilon_0\\frac{\\partial^2\\mathbf{E}}{\\partial t^2}\\). The wave speed emerges as \\(c = 1/\\sqrt{\\mu_0\\varepsilon_0}\\) — a purely electromagnetic derivation of the speed of light. Maxwell had unified electricity, magnetism, and optics in a single theoretical framework, predicting radio waves, microwaves, and light as manifestations of the same phenomenon decades before Hertz confirmed them experimentally in 1887."},{"type":"formula","text":"\\[c = \\frac{1}{\\sqrt{\\mu_0\\varepsilon_0}} \\approx 3 \\times 10^8 \\text{ m/s}\\]"},{"type":"subheading","text":"Maxwell's Legacy in Modern Photonic Computing"},{"type":"paragraph","text":"Today, Maxwell's discovery that light is an electromagnetic wave underpins all of silicon photonics — a technology that may fundamentally reshape AI hardware. As AI model sizes grow exponentially (~200× parameter increase every two years), electrical interconnects face fundamental limits: copper traces hit bandwidth ceilings around 112 Gbps per lane, while power consumption for data movement scales quadratically with distance. Optical interconnects, by contrast, transmit data via modulated light through waveguides with bandwidth in the Tbps range and sub-pJ/bit energy efficiency, with negligible distance-dependent losses."},{"type":"paragraph","text":"Two landmark papers from 2025 demonstrate the transformation from Maxwell's equations to practical AI accelerators. In Nature, researchers demonstrated a large-scale integrated photonic accelerator with 16,000+ photonic components, achieving matrix multiply-accumulate at 1 GHz with latency as low as 3 ns per cycle using 2.5D hybrid packaging. In APL Photonics, a separate group achieved a record 262 TOPS using a 16×16 Arrayed Waveguide Grating Router exploiting time-, wavelength-, and space-division multiplexing powered by a Si₃N₄ microcomb laser, projecting a roadmap to 3.276 POPS with sub-100 fJ/OP efficiency."},{"type":"subheading","text":"Why Maxwell Matters for AI Engineers"},{"type":"paragraph","text":"For an ML/AI-aware reader, the connection is direct: the same displacement current term that Maxwell added for mathematical consistency in 1861 now enables the optical interconnects that will connect next-generation GPU clusters. A comprehensive 2026 npj Nanophotonics review notes that networking already consumes ~10% of data center power, failures in 500,000-XPU clusters can cost $3M/day, and photonics — co-packaged optics, optical circuit switches, and silicon photonic interposers — is the key to breaking through scaling limits at chip, rack, and data center levels. The fundamental physics hasn't changed in 160 years. What has changed is our ability to fabricate Maxwell's waveguides at nanometer scale on silicon, turning a 19th-century theoretical prediction into 21st-century compute infrastructure."}],"mathContent":[{"type":"section_heading","text":"TOPOLOGY"},{"type":"heading","text":"The Inscribed Square Problem: How an Open Question Teaches Topology"},{"type":"paragraph","text":"Topology is often mischaracterized as 'rubber-sheet geometry' — the study of shapes that can be stretched without tearing. But the true power of topology lies in using continuous associations and impossibility results as logical instruments. The Inscribed Square Problem (Toeplitz, 1911) asks: does every closed, continuous plane curve contain four points that form a square? While the full problem remains open, the inscribed rectangle variant was elegantly proven — and the proof reveals what topology actually does."},{"type":"video","video":{"title":"This open problem taught me what topology is","channel":"3Blue1Brown","duration":"27:25","url":"https://www.youtube.com/watch?v=IQqtsm-bBRU"}},{"type":"subheading","text":"The Möbius Strip Parameterization"},{"type":"paragraph","text":"The key insight is parameterizing unordered point pairs on a closed curve. A rectangle is defined by two distinct point pairs (a, b) and (c, d) sharing the same midpoint and distance. The space of all unordered pairs on the curve maps onto a Möbius strip: take the unit square of all ordered pairs, fold along the diagonal x=y, and glue with a half-twist. Every point on this Möbius strip corresponds to a distinct unordered pair, and its boundary (where the two points coincide) maps to the original curve."},{"type":"subheading","text":"The 3D Surface and the Klein Bottle Argument"},{"type":"paragraph","text":"For each unordered point pair, we compute its midpoint coordinates (M_x, M_y) and the distance between the points (d), producing a point (M_x, M_y, d) in 3D. This maps the Möbius strip onto a continuous surface whose boundary lies in the xy-plane (where d=0, corresponding to the original curve). Reflect this surface below the xy-plane and glue the two Möbius strips at their common boundary. The result is a Klein bottle — a closed, non-orientable surface."},{"type":"formula","text":"\\[\\text{Klein bottle} \\cong \\text{Möbius strip} \\cup_{\\partial} \\text{Möbius strip}\\]"},{"type":"paragraph","text":"Here is where topology delivers its verdict: no closed non-orientable surface can be embedded in 3D without self-intersection. Therefore, the constructed surface must intersect itself. At any self-intersection point, two distinct unordered pairs share the same midpoint and distance — which means an inscribed rectangle exists on the original curve. The proof uses no angles, no distances, no geometry — only the topological impossibility of embedding a Klein bottle in \\(\\mathbb{R}^3\\)."},{"type":"subheading","text":"The Open Square Problem"},{"type":"paragraph","text":"The inscribed square requires adding an angle constraint, pushing the parameter space from 3D to 4D. Greene and Lobb (2020) proved that smooth curves always contain rectangles of every aspect ratio, but the full generality for all continuous curves — particularly fractals — remains unsolved. The 3Blue1Brown video beautifully demonstrates why: topology gives us impossibility arguments, but possibility arguments require new tools that we are still inventing."}],"deepContent":[{"type":"section_heading","text":"AI POLICY & REGULATION"},{"type":"heading","text":"Chaos as Governance: The Fragmented State of Global AI Regulation in June 2026"},{"type":"paragraph","text":"The week of June 15-19, 2026 represents one of the most consequential moments in AI governance history — not because of coherent action, but because the cracks are showing. The G7 Summit in Évian produced declarations on \"safe AI deployment\" while a member nation was simultaneously forcing the shutdown of one of the world's most capable AI models. The EU AI Act approaches its August 2, 2026 full applicability deadline with open questions about enforcement. China is writing the world's most detailed consumer AI rules. And the international system — the UN, OECD, G7 — has produced frameworks without enforcement, dialogue without decisions."},{"type":"subheading","text":"The Incoherence at the Center"},{"type":"paragraph","text":"The U.S. government's position on AI is best described as a live experiment. Within a four-month span: the Pentagon designated Anthropic a \"supply-chain risk to national security\" (a label for foreign adversaries); the White House called Anthropic's staff \"very smart, high-IQ people\"; the NSA quietly used Mythos to harden networks; and on June 13, the Commerce Department gave Anthropic 90 minutes to disable Mythos 5 and Fable 5 based on an Amazon tip about guardrail bypass. Two branches of the same government hold diametrically opposed positions on the same company — one calling its CEO an \"ideological lunatic\" while the other relies on its technology for national security."},{"type":"paragraph","text":"The June 2 Executive Order on AI Innovation and Security is a \"belt after the suspenders\" — a voluntary framework announced after the Mythos model had already been released. It creates a classified benchmarking process whose thresholds even developers cannot know without engaging the government, producing regulatory uncertainty rather than predictable governance. The 30-day pre-release window (down from an originally proposed 90 days) was described as a \"game changer\" by former White House advisor David Sacks, but it amounts to a notice period with no mandatory enforcement."},{"type":"subheading","text":"The EU Model: Binding but Incomplete"},{"type":"paragraph","text":"The EU AI Act is genuinely comprehensive — binding rules on high-risk AI, transparency, governance, and penalties that will apply to 450 million people starting August 2, 2026. It is not performative. But it does not address the national security dimension at all. The EU was conspicuously uninvolved in the Anthropic shutdown. When a model crosses borders, there is still no governance architecture. And enforcement capacity across 27 member states with varying technical expertise remains an open question."},{"type":"subheading","text":"The Synthesis: Governance Is Happening — Badly"},{"type":"paragraph","text":"The regulatory frameworks are genuinely trying to address AI risk, but they are doing so in a reactive, fragmented, and often incoherent way. The underlying problem is structural: AI capabilities are advancing faster than any government's ability to govern them. This creates a pattern where regulation follows crisis, never precedes it; national security frameworks (export controls, supply chain designations) are jury-rigged for AI governance; the international system is absent when it is most needed; and the most aggressive government action (the U.S.) operates through ad hoc mechanisms with no due process."},{"type":"paragraph","text":"The most substantive regulations — the EU AI Act and China's forthcoming interactive AI rules — address consumer protection and transparency but not frontier model governance. The most aggressive government action — the U.S. shutdown of Anthropic's models — operates outside any regulatory framework at all. As of June 19, 2026, AI governance is happening, and not all of it is performative. But it is chaotic, reactive, and structurally incapable of anticipating the next crisis before it arrives. The question is whether the emerging frameworks will converge into coherent global architecture before an AI-related catastrophe forces convergence on worse terms."}]};
+let tab = 0;
+
+// Theme switching functionality
+function setTheme(themeName) {
+  const root = document.getElementById('root');
+  root.setAttribute('data-theme', themeName);
+
+  // Update active state on theme dots
+  document.querySelectorAll('.theme-dot').forEach(dot => {
+    if (dot.getAttribute('data-theme') === themeName) {
+      dot.classList.add('active');
+    } else {
+      dot.classList.remove('active');
+    }
+  });
+
+  // Persist theme preference to localStorage
+  try {
+    localStorage.setItem('digest-theme', themeName);
+  } catch(e) {
+    console.error('Failed to save theme preference:', e);
+  }
+}
+
+// Load saved theme on page load
+function loadSavedTheme() {
+  try {
+    const savedTheme = localStorage.getItem('digest-theme');
+    if (savedTheme && ['parchment', 'sepia', 'nordic', 'dusk', 'graphite'].includes(savedTheme)) {
+      setTheme(savedTheme);
+    } else {
+      setTheme('parchment');
+    }
+  } catch(e) {
+    console.error('Failed to load theme preference:', e);
+    setTheme('parchment');
+  }
+}
+
+function renderTechNews() {
+  return `<div class="tech-news-container" style="background: var(--tn-bg); padding: 48px 24px 80px; min-height: 100%;">
+    <h1 style="font-family: Georgia, serif; font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: var(--tn-accent); border-bottom: 4px solid var(--tn-accent); padding-bottom: 24px; margin-bottom: 48px;">Tech News — ${data.date}</h1>
+    <div id="tech-grid" style="display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px;">
+      ${data.articles.map(a => `<div style="grid-column: span ${a.cols}; background: var(--tn-card); border: 2px solid var(--tn-border); padding: 24px;">
+        <span style="display: inline-block; background: var(--tn-accent); color: var(--tn-bg); font-size: 10px; font-weight: 700; letter-spacing: 0.12em; padding: 3px 10px; margin-bottom: 16px; font-family: 'IBM Plex Mono'; text-transform: uppercase;">${a.category}</span>
+        <h2 class="${a.cols === 12 ? 'article-title-large' : 'article-title-small'}" style="font-family: Georgia, serif; font-size: ${a.cols === 12 ? '36px' : '20px'}; font-weight: 700; color: var(--tn-ink); line-height: 1.12; margin-bottom: ${a.cols === 12 ? '20px' : '12px'};">${a.title}</h2>
+        <p style="font-family: 'IBM Plex Mono'; font-size: 11px; color: var(--tn-meta); margin-bottom: 14px;">${a.source} · ${a.date}</p>
+        <p class="article-summary" style="font-family: 'IBM Plex Sans'; font-size: ${a.cols === 12 ? '16px' : '14px'}; line-height: 1.65; color: var(--tn-ink); opacity: 0.78;">${a.summary}</p>
+        <a href="${a.url}" target="_blank" style="display: inline-block; font-size: 12px; font-weight: 600; color: var(--tn-accent); border-bottom: 1.5px solid var(--tn-accent); margin-top: 20px; text-decoration: none;">Read Full Article →</a>
+      </div>`).join('')}
+    </div>
+  </div>`;
+}
+
+function renderContent(blocks, bgVar, textVar, accentVar, fbgVar) {
+  return blocks.map(b => {
+    if (b.type === 'section_heading') return `<p style="font-family: 'IBM Plex Mono'; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(${accentVar}); opacity: 0.65; margin-bottom: 16px;">${b.text}</p>`;
+    if (b.type === 'heading') return `<h2 class="content-heading" style="font-family: Georgia, serif; font-size: 30px; font-weight: 700; color: var(${accentVar}); margin-bottom: 24px;">${b.text}</h2>`;
+    if (b.type === 'paragraph') return `<p class="content-paragraph" style="font-family: Georgia, serif; font-size: 18px; line-height: 1.8; color: var(${textVar}); text-align: justify; margin-bottom: 20px;">${b.text}</p>`;
+    if (b.type === 'formula') return `<div class="formula-block" style="padding: 28px 20px; margin: 32px 0; text-align: center; border-left: 3px solid var(${accentVar}); background: var(${fbgVar}); color: var(${textVar});">${b.text}</div>`;
+    if (b.type === 'subheading') return `<h3 class="content-subheading" style="font-family: Georgia, serif; font-size: 22px; font-weight: 600; color: var(${textVar}); margin-top: 44px; margin-bottom: 20px;">${b.text}</h3>`;
+    if (b.type === 'video') return `<div class="video-card" style="background: var(--mt-vbg); border: 2px solid var(${accentVar}); border-radius: 6px; padding: 24px; margin: 32px 0; display: flex; align-items: center; gap: 20px;">
+      <span style="font-size: 30px;">🎥</span>
+      <div style="flex: 1;">
+        <p style="font-family: 'IBM Plex Sans'; font-weight: 700; font-size: 16px; margin-bottom: 6px;">${b.video.title}</p>
+        <p style="font-family: 'IBM Plex Mono'; font-size: 12px; opacity: 0.6;">${b.video.channel} · ${b.video.duration}</p>
+      </div>
+      <a href="${b.video.url}" target="_blank" style="background: var(${accentVar}); color: var(${bgVar}); padding: 10px 22px; font-size: 13px; font-weight: 600; border-radius: 4px; text-decoration: none;">Watch</a>
+    </div>`;
+    return '';
+  }).join('');
+}
+
+function showTab(n) {
+  tab = n;
+  document.querySelectorAll('[id^=tab]').forEach((el, i) => {
+    el.style.borderBottomColor = i === n ? 'var(--tab-active)' : 'transparent';
+    el.style.color = i === n ? 'var(--tab-active)' : 'var(--tab-muted)';
+    el.style.fontWeight = i === n ? '600' : '400';
+  });
+  document.getElementById('pageNum').textContent = `Page ${n + 1} of 4`;
+
+  const content = document.getElementById('content');
+  if (n === 0) content.innerHTML = renderTechNews();
+  else if (n === 1) content.innerHTML = `<div class="content-container" style="background: var(--ph-bg); padding: 64px 32px 96px; min-height: 100%;"><div style="max-width: 896px; margin: 0 auto;">${renderContent(data.physicsContent, '--ph-bg', '--ph-text', '--ph-accent', '--ph-fbg')}</div></div>`;
+  else if (n === 2) content.innerHTML = `<div class="content-container" style="background: var(--mt-bg); padding: 64px 32px 96px; min-height: 100%;"><div style="max-width: 896px; margin: 0 auto;">${renderContent(data.mathContent, '--mt-bg', '--mt-text', '--mt-accent', '--mt-fbg')}</div></div>`;
+  else content.innerHTML = `<div class="content-container" style="background: var(--mt-bg); padding: 64px 32px 96px; min-height: 100%;"><div style="max-width: 896px; margin: 0 auto;">${renderContent(data.deepContent, '--mt-bg', '--mt-text', '--mt-accent', '--mt-fbg')}</div></div>`;
+
+  if (window.MathJax) {
+    MathJax.typesetPromise([document.getElementById('content')]).catch(e => {});
+  }
+}
+
+function nextTab() { if (tab < 3) showTab(tab + 1); }
+function prevTab() { if (tab > 0) showTab(tab - 1); }
+
+// Initialize on page load
+loadSavedTheme();
+showTab(0);
+</script>
+</body>
+</html>
